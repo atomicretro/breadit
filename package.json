@@ -1,5 +1,38 @@
 {
-  "name": "breadit",
+  "name": "enjambment",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "lodash": "^4.17.10",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
+    "react-router-dom": "^4.2.2",
+    "redux": "^4.0.0",
+    "webpack": "^3.11.0"
+  },
+  "description": "**en·jamb·ment** - /inˈjambmənt/ - _noun_<br> (in verse) the continuation of a sentence without a pause beyond the end of a line, couplet, or stanza.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "webpack": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atomicretro/enjambment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/atomicretro/enjambment/issues"
+  },
+  "homepage": "https://github.com/atomicretro/enjambment#readme"
 }
