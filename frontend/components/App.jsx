@@ -8,7 +8,7 @@ const App = () => {
         <h1>peanut butter and enjambment sandwich</h1>
       </header>
     </div>
-  )
+  );
 };
 
 export default App;
