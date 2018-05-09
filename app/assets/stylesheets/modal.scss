@@ -72,6 +72,11 @@
 
 .session-form-footer {
   display: flex;
+  justify-content: space-between;
+}
+
+.footer-left {
+  display: flex;
 }
 
 .session-submit {
@@ -94,8 +99,17 @@
 .other-form-button {
   font-size: 12px;
   padding-left: 10px;
-
 }
+
 .other-form-button:hover {
+  text-decoration: underline #d70062;
+}
+
+.demo-user-button {
+  font-size: 12px;
+  padding-right: 6px;
+}
+
+.demo-user-button:hover {
   text-decoration: underline #d70062;
 }

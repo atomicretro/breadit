@@ -61,11 +61,17 @@ class SessionForm extends React.Component {
             <br />
           </div>
           <div className="session-form-footer">
-            <button className="session-submit"
-              type="submit" >{this.props.formType}
+            <div className="footer-left">
+              <button className="session-submit"
+                type="submit" >
+                {this.props.formType}
+              </button>
+              {this.props.otherForm}
+            </div>
+            <button className="demo-user-button"
+              type="submit" >
+              demo login
             </button>
-            {this.props.otherForm}
-            
           </div>
         </form>
       </div>
