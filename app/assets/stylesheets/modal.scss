@@ -20,10 +20,10 @@
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 1px;
+  background-color: #e9e9e9;
 }
 
 .login-form-box {
-  background-color: gray;
   position: relative;
   padding: 5px;
 }
@@ -46,13 +46,23 @@
 }
 
 .session-form {
-  background-color: blue;
+
 }
 
 .session-form input {
-  padding: 5px;
+  padding-left: 3px;
   background-color: white;
   height: 32px;
   width: 400px;
-  border: inset 1px gray; 
+  border: inset 1px gray;
+  font-size: 12px;
+}
+
+.session-submit {
+  font-size: 12px;
+  display: block;
+  padding: 5px;
+  height: auto;
+  width: auto;
+  border: solid 1px gray;
 }
