@@ -1,12 +1,12 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import NavbarContainer from './navbar/navbar_container';
-import Modal from './modal/modal';
+import ModalContainer from './modal/modal_container';
 
 const App = () => {
   return (
     <div>
-      <Modal />
+      <ModalContainer />
       <header>
         <NavbarContainer />
       </header>

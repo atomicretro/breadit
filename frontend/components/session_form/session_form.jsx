@@ -25,6 +25,7 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
+    debugger
     return(
       <ul>
         {this.props.errors.map((error, idx) => {
@@ -45,7 +46,7 @@ class SessionForm extends React.Component {
           {this.props.formType} for poetry
           <br />
           <div onClick={this.props.closeModal} className="close-x">x</div>
-          {this.renderErrors}
+          {this.renderErrors()}
           <div className="session-form">
             <br />
             <label>username
