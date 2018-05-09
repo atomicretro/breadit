@@ -1,10 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { openModal } from '../../actions/modal_actions';
 
 const Navbar = (ownProps) => {
   const sessionLinks = () => {
     return (
       <section className="login-signup">
+        <button onClick={openModal}
         <Link to='/signup'>sign up</Link> &nbsp;
         <Link to='/login'>log in</Link>
       </section>
