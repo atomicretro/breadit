@@ -15,7 +15,7 @@ const Navbar = (ownProps) => {
   const loggedIn = () => {
     return (
       <section className="user-greeting">
-        <h1>{ownProps.currentUser.username}</h1>
+        <h2>{ownProps.currentUser.username}</h2>
         <button onClick={ownProps.logout}>logout</button>
       </section>
     );
@@ -23,7 +23,8 @@ const Navbar = (ownProps) => {
 
   return (
     <nav className="navbar">
-      <section className="logo">enjambment</section>
+      <section className="search"></section>
+      <section className="logo"><h1>enjambment</h1></section>
       {ownProps.currentUser ? loggedIn() : sessionLinks()}
     </nav>
   );

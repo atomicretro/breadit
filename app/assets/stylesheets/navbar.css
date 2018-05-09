@@ -1,0 +1,42 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: #9dc89b;
+  height: 41px;
+  /* family: 'Open Sans', sans-serif; */
+  overflow: hidden;
+}
+
+.login-signup {
+  background-color: red;
+  display: block;
+  width: 100px;
+  margin-left: auto;
+}
+
+.login-signup button {
+  font-family: 'Open Sans', sans-serif;
+  display: inline;
+  border: solid 2px black;
+}
+
+.user-greeting {
+  background-color: blue;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,0);
+  display: block;
+  width: auto;
+  height: auto;
+  /* background-color: green; */
+}
+
+.logo h1 {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  text-transform: uppercase;
+}
