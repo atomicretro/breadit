@@ -14,4 +14,45 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
+  padding: 10px;
+  display: flex;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.login-form-box {
+  background-color: gray;
+  position: relative;
+  padding: 5px;
+}
+
+.close-x {
+  background-color: red;
+  display: block;
+  height: auto;
+  width: 10px;;
+  position: absolute;
+  top: -2px;
+  right: 1px;
+}
+
+.form-header {
+  display: block;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+}
+
+.session-form {
+  background-color: blue;
+}
+
+.session-form input {
+  padding: 5px;
+  background-color: white;
+  height: 32px;
+  width: 400px;
+  border: inset 1px gray; 
 }
