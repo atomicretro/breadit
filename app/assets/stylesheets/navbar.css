@@ -6,6 +6,7 @@
   height: 41px;
   /* family: 'Open Sans', sans-serif; */
   overflow: hidden;
+  border-bottom: 7px solid #5c965d;
 }
 
 .login-signup {
@@ -27,6 +28,7 @@
 
 .logo {
   position: absolute;
+  top: -17px;
   left: 50%;
   transform: translate(-50%,0);
   display: block;
@@ -37,6 +39,10 @@
 
 .logo h1 {
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
+  font-size: 21px;
+  font-weight: 700;
+  color: #9dc89b;
   text-transform: uppercase;
+  text-shadow: -2px 2px 0 #d70062;
+  letter-spacing: 4px;
 }
