@@ -4,26 +4,75 @@
   position: relative;
   background-color: #9dc89b;
   height: 41px;
-  /* family: 'Open Sans', sans-serif; */
   overflow: hidden;
   border-bottom: 7px solid #5c965d;
 }
 
 .login-signup {
-  background-color: red;
-  display: block;
+  display: flex;
   width: 100px;
   margin-left: auto;
+  margin-right: 20px;
+  /* background-color: red; */
 }
 
 .login-signup button {
   font-family: 'Open Sans', sans-serif;
-  display: inline;
-  border: solid 2px black;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 10px;
+  font-weight: 600;
+  /* background-color: blue; */
+  height: 30px;
+}
+
+.login-signup button:last-child {
+  margin-left: 10px;
+  /* background-color: yellow; */
+}
+
+.login-signup button:hover {
+  border-bottom: 30px solid #d70062;
+  margin-bottom: -30px;
 }
 
 .user-greeting {
-  background-color: blue;
+  display: flex;
+  width: 100px;
+  margin-left: auto;
+  margin-right: 40px;
+  /* background-color: red; */
+}
+
+.user-greeting h2 {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  vertical-align: middle;
+  line-height: 30px;
+  direction: rtl;
+  /* margin-bottom: 1px; */
+}
+
+.user-greeting button {
+  font-family: 'Open Sans', sans-serif;
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 10px;
+  font-weight: 600;
+  /* background-color: blue; */
+  height: 30px;
+}
+
+.user-greeting button:last-child {
+  margin-left: 20px;
+}
+
+.user-greeting button:hover {
+  border-bottom: 30px solid #d70062;
+  margin-bottom: -30px;
 }
 
 .logo {
