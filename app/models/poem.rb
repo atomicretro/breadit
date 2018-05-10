@@ -13,6 +13,8 @@
 
 class Poem < ApplicationRecord
   validates :title, :body, :author_id, :image_url, presence: true
+  validates :title, uniqueness: { scope: :author_id,
+    message: 'poem already exists' }
 
   belongs_to :author,
     class_name: 'Author',
