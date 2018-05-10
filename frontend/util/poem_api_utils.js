@@ -9,8 +9,7 @@ export const fetchPoems = (data) => {
 export const fetchPoem = (id) => {
   return $.ajax({
     method: 'GET',
-    url: `/api/poems/${id}`,
-    data: { id }
+    url: `/api/poems/${id}`
   });
 };
 

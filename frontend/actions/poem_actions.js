@@ -15,10 +15,10 @@ export const receiveAllPoems = (poems) => {
 };
 
 export const receivePoem = (poem) => {
-  return ({
+  return {
     type: RECEIVE_POEM,
     poem
-  });
+  };
 };
 
 export const removePoem = (poemId) => {

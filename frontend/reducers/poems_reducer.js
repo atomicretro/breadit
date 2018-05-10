@@ -11,7 +11,7 @@ const PoemsReducer = (previousState = {}, action) => {
     case RECEIVE_ALL_POEMS:
       return merge({}, previousState, action.poems);
     case RECEIVE_POEM:
-      return merge({}, previousState, { [action.poem.id]: action.poem} );
+      return merge({}, previousState, { [action.poem.poem.id]: action.poem.poem} );
     case REMOVE_POEM:
       let newState = merge({}, previousState);
       delete newState[action.poemId];
