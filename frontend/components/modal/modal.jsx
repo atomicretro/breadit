@@ -9,10 +9,10 @@ const Modal = (ownProps) => {
 
   let component;
   switch (ownProps.modal) {
-    case 'login':
+    case 'log in':
       component = <LoginFormContainer />;
       break;
-    case 'signup':
+    case 'sign up':
       component = <SignupFormContainer />;
       break;
     default:

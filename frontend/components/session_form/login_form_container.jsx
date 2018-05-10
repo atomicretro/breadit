@@ -7,7 +7,7 @@ import SessionForm from './session_form';
 const mapStateToProps = (state) => {
   return ({
     errors: state.errors,
-    formType: 'login'
+    formType: 'log in'
   });
 };
 
@@ -18,8 +18,8 @@ const mapDispatchToProps = (dispatch) => {
     },
     otherForm: (
       <button className="other-form-button"
-        onClick={() => dispatch(openModal('signup'))}>
-        or signup instead
+        onClick={() => dispatch(openModal('sign up'))}>
+        or sign up instead
       </button>
     ),
     closeModal: () => dispatch(closeModal()),

@@ -10,7 +10,7 @@
 
 .login-signup {
   display: flex;
-  width: 100px;
+  width: auto;
   margin-left: auto;
   margin-right: 20px;
   /* background-color: red; */

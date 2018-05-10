@@ -6,8 +6,8 @@ const Navbar = (ownProps) => {
   const sessionLinks = () => {
     return (
       <section className="login-signup">
-        <button onClick={() => ownProps.openModal('signup')}>signup</button> &nbsp;
-        <button onClick={() => ownProps.openModal('login')}>login</button>
+        <button onClick={() => ownProps.openModal('sign up')}>sign up</button> &nbsp;
+        <button onClick={() => ownProps.openModal('log in')}>log in</button>
       </section>
     );
   };
