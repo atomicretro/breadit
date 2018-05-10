@@ -7,29 +7,23 @@ export const RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 
 // synchronous session action creators
 export const receiveCurrentUser = (currentUser) => {
-  return (
-    {
+  return ({
       type: RECEIVE_CURRENT_USER,
       currentUser
-    }
-  );
+    });
 };
 
 export const logoutCurrentUser = () => {
-  return (
-    {
+  return ({
       type: LOGOUT_CURRENT_USER
-    }
-  );
+    });
 };
 
 export const receiveSessionErrors = (errors) => {
-  return (
-    {
+  return ({
       type: RECEIVE_SESSION_ERRORS,
       errors
-    }
-  );
+    });
 };
 
 // thunk session action creators

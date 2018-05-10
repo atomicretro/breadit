@@ -1,8 +1,8 @@
-export const fetchPoems = (poems) => {
+export const fetchPoems = (data) => {
   return $.ajax({
     method: 'GET',
     url: '/api/poems',
-    data: { poems }
+    data: { data }
   });
 };
 
