@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180510155102) do
+ActiveRecord::Schema.define(version: 20180510190057) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "authors", force: :cascade do |t|
     t.string "name", null: false
+    t.string "image_url"
     t.index ["name"], name: "index_authors_on_name"
   end
 

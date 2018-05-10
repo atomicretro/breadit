@@ -2,8 +2,9 @@
 #
 # Table name: authors
 #
-#  id   :integer          not null, primary key
-#  name :string           not null
+#  id        :integer          not null, primary key
+#  name      :string           not null
+#  image_url :string
 #
 
 class Author < ApplicationRecord
