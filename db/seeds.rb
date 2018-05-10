@@ -15,5 +15,5 @@ author2 = Author.create(name: 'finn')
 author3 = Author.create(name: 'jake')
 
 poem1 = Poem.create(title: 'test', body: 'testing', author_id: author1.id, image_url: 'hi')
-poem2 = Poem.create(title: "come along with me', body: 'and the butterflies and bees\nwe'll wander through the forest\nand do so as we please", author_id: author1.id, image_url: 'bye')
-poem3 = Poem.create(title: 'truths', body: 'sucking at something is the first step to being sorta good at something', author_id: author1.id, image_url: 'ok')
+poem2 = Poem.create(title: "come along with me", body: "and the butterflies and bees\nwe'll wander through the forest\nand do so as we please", author_id: author2.id, image_url: 'bye')
+poem3 = Poem.create(title: 'truths', body: 'sucking at something is the first step to being sorta good at something', author_id: author3.id, image_url: 'ok')
