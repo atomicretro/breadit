@@ -1,7 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import NavbarContainer from './navbar/navbar_container';
 import ModalContainer from './modal/modal_container';
+import NavbarContainer from './navbar/navbar_container';
+import PoemContainer from './poems/poem_container';
 
 const App = () => {
   return (
@@ -10,6 +11,11 @@ const App = () => {
       <header>
         <NavbarContainer />
       </header>
+      <body>
+        <Switch>
+          <Route path="/poems/:poemId" component={PoemContainer} />
+        </Switch>
+      </body>
     </div>
   );
 };
