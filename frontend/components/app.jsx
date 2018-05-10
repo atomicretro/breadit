@@ -11,11 +11,9 @@ const App = () => {
       <header>
         <NavbarContainer />
       </header>
-      <body>
-        <Switch>
-          <Route path="/poems/:poemId" component={PoemContainer} />
-        </Switch>
-      </body>
+      <main>
+        <Route path="/poems/:poemId" component={PoemContainer} />
+      </main>
     </div>
   );
 };
