@@ -7,10 +7,10 @@ export const REMOVE_POEM = 'REMOVE_POEM';
 export const RECEIVE_POEM_ERRORS = 'RECEIVE_POEM_ERRORS';
 
 // synchronous poem action creators
-export const receiveAllPoems = (data) => {
+export const receiveAllPoems = (poems) => {
   return ({
       type: RECEIVE_ALL_POEMS,
-      data
+      poems
     });
 };
 
@@ -21,10 +21,10 @@ export const receivePoem = (poem) => {
   });
 };
 
-export const removePoem = (id) => {
+export const removePoem = (poemId) => {
   return ({
     type: REMOVE_POEM,
-    id
+    poemId
   });
 };
 
