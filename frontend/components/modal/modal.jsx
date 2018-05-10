@@ -23,7 +23,7 @@ const Modal = (ownProps) => {
     <div className="modal-background" onClick={ownProps.closeModal}>
       <div className="modal-child" onClick={(e) => e.stopPropagation()}>
         { component }
-      </div>)
+      </div>
     </div>
   );
 };

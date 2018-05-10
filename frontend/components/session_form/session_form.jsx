@@ -10,6 +10,7 @@ class SessionForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleGuest = this.handleGuest.bind(this);
   }
 
   update(field) {
@@ -24,9 +25,14 @@ class SessionForm extends React.Component {
     this.props.processForm(user).then(this.props.closeModal);
   }
 
+  handleGuest(e) {
+    e.preventDefault();
+    this.props.loginGuest().then(this.props.closeModal);
+  }
+
   renderErrors() {
     return(
-      <ul>
+      <ul className="session-errors-list">
         {this.props.errors.map((error, idx) => {
           return (
             <li key={`error-${idx}`}>
@@ -41,7 +47,7 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
+        <form className="login-form-box">
           <div onClick={this.props.closeModal} className="close-x">x</div>
           <span className="form-header">{this.props.formType} for poetry</span>
           <hr className="line1" />
@@ -63,12 +69,14 @@ class SessionForm extends React.Component {
           <div className="session-form-footer">
             <div className="footer-left">
               <button className="session-submit"
+                onClick={this.handleSubmit}
                 type="submit" >
                 {this.props.formType}
               </button>
               {this.props.otherForm}
             </div>
             <button className="demo-user-button"
+              onClick={this.handleGuest}
               type="submit" >
               demo login
             </button>

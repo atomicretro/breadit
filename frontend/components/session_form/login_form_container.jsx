@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return({
+  return ({
     processForm: (user) => {
       return dispatch(login(user));
     },
@@ -22,7 +22,13 @@ const mapDispatchToProps = (dispatch) => {
         or signup instead
       </button>
     ),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    loginGuest: () => {
+      return dispatch(login({
+        username: 'guest',
+        password: 'guestlogin'
+      }));
+    }
   });
 };
 
