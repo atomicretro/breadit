@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Lyrics from './lyrics';
+import Lines from './lines';
 
 const mapStateToProps = (state) => {
   return {
@@ -9,4 +9,4 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps
-)(Lyrics);
+)(Lines);

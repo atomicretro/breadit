@@ -1,0 +1,5 @@
+.poem-lines {
+  padding-left: 20px;
+  max-width: 570px;
+  white-space: pre-wrap;
+}

@@ -1,0 +1,19 @@
+.poem-background {
+  background-color: #f7f7f7;
+}
+
+.poem-foreground {
+  margin: auto;
+  width: 80%;
+  min-width: 970px;
+  background-color: yellow;
+  padding-top: 40px;
+}
+
+.poem-lines-title {
+  margin: 0;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding-left: 20px;
+  margin-bottom: 20px;
+}
