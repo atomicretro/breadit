@@ -14,7 +14,9 @@ class AuthorBar extends React.Component {
     console.log(this.props.authorImage);
     return(
       <div className="author-bar">
-        <img src={this.props.imageUrl} className="background-img" />
+        <div className="author-bar-background">
+          <img src={this.props.imageUrl} className="background-img" />
+        </div>
         <div className="author-img-container">
           <img
             className="author-img"

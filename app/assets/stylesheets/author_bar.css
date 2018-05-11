@@ -1,6 +1,11 @@
 .author-bar  {
   width: 100%;
   height: 280px;
+}
+
+.author-bar-background {
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   position: relative;
 }
@@ -14,7 +19,7 @@
 
 .author-img-container {
   display: flex;
-  position: fixed;
+  position: absolute;
   width: 500px;
   height: auto;
   left: 15%;
