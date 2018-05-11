@@ -4,7 +4,7 @@ import AuthorBar from './author_bar';
 
 const mapStateToProps = (state) => {
   return {
-    bye: 'bye'
+    authorbar: 'authorbar'
   };
 };
 

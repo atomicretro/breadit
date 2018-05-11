@@ -5,6 +5,6 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:show, :create, :destroy]
     resources :poems, only: [:index, :show, :create, :update]
-    resources :author, only: [:create, :show]
+    resources :authors, only: [:create, :show]
   end
 end
