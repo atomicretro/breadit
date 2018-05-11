@@ -14,7 +14,7 @@ export const receiveAllPoems = (poems) => {
     });
 };
 
-export const receivePoem = (poem) => {
+export const receivePoem = ({ poem }) => {
   return {
     type: RECEIVE_POEM,
     poem
@@ -49,8 +49,8 @@ export const fetchPoems = (data) => (dispatch) => {
 
 export const fetchPoem = (id) => (dispatch) => {
   return PoemApiUtils.fetchPoem(id).then(
-    (poem) => {
-      return dispatch(receivePoem(poem));
+    (payload) => {
+      return dispatch(receivePoem(payload));
     },
     (errors) => {
       return dispatch(receivePoemErrors(errors.responseJSON));
