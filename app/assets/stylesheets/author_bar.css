@@ -1,0 +1,36 @@
+.author-bar  {
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+  position: relative;
+}
+
+.background-img {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  opacity: 0.3;
+}
+
+.author-img-container {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 400;
+  height: auto;
+  left: 15%;
+  top:80px;
+}
+
+.author-img {
+  width: 280px;
+  height: 280px;
+  background-color: #5c965d;
+  border-radius: 50%;
+}
+
+.poem-title {
+  text-transform: capitalize;
+  align-self: center;
+  font-size: 32px;
+}

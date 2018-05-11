@@ -1,4 +1,9 @@
 class Api::AuthorsController < ApplicationController
+  def show
+    @author = Author.find(params[:id])
+    render :show
+  end
+
   def create
     @author = Author.new(author_params)
     if @author.save
