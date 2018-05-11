@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import ModalContainer from './modal/modal_container';
 import NavbarContainer from './navbar/navbar_container';
 import PoemContainer from './poems/poem_container';
+import NewPoemContainer from './poem_form/new_poem_container';
 import Footer from './footer/footer';
 
 const App = () => {
@@ -14,6 +15,7 @@ const App = () => {
       </header>
       <main>
         <Route path="/poems/:poemId" component={PoemContainer} />
+        <Route path="/poems/new" component={NewPoemContainer} />
       </main>
       <footer>
         <Footer />
