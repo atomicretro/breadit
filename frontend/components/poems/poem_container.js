@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
+import { fetchPoem } from '../../actions/poem_actions';
 import Poem from './poem';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    hi: 'hi'
+    poem: state.entities.poems[ownProps.match.params.poemId] || { }
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    bye: 'bye'
+    fetchPoem: (poemId) => dispatch(fetchPoem(poemId))
   };
 };
 

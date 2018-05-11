@@ -11,9 +11,10 @@ class AuthorBar extends React.Component {
   }
 
   render () {
+    debugger
     return(
       <div>
-        <img src={this.props.match.params.image_url} />
+        <img src={this.props.imageUrl} />
       </div>
     );
   }
