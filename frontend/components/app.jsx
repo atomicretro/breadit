@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import ModalContainer from './modal/modal_container';
 import NavbarContainer from './navbar/navbar_container';
 import PoemContainer from './poems/poem_container';
+import Footer from './footer/footer';
 
 const App = () => {
   return (
@@ -14,6 +15,9 @@ const App = () => {
       <main>
         <Route path="/poems/:poemId" component={PoemContainer} />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 };

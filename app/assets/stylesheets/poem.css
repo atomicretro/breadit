@@ -7,13 +7,24 @@
   width: 80%;
   min-width: 970px;
   background-color: white;
-  padding-top: 40px;
+  padding-top: 50px;
+  padding-bottom: 41px;
 }
 
 .poem-lines-title {
   margin: 0;
   font-size: 14px;
   text-transform: uppercase;
-  padding-left: 20px;
+  padding-left: 75px;
   margin-bottom: 20px;
+}
+
+.poem-lines {
+  padding-left: 75px;
+  max-width: 570px;
+  white-space: pre-wrap;
+  font-family: 'futura', sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 28px;
 }

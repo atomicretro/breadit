@@ -24,6 +24,7 @@ class Poem extends React.Component {
             <h3 className="poem-lines-title">{this.props.poem.title} lines</h3>
             <LinesContianer
               lines={this.props.poem.body} />
+            
           </div>
         </div>
       </div>
