@@ -14,10 +14,11 @@ export const receiveAllPoems = (poems) => {
     });
 };
 
-export const receivePoem = ({ poem }) => {
+export const receivePoem = ({ poem, author }) => {
   return {
     type: RECEIVE_POEM,
-    poem
+    poem,
+    author
   };
 };
 

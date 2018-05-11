@@ -9,7 +9,6 @@ class Poem extends React.Component {
 
   componentDidMount() {
     this.props.fetchPoem(this.props.match.params.poemId);
-    // this.props.fetchAuthorFromPoem(this.props.match.params.poemId);
   }
 
   render () {
@@ -19,7 +18,7 @@ class Poem extends React.Component {
           imageUrl={this.props.poem.image_url}
           title={this.props.poem.title}
           authorId={this.props.poem.author_id}
-          authorImage={this.props.poem.author_image}/>
+          authorImage={this.props.author.image_url} />
         <LyricsContainer
           lyrics={this.props.poem.body} />
       </div>

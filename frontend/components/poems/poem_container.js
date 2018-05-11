@@ -4,8 +4,10 @@ import { fetchAuthor, fetchAuthorFromPoem } from '../../actions/author_actions';
 import Poem from './poem';
 
 const mapStateToProps = (state, ownProps) => {
+  const poem = state.entities.poems[ownProps.match.params.poemId] || { };
   return {
-    poem: state.entities.poems[ownProps.match.params.poemId] || { }
+    poem: poem,
+    author: state.entities.authors[poem.author_id] || { }
   };
 };
 

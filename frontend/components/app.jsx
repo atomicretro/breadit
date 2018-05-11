@@ -6,7 +6,7 @@ import PoemContainer from './poems/poem_container';
 
 const App = () => {
   return (
-    <div>
+    <div className="app-page">
       <ModalContainer />
       <header>
         <NavbarContainer />
