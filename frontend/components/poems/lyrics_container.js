@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
+import Lyrics from './lyrics';
 
 const mapStateToProps = (state) => {
   return {
-    lyrics: 'lyrics'
+    hi: 'hi'
   };
 };
 
