@@ -13,11 +13,13 @@ class Api::PoemsController < ApplicationController
     @poem = Poem.new(poem_params)
     @author = Author.find_or_initialize_by(author_params)
     @poem.author = @author
-    if @poem.save
+    if @poem.save && @author.valid?
       @author.save
       render :show
     else
-      render json: @poem, status: :unprocessable_entity
+      author_errors = @author[:name].empty? ? ["Author name invalid"] : []
+      all_errors = @poem.errors.full_messages + author_errors
+      render json: all_errors, status: :unprocessable_entity
     end
   end
 
@@ -27,7 +29,7 @@ class Api::PoemsController < ApplicationController
     if @poem.update_attributes(poem_params)
       render :show
     else
-      render json: @poem, status: :unprocessable_entity
+      render json: @poem.errors.full_messages, status: :unprocessable_entity
     end
   end
 

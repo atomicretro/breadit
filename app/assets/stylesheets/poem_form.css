@@ -44,6 +44,15 @@
   margin-bottom: 12px;
 }
 
+.poem-input-error {
+  padding-left: 20px;
+  color: red;
+}
+
+.poem-body-area {
+  display: flex;
+}
+
 .poem-form-container textarea {
   margin-top: 2px;
   padding-top: 6px;
@@ -55,6 +64,12 @@
   border: inset 1px gray;
   font-size: 12px;
   margin-bottom: 12px;
+}
+
+.poem-body-error {
+  padding-left: 20px;
+  color: red;
+
 }
 
 .poem-submit {

@@ -11,6 +11,7 @@ class PoemForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.navigateToPoem = this.navigateToPoem.bind(this);
+    this.renderError = this.renderError.bind(this);
   }
 
   componentWillUnmount() {
@@ -35,18 +36,17 @@ class PoemForm extends React.Component {
     });
   }
 
-  renderErrors() {
+  renderError(type) {
     let errors = this.props.errors.poemErrors;
+    let thisError = '';
+    errors.forEach((error) => {
+      if (error.includes(type)) {
+        thisError = error;
+      }
+    });
+
     return(
-      <ul className="poem-errors-list">
-        {errors.map((error, idx) => {
-          return (
-            <li key={`poem-error-${idx}`}>
-              {error}
-            </li>
-          );
-        })}
-      </ul>
+      <span>{thisError}</span>
     );
   }
 
@@ -69,6 +69,9 @@ class PoemForm extends React.Component {
                   className="poem-form-title"
                   placeholder="title" />
               </label>
+              <span className="poem-input-error">
+                {this.renderError('Title')}
+              </span>
               <br />
               <label>Author:<br />
                 <input type="text"
@@ -77,13 +80,21 @@ class PoemForm extends React.Component {
                   className="poem-form-author"
                   placeholder="author" />
               </label>
+              <span className="poem-input-error">
+                {this.renderError('Author')}
+              </span>
               <br />
-              <label>Body:<br />
-                <textarea
-                  value={this.state.body}
-                  onChange={this.update('body')}
-                  className="poem-form-body" />
-              </label>
+              <div className="poem-body-area">
+                <label>Body:<br />
+                  <textarea
+                    value={this.state.body}
+                    onChange={this.update('body')}
+                    className="poem-form-body" />
+                </label>
+                <span className="poem-body-error">
+                  <br />{this.renderError('Body')}
+                </span>
+              </div>
               <br />
               <button className="poem-submit"
                 onClick={this.handleSubmit}

@@ -9,9 +9,9 @@ const Footer = () => {
         <Link to="/authors" className="footer-links-author">all authors</Link>
       </div>
       <div className="footer-copyright">
-        <span>created by Alec Cuccia</span>
-        <br />
         <span>a clone of <a href="https://www.genius.com">Genius.com</a></span>
+        <br />
+        <span>created by Alec Cuccia</span>
       </div>
     </div>
   );

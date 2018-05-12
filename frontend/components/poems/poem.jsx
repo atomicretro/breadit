@@ -21,7 +21,7 @@ class Poem extends React.Component {
         authorName={this.props.author.name}
         authorImage={this.props.author.image_url} />
       <div className="poem-show-foreground">
-          <h3 className="poem-lines-title">{this.props.poem.title} lines</h3>
+          <h3 className="poem-lines-title">{this.props.poem.title}</h3>
           <LinesContianer lines={this.props.poem.body} />
         </div>
       </div>
