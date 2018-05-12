@@ -10,18 +10,14 @@ const App = () => {
   return (
     <div className="app-page">
       <ModalContainer />
-      <header>
-        <NavbarContainer />
-      </header>
-      <main>
+      <NavbarContainer />
+      <main className="main">
         <Switch>
           <Route exact path="/poems/new" component={NewPoemContainer} />
           <Route exact path="/poems/:poemId" component={PoemContainer} />
         </Switch>
       </main>
-      <footer>
-        <Footer />
-      </footer>
+      <Footer />
     </div>
   );
 };

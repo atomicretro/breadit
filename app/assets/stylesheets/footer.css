@@ -1,6 +1,41 @@
-.footer {
+.footer-container {
+  position: absolute;
+  bottom: 0;
   height: 82px;
   width: 100%;
   background-color: #9dc89b;
   border-top: solid 2px #5c965d;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.footer-links {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.footer-links-poem {
+  margin-right: 15px;
+}
+
+.footer-links-poem:hover {
+  text-decoration: underline #d70062;
+}
+
+.footer-links-author {
+  margin-left: 15px;
+}
+
+.footer-links-author:hover {
+  text-decoration: underline #d70062;
+}
+
+.footer-copyright {
+  font-size: 10px;
+  text-align: center;
+}
+
+.footer-copyright a:hover {
+  text-decoration: underline #d70062;
 }

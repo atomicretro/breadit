@@ -1,0 +1,13 @@
+body {
+   height:100%;
+}
+
+.app-page {
+  min-height: 100%;
+  position: relative;
+  min-height: 100%
+}
+
+.main {
+  padding-bottom: 82px;
+}
