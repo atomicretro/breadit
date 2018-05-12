@@ -10,6 +10,7 @@ class PoemForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.navigateToPoem = this.navigateToPoem.bind(this);
   }
 
   componentWillUnmount() {
@@ -22,10 +23,16 @@ class PoemForm extends React.Component {
     });
   }
 
+  navigateToPoem(poemId) {
+    this.props.history.push(`/poems/${poemId}`);
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const poem = Object.assign({}, this.state);
-    this.props.processForm(poem);
+    this.props.processForm(poem).then((response) => {
+      this.navigateToPoem(response.poem.id);
+    });
   }
 
   renderErrors() {
