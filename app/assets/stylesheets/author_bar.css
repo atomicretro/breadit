@@ -20,10 +20,10 @@
 .author-img-container {
   display: flex;
   position: absolute;
-  width: 500px;
+  width: auto;
   height: auto;
   left: 15%;
-  top:80px;
+  top: 80px;
 }
 
 .author-img {
@@ -33,9 +33,23 @@
   border-radius: 50%;
 }
 
-.poem-title {
+.poem-bar-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 500px;
+}
+
+.poem-bar-title {
   text-transform: capitalize;
-  align-self: center;
   font-size: 32px;
   padding-left: 25px;
+  margin: 0;
+}
+
+.poem-bar-author {
+  text-transform: capitalize;
+  font-size: 24px;
+  padding-left: 25px;
+  margin: 0;
 }

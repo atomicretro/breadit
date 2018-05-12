@@ -3,15 +3,24 @@ import React from 'react';
 import {
   createPoem,
   receivePoemErrors
-} from '../../actions/session_actions';
+} from '../../actions/poem_actions';
 import PoemForm from './poem_form.jsx';
 
 const mapStateToProps = (state) => {
   return({
-    poemform: 'poemform'
+    errors: state.errors,
+    formType: 'create'
+  });
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return ({
+    processForm: (poem) => { return dispatch(createPoem(poem)); },
+    clearErrors: (clear) => { dispatch(receivePoemErrors(clear)); }
   });
 };
 
 export default connect(
-  mapStateToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(PoemForm);

@@ -2,9 +2,11 @@ import { connect } from 'react-redux';
 import { fetchPoem } from '../../actions/poem_actions';
 import AuthorBar from './author_bar';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  // debugger
+  // const author = state.entities.authors[ownProps.authorId] || { };
   return {
-    authorbar: 'authorbar'
+    
   };
 };
 

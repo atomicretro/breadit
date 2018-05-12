@@ -18,6 +18,7 @@ class Poem extends React.Component {
           imageUrl={this.props.poem.image_url}
           title={this.props.poem.title}
           authorId={this.props.poem.author_id}
+          authorName={this.props.author.name}
           authorImage={this.props.author.image_url} />
         <div className="poem-background">
           <div className="poem-foreground">

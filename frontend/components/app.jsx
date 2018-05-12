@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import ModalContainer from './modal/modal_container';
 import NavbarContainer from './navbar/navbar_container';
 import PoemContainer from './poems/poem_container';
@@ -14,8 +14,10 @@ const App = () => {
         <NavbarContainer />
       </header>
       <main>
-        <Route path="/poems/:poemId" component={PoemContainer} />
-        <Route path="/poems/new" component={NewPoemContainer} />
+        <Switch>
+          <Route exact path="/poems/new" component={NewPoemContainer} />
+          <Route exact path="/poems/:poemId" component={PoemContainer} />
+        </Switch>
       </main>
       <footer>
         <Footer />

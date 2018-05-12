@@ -21,7 +21,10 @@ class AuthorBar extends React.Component {
             className="author-img"
             src={this.props.authorImage}
             alt="author picture" />
-          <h2 className="poem-title">{this.props.title}</h2>
+          <div className="poem-bar-info">
+            <h2 className="poem-bar-title">{this.props.title}</h2>
+            <h3 className="poem-bar-author">{this.props.authorName}</h3>
+          </div>
         </div>
       </div>
     );

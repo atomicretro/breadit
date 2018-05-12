@@ -40,7 +40,7 @@ class SessionForm extends React.Component {
       <ul className="session-errors-list">
         {errors.map((error, idx) => {
           return (
-            <li key={`error-${idx}`}>
+            <li key={`session-error-${idx}`}>
               {error}
             </li>
           );
