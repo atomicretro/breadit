@@ -11,7 +11,10 @@ class Api::PoemsController < ApplicationController
 
   def create
     @poem = Poem.new(poem_params)
+    @author = Author.find_or_initialize_by(author_params)
+    @poem.author = @author
     if @poem.save
+      @author.save
       render :show
     else
       render json: @poem, status: :unprocessable_entity
@@ -20,6 +23,7 @@ class Api::PoemsController < ApplicationController
 
   def update
     @poem = Poem.find(params[:id])
+
     if @poem.update_attributes(poem_params)
       render :show
     else
@@ -30,5 +34,9 @@ class Api::PoemsController < ApplicationController
 private
   def poem_params
     params.require(:poem).permit(:title, :body)
+  end
+
+  def author_params
+    params.require(:poem).permit(:name)
   end
 end

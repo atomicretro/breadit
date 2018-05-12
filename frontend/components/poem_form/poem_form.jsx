@@ -5,7 +5,7 @@ class PoemForm extends React.Component {
     super(props);
     this.state = {
       title: '',
-      author: '',
+      name: '',
       body: ''
     };
 
@@ -59,8 +59,8 @@ class PoemForm extends React.Component {
             placeholder="title" />
           <br />
           <input type="text"
-            value={this.state.author}
-            onChange={this.update('author')}
+            value={this.state.name}
+            onChange={this.update('name')}
             className="poem-form-author"
             placeholder="author" />
           <br />

@@ -15,7 +15,7 @@
 #
 
 class Poem < ApplicationRecord
-  validates :title, :body, :author_id, presence: true
+  validates :title, :body, :author, presence: true
   validates :title, uniqueness: { scope: :author_id,
     message: 'poem already exists' }
 
