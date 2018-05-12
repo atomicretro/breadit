@@ -1,8 +1,4 @@
-.poem-background {
-  background-color: #f7f7f7;
-}
-
-.poem-foreground {
+.poem-show-foreground {
   margin: auto;
   width: 80%;
   min-width: 970px;

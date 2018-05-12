@@ -9,7 +9,7 @@ import PoemForm from './poem_form.jsx';
 const mapStateToProps = (state) => {
   return({
     errors: state.errors,
-    formType: 'create'
+    formType: 'create poem'
   });
 };
 

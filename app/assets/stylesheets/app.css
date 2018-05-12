@@ -11,3 +11,7 @@ body {
 .main {
   padding-bottom: 82px;
 }
+
+.background {
+  background-color: #f7f7f7;
+}

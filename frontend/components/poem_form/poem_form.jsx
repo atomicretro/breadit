@@ -55,33 +55,44 @@ class PoemForm extends React.Component {
   }
 
   render(){
-    // debugger
     return(
-      <div className="poem-form-container">
-        <form className="poem-form-box">
-          <input type="text"
-            value={this.state.title}
-            onChange={this.update('title')}
-            className="poem-form-title"
-            placeholder="title" />
-          <br />
-          <input type="text"
-            value={this.state.name}
-            onChange={this.update('name')}
-            className="poem-form-author"
-            placeholder="author" />
-          <br />
-          <textarea
-            value={this.state.body}
-            onChange={this.update('body')}
-            className="poem-form-body" />
-          <br />
-          <button className="poem-submit"
-            onClick={this.handleSubmit}
-            type="submit" >
-            {this.props.formType}
-          </button>
-        </form>
+      <div className="background">
+        <div className="poem-new-foreground">
+          <div className="poem-form-container">
+            <h2>add a poem</h2>
+            <hr className="line2" />
+            <form className="poem-form-box">
+              <label>Title:<br />
+                <input type="text"
+                  value={this.state.title}
+                  onChange={this.update('title')}
+                  className="poem-form-title"
+                  placeholder="title" />
+              </label>
+              <br />
+              <label>Author:<br />
+                <input type="text"
+                  value={this.state.name}
+                  onChange={this.update('name')}
+                  className="poem-form-author"
+                  placeholder="author" />
+              </label>
+              <br />
+              <label>Body:<br />
+                <textarea
+                  value={this.state.body}
+                  onChange={this.update('body')}
+                  className="poem-form-body" />
+              </label>
+              <br />
+              <button className="poem-submit"
+                onClick={this.handleSubmit}
+                type="submit" >
+                {this.props.formType}
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     );
   }
