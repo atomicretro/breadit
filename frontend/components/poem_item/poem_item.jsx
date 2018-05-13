@@ -1,11 +1,13 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PoemItem = () => {
-  debugger
-  let title = this.props.title;
-  let author = this.props.author;
+const PoemItem = (ownProps) => {
+  let poemId = ownProps.poemInfo.id;
+  let title = ownProps.poemInfo.title;
+  let author = ownProps.poemInfo.author_name;
+
   return (
-    <li><Link to={`/poems/${this.value}`}> {title}, {author}</Link></li>
+    <li><Link to={`/poems/${poemId}`}>{title}, {author}</Link></li>
   );
 };
 

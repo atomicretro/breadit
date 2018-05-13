@@ -12,7 +12,6 @@ class PoemIndex extends Component {
     const fetchedPoems = this.props.poems;
     const poemsToRender = [];
     for (let key in fetchedPoems) {
-      debugger
       poemsToRender.push(
         <PoemItemContainer poemInfo = { fetchedPoems[key] } />
       );

@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import PoemItem from './poem_item';
 
-const mapStateToProps = (state) => {
-  const poems = state.entities.poems || { };
+const mapStateToProps = (state, ownProps) => {
+  const poemInfo = ownProps.poemInfo || { };
   return {
-    poems: poems
+    poemInfo: poemInfo
   };
 };
 
