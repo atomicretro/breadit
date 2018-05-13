@@ -1,6 +1,4 @@
 class Api::PoemsController < ApplicationController
-  before_action :ensure_logged_in
-
   def index
     @poems = Poem.all
     render :index
@@ -12,16 +10,20 @@ class Api::PoemsController < ApplicationController
   end
 
   def create
-    @poem = Poem.new(poem_params)
-    @author = Author.find_or_initialize_by(author_params)
-    @poem.author = @author
-    if @poem.save && @author.valid?
-      @author.save
-      render :show
+    if logged_in?
+      @poem = Poem.new(poem_params)
+      @author = Author.find_or_initialize_by(author_params)
+      @poem.author = @author
+      if @poem.save && @author.valid?
+        @author.save
+        render :show
+      else
+        author_errors = @author[:name].empty? ? ["Author name invalid"] : []
+        all_errors = @poem.errors.full_messages + author_errors
+        render json: all_errors, status: :unprocessable_entity
+      end
     else
-      author_errors = @author[:name].empty? ? ["Author name invalid"] : []
-      all_errors = @poem.errors.full_messages + author_errors
-      render json: all_errors, status: :unprocessable_entity
+      render :index
     end
   end
 
