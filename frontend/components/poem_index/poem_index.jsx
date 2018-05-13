@@ -13,9 +13,11 @@ class PoemIndex extends Component {
     const poemsToRender = [];
     for (let key in fetchedPoems) {
       poemsToRender.push(
-        <PoemItemContainer poemInfo = { fetchedPoems[key] } />
+        <PoemItemContainer
+          key={`poem-item-${key}`}
+          poemInfo = { fetchedPoems[key] } />
       );
-    } //SEEMS TO GO THROUGH FOR EVERY POEM BEFORE DOING ITEMCONTAINER STUFF
+    }
 
     return (
       <section className="pokedex">
