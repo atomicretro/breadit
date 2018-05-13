@@ -22,9 +22,11 @@ class Poem < ApplicationRecord
   has_attached_file :image, default_url: "smiling.png"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
-
   belongs_to :author,
     class_name: 'Author',
     primary_key: :id,
     foreign_key: :author_id
+
+  has_many :comments,
+    as: :commentable
 end
