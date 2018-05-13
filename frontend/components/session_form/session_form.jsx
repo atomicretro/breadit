@@ -35,7 +35,6 @@ class SessionForm extends React.Component {
   }
 
   renderErrors() {
-    debugger
     let errors = this.props.errors.sessionErrors;
     return(
       <ul className="session-errors-list">

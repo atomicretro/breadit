@@ -1,11 +1,11 @@
-.navbar {
+.navbar-top {
   display: flex;
   align-items: center;
   position: relative;
   background-color: #9dc89b;
   height: 41px;
   overflow: hidden;
-  border-bottom: 7px solid #5c965d;
+  /* border-bottom: 7px solid #5c965d; */
 }
 
 .login-signup {
@@ -80,7 +80,7 @@
   display: block;
   width: auto;
   height: auto;
-  /* background-color: green; */
+  background-color: green;
 }
 
 .logo h1 {
@@ -91,4 +91,31 @@
   text-transform: uppercase;
   text-shadow: -2px 2px 0 #d70062;
   letter-spacing: 4px;
+}
+
+.navbar-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 28px;
+  background-color: #5c965d;
+  font-size: 12px;
+}
+
+.navbar-add-poem {
+  text-transform: uppercase;
+  padding-right: 10px;
+}
+
+.navbar-add-poem:hover {
+  text-decoration: underline #d70062;
+}
+
+.navbar-add-author {
+  text-transform: uppercase;
+  padding-left: 10px;
+}
+
+.navbar-add-author:hover {
+  text-decoration: underline #d70062;
 }

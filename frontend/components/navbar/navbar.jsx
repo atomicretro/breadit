@@ -23,11 +23,19 @@ const Navbar = (ownProps) => {
 
   return (
     <nav className="navbar">
-      <section className="search"></section>
-      <section className="logo">
-        <Link to="/"><h1>enjambment</h1></Link>
-      </section>
-      {ownProps.currentUser ? loggedIn() : sessionLinks()}
+      <div className="navbar-top">
+        <section className="search"></section>
+        <section className="logo">
+          <Link to="/"><h1>enjambment</h1></Link>
+        </section>
+        {ownProps.currentUser ? loggedIn() : sessionLinks()}
+      </div>
+      <div className="navbar-bottom">
+        <Link to="/poems/new"
+          className="navbar-add-poem">add poem</Link>
+        <Link to="/authors/new"
+          className="navbar-add-author">add author</Link>
+      </div>
     </nav>
   );
 };
