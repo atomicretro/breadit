@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import PoemItem from './poem_item';
+import PoemIndexItem from './poem_index_item';
 
 const mapStateToProps = (state, ownProps) => {
   const poemInfo = ownProps.poemInfo || { };
@@ -10,4 +10,4 @@ const mapStateToProps = (state, ownProps) => {
 
 export default connect(
   mapStateToProps
-)(PoemItem);
+)(PoemIndexItem);

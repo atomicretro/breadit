@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import PoemItemContainer from '../poem_item/poem_item_container';
+import PoemIndexItemContainer from '../poem_index_item/poem_index_item_container';
 
 class PoemIndex extends Component {
   componentDidMount() {
@@ -13,7 +13,7 @@ class PoemIndex extends Component {
     const poemsToRender = [];
     for (let key in fetchedPoems) {
       poemsToRender.push(
-        <PoemItemContainer
+        <PoemIndexItemContainer
           key={`poem-item-${key}`}
           poemInfo = { fetchedPoems[key] } />
       );

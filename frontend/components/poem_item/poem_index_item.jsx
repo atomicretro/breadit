@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PoemItem = (ownProps) => {
+const PoemIndexItem = (ownProps) => {
   let poemId = ownProps.poemInfo.id;
   let title = ownProps.poemInfo.title;
   let author = ownProps.poemInfo.author_name;
@@ -14,4 +14,4 @@ const PoemItem = (ownProps) => {
   );
 };
 
-export default PoemItem;
+export default PoemIndexItem;
