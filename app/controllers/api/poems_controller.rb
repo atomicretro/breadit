@@ -2,6 +2,8 @@ class Api::PoemsController < ApplicationController
   before_action :ensure_logged_in
 
   def index
+    @poems = Poem.all
+    render :index
   end
 
   def show
