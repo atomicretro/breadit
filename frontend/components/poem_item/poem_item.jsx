@@ -7,7 +7,10 @@ const PoemItem = (ownProps) => {
   let author = ownProps.poemInfo.author_name;
 
   return (
-    <li><Link to={`/poems/${poemId}`}>{title}, {author}</Link></li>
+    <li className="poem-index-list-item">
+      <Link to={`/poems/${poemId}`}
+        className="poem-index-item-list-link">{title}, {author}</Link>
+    </li>
   );
 };
 

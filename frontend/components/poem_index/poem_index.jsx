@@ -20,11 +20,17 @@ class PoemIndex extends Component {
     }
 
     return (
-      <section className="pokedex">
-        <ul>
-          {poemsToRender}
-        </ul>
-      </section>
+      <div className="background">
+        <section className="poem-index-foreground">
+          <div className="poem-index-container">
+            <h2>all poems</h2>
+            <hr className="line3" />
+            <ul className="poem-index-list-container">
+              {poemsToRender}
+            </ul>
+          </div>
+        </section>
+      </div>
     );
   }
 }

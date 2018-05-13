@@ -1,0 +1,45 @@
+.poem-index-foreground {
+  margin: auto;
+  width: 80%;
+  min-width: 970px;
+  background-color: white;
+  padding-top: 25px;
+  padding-bottom: 41px;
+}
+
+.poem-index-container {
+  padding-left: 75px;
+  padding-right: 75px;
+}
+
+.poem-index-foreground h2 {
+  text-transform: uppercase;
+}
+
+.line3 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  border-color: #d70062;
+  background-color: #d70062;
+  margin-bottom: 26px;
+}
+
+
+.poem-index-list-container li {
+  margin-top: 10px
+}
+
+.poem-index-list-container li:first-child {
+  margin-top: 0;
+}
+
+.poem-index-list-item {
+
+}
+
+.poem-index-list-item:hover {
+  text-decoration: underline #d70062;
+}
