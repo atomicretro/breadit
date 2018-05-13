@@ -1,6 +1,6 @@
 import React from 'react';
 import AuthorBarContainer from '../authors/author_bar_container';
-import LinesContianer from './lines_container';
+import PoemShowItemContainer from './poem_show_item_container';
 
 class Poem extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class Poem extends React.Component {
         authorImage={this.props.author.image_url} />
       <div className="poem-show-foreground">
           <h3 className="poem-show-title">{this.props.poem.title}</h3>
-          <LinesContianer lines={this.props.poem.body} />
+          <PoemShowItemContainer lines={this.props.poem.body} />
         </div>
       </div>
     );

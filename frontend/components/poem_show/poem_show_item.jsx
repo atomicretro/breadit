@@ -1,6 +1,6 @@
 import React from 'react';
 
-class Lines extends React.Component {
+class PoemShowItem extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -14,4 +14,4 @@ class Lines extends React.Component {
   }
 }
 
-export default Lines;
+export default PoemShowItem;

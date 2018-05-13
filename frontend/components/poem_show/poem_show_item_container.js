@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Lines from './lines';
+import PoemShowItem from './poem_show_item';
 
 const mapStateToProps = (state) => {
   return {
@@ -9,4 +9,4 @@ const mapStateToProps = (state) => {
 
 export default connect(
   mapStateToProps
-)(Lines);
+)(PoemShowItem);
