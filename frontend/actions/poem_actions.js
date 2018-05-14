@@ -14,12 +14,13 @@ export const receiveAllPoems = (poems) => {
     });
 };
 
-export const receivePoem = ({ poem, author, comments }) => {
+export const receivePoem = ({ poem, author, comments, comment_authors }) => {
   return {
     type: RECEIVE_POEM,
     poem,
     author,
-    comments
+    comments,
+    comment_authors
   };
 };
 

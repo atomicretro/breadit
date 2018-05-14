@@ -3,9 +3,12 @@ import { createComment } from '../../actions/comment_actions';
 import Comments from './comments';
 
 const mapStateToProps = (state) => {
-  let comments = state.entities.comments || [];
+  debugger
+  let comments = state.entities.comments || { };
+  let commentAuthors = state.entities.comment_authors || { };
   return {
-    comments: comments
+    comments: comments,
+    commentAuthors: commentAuthors
   };
 };
 

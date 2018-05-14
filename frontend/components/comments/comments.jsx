@@ -14,7 +14,7 @@ class Comments extends React.Component {
     debugger
     const comments = this.props.comments;
     const commentsToRender = [];
-    for (let key in fetchedPoems) {
+    for (let key in comments) {
       commentsToRender.push(
         <CommentItem
           key={`comment-item-${key}`}
