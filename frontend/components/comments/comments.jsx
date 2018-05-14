@@ -11,20 +11,23 @@ class Comments extends React.Component {
   }
 
   render () {
-    debugger
-    const comments = this.props.comments;
     const commentsToRender = [];
-    for (let key in comments) {
+    const poemComments = this.props.comments;
+    const commentAuthors = this.props.commentAuthors;
+    this.props.commentIds.forEach((id) => {
+      let commentAuthorId = poemComments[id].comment_author_id;
       commentsToRender.push(
         <CommentItem
-          key={`comment-item-${key}`}
-          comment = { comments[key] } />
+          key={`comment-item-${id}`}
+          body={poemComments[id].body}
+          commentAuthor={commentAuthors[commentAuthorId]} />
       );
-    }
+    });
 
     return(
       <div className="comments-container">
-        <ul className="comments-list-container">
+        comments:
+        <ul className="comment-items-list-container">
           {commentsToRender}
         </ul>
       </div>

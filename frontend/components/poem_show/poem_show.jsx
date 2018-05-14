@@ -22,9 +22,11 @@ class Poem extends React.Component {
           authorName={this.props.author.name}
           authorImage={this.props.author.image_url} />
         <div className="poem-show-foreground">
-          <h3 className="poem-show-title">{this.props.poem.title}</h3>
-          <PoemShowItem lines={this.props.poem.body} />
-          <CommentsContainer />
+          <div className="poem-show-text-area">
+            <h3 className="poem-show-title">{this.props.poem.title}</h3>
+            <PoemShowItem lines={this.props.poem.body} />
+            <CommentsContainer poemId={this.props.match.params.poemId} />
+          </div>
         </div>
       </div>
     );
