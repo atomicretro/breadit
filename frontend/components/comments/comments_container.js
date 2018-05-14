@@ -24,7 +24,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createComment: (comment, poemId) => { return dispatch(createComment(comment, poemId)); },
+    createComment: (comment, poemId) => {
+      return dispatch(createComment(comment, poemId));
+    }
   };
 };
 

@@ -7,6 +7,10 @@ class Comments extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    
+  }
+
   render () {
     const commentsToRender = [];
     const poemComments = this.props.comments;

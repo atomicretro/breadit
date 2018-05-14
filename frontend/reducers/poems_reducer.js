@@ -4,6 +4,7 @@ import {
   RECEIVE_POEM,
   REMOVE_POEM
 } from '../actions/poem_actions';
+import { RECEIVE_COMMENT } from '../actions/comment_actions';
 
 const PoemsReducer = (previousState = {}, action) => {
   Object.freeze(previousState);
@@ -16,6 +17,7 @@ const PoemsReducer = (previousState = {}, action) => {
       let newState = merge({}, previousState);
       delete newState[action.poemId];
       return newState;
+
     default:
       return previousState;
   }
