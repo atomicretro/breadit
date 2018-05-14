@@ -15,3 +15,11 @@ body {
 .background {
   background-color: #f7f7f7;
 }
+
+::selection {
+  background: #9dc89b;
+}
+
+::-moz-selection {
+  background: #9dc89b;
+}

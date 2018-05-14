@@ -7,6 +7,7 @@ json.author do
   json.image_url asset_path(@poem.author.image.url)
 end
 
+json.comments Hash.new()
 json.comments do
   @poem.comments.each do |comment|
     json.set! comment.id do
@@ -16,6 +17,7 @@ json.comments do
   end
 end
 
+json.comment_authors Hash.new()
 json.comment_authors do
   @poem.comments.each do |comment|
     json.set! comment.user.id do
