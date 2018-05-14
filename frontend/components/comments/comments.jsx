@@ -25,7 +25,9 @@ class Comments extends React.Component {
       <div className="comments-container">
         <hr className="line4" />
         <h3 className="comments-title">comments</h3>
-        <CommentForm createComment={this.props.createComment} />
+        <CommentForm
+          poemId = {this.props.poemId}
+          createComment={this.props.createComment} />
         <ul className="comment-items-list-container">
           {commentsToRender}
         </ul>

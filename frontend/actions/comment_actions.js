@@ -6,6 +6,7 @@ export const RECEIVE_COMMENT_ERRORS = 'RECEIVE_COMMENT_ERRORS';
 
 // synchronous comment action creators
 export const receiveComment = ({ comment }) => {
+  debugger
   return {
     type: RECEIVE_COMMENT,
     comment
@@ -20,8 +21,8 @@ export const receiveCommentErrors = (errors) => {
 };
 
 // thunk comment action creators
-export const createComment = (comment) => (dispatch) => {
-  return CommentApiUtils.createComment(comment).then(
+export const createComment = (comment, poemId) => (dispatch) => {
+  return CommentApiUtils.createComment(comment, poemId).then(
     (comment) => {
       return dispatch(receiveComment(comment));
     },
