@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchPoem } from '../../actions/poem_actions';
-import { fetchAuthor, fetchAuthorFromPoem } from '../../actions/author_actions';
+import { fetchAuthor } from '../../actions/author_actions';
 import Poem from './poem_show';
 
 const mapStateToProps = (state, ownProps) => {
@@ -13,8 +13,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchPoem: (poemId) => dispatch(fetchPoem(poemId)),
-    fetchAuthorFromPoem: (authorId) => dispatch(fetchAuthorFromPoem(authorId))
+    fetchPoem: (poemId) => dispatch(fetchPoem(poemId))
   };
 };
 
