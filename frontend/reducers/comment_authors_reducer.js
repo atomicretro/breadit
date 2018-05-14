@@ -5,7 +5,6 @@ import {
 import { RECEIVE_COMMENT } from '../actions/comment_actions';
 
 const CommentAuthorsReducer = (previousState = {}, action) => {
-  debugger
   Object.freeze(previousState);
   switch (action.type) {
     case RECEIVE_POEM:

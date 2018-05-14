@@ -6,7 +6,6 @@ export const RECEIVE_COMMENT_ERRORS = 'RECEIVE_COMMENT_ERRORS';
 
 // synchronous comment action creators
 export const receiveComment = (comment) => {
-  debugger
   return {
     type: RECEIVE_COMMENT,
     comment

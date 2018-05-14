@@ -8,10 +8,9 @@ const CommentsReducer = (previousState = {}, action) => {
   Object.freeze(previousState);
   switch (action.type) {
     case RECEIVE_POEM:
-    debugger
       return action.comments;
     case RECEIVE_COMMENT:
-      return merge({}, previousState, { [action.comment.id]: action.comment.body} );
+      return merge({}, previousState, { [action.comment.id]: action.comment} );
     default:
       return previousState;
   }
