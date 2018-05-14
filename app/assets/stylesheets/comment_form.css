@@ -1,0 +1,48 @@
+.comment-form textarea {
+  padding-top: 8px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  background-color: white;
+  height: 63px;
+  width: 466px;
+  border: inset 1px gray;
+  font-size: 14px;
+  resize: none;
+}
+
+.comment-baggage {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+
+.comment-count {
+  align-self: center;
+  margin-right: 20px;
+}
+
+.comment-submit {
+  font-size: 12px;
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: auto;
+  width: auto;
+  border: solid 2px black;
+}
+
+/* .comment-submit:hover {
+  background-color: #dcdcdc;
+  text-decoration: underline #d70062;
+}
+
+.comment-baggage-hide {
+  display: none;
+  margin-bottom: 10000px;
+} */

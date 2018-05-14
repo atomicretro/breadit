@@ -1,5 +1,6 @@
 import React from 'react';
 import CommentItem from '../comment_item/comment_item';
+import CommentForm from '../comment_form/comment_form';
 
 class Comments extends React.Component {
   constructor(props) {
@@ -24,6 +25,7 @@ class Comments extends React.Component {
       <div className="comments-container">
         <hr className="line4" />
         <h3 className="comments-title">comments</h3>
+        <CommentForm createComment={this.props.createComment} />
         <ul className="comment-items-list-container">
           {commentsToRender}
         </ul>

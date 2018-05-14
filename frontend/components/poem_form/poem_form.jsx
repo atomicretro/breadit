@@ -54,8 +54,8 @@ class PoemForm extends React.Component {
     this.props.clearErrors([]);
   }
 
-  render(){
-    return(
+  render() {
+    return (
       <div className="background">
         <div className="poem-new-foreground">
           <div className="poem-form-container">
