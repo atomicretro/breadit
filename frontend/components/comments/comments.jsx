@@ -6,10 +6,6 @@ class Comments extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-
-  }
-
   render () {
     const commentsToRender = [];
     const poemComments = this.props.comments;
@@ -26,7 +22,8 @@ class Comments extends React.Component {
 
     return(
       <div className="comments-container">
-        comments:
+        <hr className="line4" />
+        <h3 className="comments-title">comments</h3>
         <ul className="comment-items-list-container">
           {commentsToRender}
         </ul>

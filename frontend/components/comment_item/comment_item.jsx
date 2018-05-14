@@ -7,8 +7,13 @@ const CommentItem = (ownProps) => {
 
   return (
     <li className="comment-list-item">
-      {commentAuthorUsername}
-      {commentBody}
+      <span className="comment-list-item-username">
+        {commentAuthorUsername}
+      </span>
+      <br />
+      <span className="comment-list-item-body">
+        {commentBody}
+      </span>
     </li>
   );
 };

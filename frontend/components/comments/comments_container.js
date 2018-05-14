@@ -1,14 +1,13 @@
 import { connect } from 'react-redux';
+import { isEmpty } from 'lodash';
 import { createComment } from '../../actions/comment_actions';
 import Comments from './comments';
 
 const mapStateToProps = (state, ownProps) => {
   let comments = state.entities.comments || { };
   let commentAuthors = state.entities.commentAuthors || { };
-  let commentIds;
-  if (state.entities.poems[ownProps.poemId]) {
-    commentIds = state.entities.poems[ownProps.poemId].comment_ids;
-  } else {
+  let commentIds = ownProps.commentIds || [ ];
+  if (isEmpty(commentAuthors)) {
     commentIds = [];
   }
 

@@ -1,0 +1,17 @@
+.comment-list-item {
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: solid 1px #d70062;
+}
+
+.comment-list-item-username {
+  font-family: 'Open Sans', sans-serif;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.comment-list-item:last-child {
+  border-bottom: none;
+}

@@ -25,7 +25,9 @@ class Poem extends React.Component {
           <div className="poem-show-text-area">
             <h3 className="poem-show-title">{this.props.poem.title}</h3>
             <PoemShowItem lines={this.props.poem.body} />
-            <CommentsContainer poemId={this.props.match.params.poemId} />
+            <CommentsContainer
+              poemId={this.props.match.params.poemId}
+              commentIds={this.props.poem.comment_ids} />
           </div>
         </div>
       </div>

@@ -1,23 +1,25 @@
 .poem-show-foreground {
   margin: auto;
   width: 80%;
-  min-width: 970px;
+  min-width: 1000px;
   background-color: white;
   padding-top: 50px;
   padding-bottom: 41px;
+}
+
+.poem-show-text-area {
+  padding-left: 75px;
+  max-width: 500px;
 }
 
 .poem-show-title {
   margin: 0;
   font-size: 14px;
   text-transform: uppercase;
-  padding-left: 75px;
   margin-bottom: 20px;
 }
 
-.poem-lines {
-  padding-left: 75px;
-  max-width: 570px;
+.poem-text {
   white-space: pre-wrap;
   font-family: 'futura', sans-serif;
   font-weight: 300;
