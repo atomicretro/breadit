@@ -7,4 +7,19 @@ json.author do
   json.image_url asset_path(@poem.author.image.url)
 end
 
-json.comments @poem.comments
+json.comments do
+  @poem.comments.each do |comment|
+    json.set! comment.id do
+      json.extract! comment, :body
+      json.comment_author_id comment.user.id
+    end
+  end
+end
+
+json.comment_authors do
+  @poem.comments.each do |comment|
+    json.set! comment.user.id do
+      json.extract! comment.user, :username
+    end
+  end
+end

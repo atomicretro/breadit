@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentItem from '../comment_item/comment_item';
 
 class Comments extends React.Component {
   constructor(props) {
@@ -10,8 +11,23 @@ class Comments extends React.Component {
   }
 
   render () {
+    debugger
+    const comments = this.props.comments;
+    const commentsToRender = [];
+    for (let key in fetchedPoems) {
+      commentsToRender.push(
+        <CommentItem
+          key={`comment-item-${key}`}
+          comment = { comments[key] } />
+      );
+    }
+
     return(
-      <div></div>
+      <div className="comments-container">
+        <ul className="comments-list-container">
+          {commentsToRender}
+        </ul>
+      </div>
     );
   }
 }

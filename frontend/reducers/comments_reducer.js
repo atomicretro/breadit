@@ -3,6 +3,7 @@ import {
   RECEIVE_ALL_POEMS,
   RECEIVE_POEM
 } from '../actions/poem_actions';
+import { RECEIVE_COMMENT } from '../actions/comment_actions';
 
 const CommentsReducer = (previousState = [], action) => {
   Object.freeze(previousState);
@@ -11,6 +12,8 @@ const CommentsReducer = (previousState = [], action) => {
       return [];
     case RECEIVE_POEM:
       return action.comments;
+    case RECEIVE_COMMENT:
+      return merge({}, previousState, { [action.comment.id]: action.comment} );
     default:
       return previousState;
   }
