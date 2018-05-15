@@ -31,6 +31,7 @@ class CommentForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const comment = Object.assign({}, this.state);
+    this.state.body = '';
     this.props.createComment(comment, this.props.poemId);
   }
 

@@ -17,7 +17,7 @@ class Comments extends React.Component {
     const commentAuthors = this.props.commentAuthors;
     this.props.commentIds.forEach((id) => {
       let commentAuthorId = poemComments[id].comment_author_id;
-      commentsToRender.unshift(
+      commentsToRender.push(
         <CommentItem
           key={`comment-item-${id}`}
           body={poemComments[id].body}
@@ -31,7 +31,8 @@ class Comments extends React.Component {
         <h3 className="comments-title">comments</h3>
         <CommentForm
           poemId = {this.props.poemId}
-          createComment={this.props.createComment} />
+          createComment={this.props.createComment}
+          clearErrors={this.props.clearErrors} />
         <ul className="comment-items-list-container">
           {commentsToRender}
         </ul>

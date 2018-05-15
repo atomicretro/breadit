@@ -20,7 +20,7 @@ const PoemsReducer = (previousState = {}, action) => {
       return newState;
     case RECEIVE_COMMENT:
       newState = merge({}, previousState);
-      newState[action.comment.poem_id].comment_ids.push(action.comment.id);
+      newState[action.comment.poem_id].comment_ids.unshift(action.comment.id);
       return newState;
     default:
       return previousState;

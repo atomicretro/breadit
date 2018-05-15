@@ -1,6 +1,9 @@
 import { connect } from 'react-redux';
 import { isEmpty } from 'lodash';
-import { createComment } from '../../actions/comment_actions';
+import {
+  createComment,
+  receiveCommentErrors
+} from '../../actions/comment_actions';
 import Comments from './comments';
 
 const mapStateToProps = (state, ownProps) => {
@@ -26,7 +29,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     createComment: (comment, poemId) => {
       return dispatch(createComment(comment, poemId));
-    }
+    },
+    clearErrors: (clear) => { dispatch(receiveCommentErrors(clear)); }
   };
 };
 
