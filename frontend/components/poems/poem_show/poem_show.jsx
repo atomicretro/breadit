@@ -17,10 +17,6 @@ class Poem extends React.Component {
     this.props.fetchPoem(this.props.match.params.poemId);
   }
 
-  // componentDidUpdate() {
-  //   this.poemBody = this.props.poem.body;
-  // }
-
   mouseUp() {
     let selection = window.getSelection();
     let firstChar = selection.anchorOffset;

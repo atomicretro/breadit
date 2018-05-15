@@ -6,7 +6,6 @@ class Annotation extends React.Component {
   }
 
   render () {
-    debugger
     return (
       <div>
         {this.props.annotation.body}

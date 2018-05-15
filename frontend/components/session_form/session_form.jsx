@@ -60,7 +60,9 @@ class SessionForm extends React.Component {
           <div onClick={this.props.closeModal} className="close-x">x</div>
           <span className="form-header">{this.props.formType} for poetry</span>
           <hr className="line1" />
-          {this.renderErrors()}
+          <div className="session-errors-container">
+            {this.renderErrors()}
+          </div>
           <div className="session-form">
             <input type="text"
               value={this.state.username}
