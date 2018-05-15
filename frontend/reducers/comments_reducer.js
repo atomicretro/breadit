@@ -2,10 +2,7 @@ import { merge } from 'lodash';
 import {
   RECEIVE_POEM
 } from '../actions/poem_actions';
-import {
-  RECEIVE_COMMENT,
-  CLEAR_COMMENTS
-} from '../actions/comment_actions';
+import { RECEIVE_COMMENT } from '../actions/comment_actions';
 
 const CommentsReducer = (previousState = {}, action) => {
   Object.freeze(previousState);
@@ -14,8 +11,6 @@ const CommentsReducer = (previousState = {}, action) => {
       return merge({}, previousState, action.comments);
     case RECEIVE_COMMENT:
       return merge({}, previousState, { [action.comment.id]: action.comment} );
-    case CLEAR_COMMENTS:
-      return action.comments;
     default:
       return previousState;
   }

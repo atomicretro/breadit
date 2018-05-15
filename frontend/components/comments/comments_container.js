@@ -2,8 +2,7 @@ import { connect } from 'react-redux';
 import { isEmpty } from 'lodash';
 import {
   createComment,
-  receiveCommentErrors,
-  clearComments
+  receiveCommentErrors
 } from '../../actions/comment_actions';
 import Comments from './comments';
 
@@ -21,7 +20,8 @@ const mapStateToProps = (state, ownProps) => {
   // if above `if` statement is not there, app crashes when going from
   // index => poem show a (w/comments) => index => poem show b (no comments) =>
   // index => poem show a ---- b/c commentAuthors & comments get cleared out
-  // from poem show b and DO NOT GET REFETCHED on second poem show a
+  // from poem show b and DO NOT GET REFETCHED on second poem show a.
+  // FIXED!!!! But we're leaving the `if` there for now just in case.
 
   return {
     comments: comments,
@@ -35,8 +35,7 @@ const mapDispatchToProps = (dispatch) => {
     createComment: (comment, poemId) => {
       return dispatch(createComment(comment, poemId));
     },
-    clearErrors: (clear) => { dispatch(receiveCommentErrors(clear)); },
-    clearComments: () => { dispatch(clearComments()); }
+    clearErrors: (clear) => { dispatch(receiveCommentErrors(clear)); }
   };
 };
 
