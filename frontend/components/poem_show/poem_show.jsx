@@ -1,6 +1,5 @@
 import React from 'react';
 import AuthorBarContainer from '../authors/author_bar_container';
-import PoemShowItem from '../poem_show_item/poem_show_item';
 import CommentsContainer from '../comments/comments_container';
 
 class Poem extends React.Component {
@@ -13,6 +12,8 @@ class Poem extends React.Component {
   }
 
   render () {
+    let poemId = this.props.poem.id;
+    let poemBody = this.props.poem.body;
     return(
       <div className="background">
         <AuthorBarContainer
@@ -24,12 +25,15 @@ class Poem extends React.Component {
         <div className="poem-show-foreground">
           <div className="poem-show-text-area">
             <h3 className="poem-show-title">{this.props.poem.title}</h3>
-            <PoemShowItem lines={this.props.poem.body} />
+            <div className="poem-text">
+              <p className={`poem-${poemId}-lines`}>{poemBody}</p>
+            </div>
             <CommentsContainer
               poemId={this.props.match.params.poemId}
               commentIds={this.props.poem.comment_ids} />
           </div>
         </div>
+
       </div>
     );
   }
