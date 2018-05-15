@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180513175953) do
+ActiveRecord::Schema.define(version: 20180515185038) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "annotations", force: :cascade do |t|
+    t.text "body", null: false
+    t.integer "user_id", null: false
+    t.integer "poem_id", null: false
+    t.integer "starting_character", null: false
+    t.integer "ending_character", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["ending_character"], name: "index_annotations_on_ending_character"
+    t.index ["poem_id"], name: "index_annotations_on_poem_id"
+    t.index ["starting_character"], name: "index_annotations_on_starting_character"
+    t.index ["user_id"], name: "index_annotations_on_user_id"
+  end
 
   create_table "authors", force: :cascade do |t|
     t.string "name", null: false
@@ -21,6 +35,8 @@ ActiveRecord::Schema.define(version: 20180513175953) do
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["name"], name: "index_authors_on_name"
   end
 
@@ -29,6 +45,8 @@ ActiveRecord::Schema.define(version: 20180513175953) do
     t.integer "user_id", null: false
     t.string "commentable_type", null: false
     t.bigint "commentable_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable_type_and_commentable_id"
   end
 
