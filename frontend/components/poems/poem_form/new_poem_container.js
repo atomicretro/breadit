@@ -3,7 +3,7 @@ import React from 'react';
 import {
   createPoem,
   receivePoemErrors
-} from '../../actions/poem_actions';
+} from '../../../actions/poem_actions';
 import PoemForm from './poem_form.jsx';
 
 const mapStateToProps = (state) => {

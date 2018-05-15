@@ -1,6 +1,6 @@
 import React from 'react';
-import AuthorBarContainer from '../authors/author_bar_container';
-import CommentsContainer from '../comments/comments_container';
+import AuthorBarContainer from '../../authors/author_bar_container';
+import CommentsContainer from '../../comments/comments_container';
 
 class Poem extends React.Component {
   constructor(props) {

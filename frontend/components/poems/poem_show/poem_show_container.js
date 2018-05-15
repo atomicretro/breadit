@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { fetchPoem } from '../../actions/poem_actions';
-import { fetchAuthor } from '../../actions/author_actions';
+import { fetchPoem } from '../../../actions/poem_actions';
+import { fetchAuthor } from '../../../actions/author_actions';
 import Poem from './poem_show';
 
 const mapStateToProps = (state, ownProps) => {

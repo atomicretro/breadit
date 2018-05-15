@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchPoems } from '../../actions/poem_actions';
+import { fetchPoems } from '../../../actions/poem_actions';
 import PoemIndex from './poem_index';
 
 const mapStateToProps = (state) => {
