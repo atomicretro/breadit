@@ -5,10 +5,31 @@ import CommentsContainer from '../comments/comments_container';
 class Poem extends React.Component {
   constructor(props) {
     super(props);
+    this.poemBody = '';
+    this.selection = window.getSelection();
+
+    this.mouseUp = this.mouseUp.bind(this);
   }
 
   componentDidMount() {
     this.props.fetchPoem(this.props.match.params.poemId);
+  }
+
+  // componentDidUpdate() {
+  //   this.poemBody = this.props.poem.body;
+  // }
+
+  mouseUp() {
+    let selection = window.getSelection();
+    let firstChar = selection.anchorOffset;
+    let lastChar = selection.focusOffset;
+
+    if (lastChar - firstChar !== 0) {
+      console.log(selection);
+      console.log(selection.anchorOffset);
+      console.log(selection.focusOffset);
+      console.log(selection.anchorNode.data.charAt(lastChar));
+    }
   }
 
   render () {
@@ -26,14 +47,14 @@ class Poem extends React.Component {
           <div className="poem-show-text-area">
             <h3 className="poem-show-title">{this.props.poem.title}</h3>
             <div className="poem-text">
-              <p className={`poem-${poemId}-lines`}>{poemBody}</p>
+              <p className={`poem-${poemId}-lines`}
+                onMouseUp={this.mouseUp}>{poemBody}</p>
             </div>
             <CommentsContainer
               poemId={this.props.match.params.poemId}
               commentIds={this.props.poem.comment_ids} />
           </div>
         </div>
-        <p>Hello from p <span style={{color:'blue'}}>span</span> p again</p>
       </div>
     );
   }

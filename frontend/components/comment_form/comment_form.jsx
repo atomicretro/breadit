@@ -7,7 +7,6 @@ class CommentForm extends React.Component {
       body: ''
     };
 
-    this.selection = window.getSelection();
     this.commentBaggage = false;
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderError = this.renderError.bind(this);
@@ -31,7 +30,6 @@ class CommentForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.selection);
     const comment = Object.assign({}, this.state);
     this.state.body = '';
     this.props.createComment(comment, this.props.poemId);
