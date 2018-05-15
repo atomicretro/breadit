@@ -1,6 +1,6 @@
 import { merge } from 'lodash';
-import { RECEIVE_AUTHOR } from '../actions/author_actions';
-import { RECEIVE_POEM } from '../actions/poem_actions';
+import { RECEIVE_AUTHOR } from '../../actions/author_actions';
+import { RECEIVE_POEM } from '../../actions/poem_actions';
 
 const AuthorsReducer = (previousState = {}, action) => {
   Object.freeze(previousState);

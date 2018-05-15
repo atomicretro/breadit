@@ -1,4 +1,4 @@
-import { RECEIVE_AUTHOR_ERRORS } from '../actions/author_actions';
+import { RECEIVE_AUTHOR_ERRORS } from '../../actions/author_actions';
 
 const AuthorErrorsReducer = (previousState = [], action) => {
   Object.freeze(previousState);

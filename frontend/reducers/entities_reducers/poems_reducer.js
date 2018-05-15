@@ -3,8 +3,8 @@ import {
   RECEIVE_ALL_POEMS,
   RECEIVE_POEM,
   REMOVE_POEM
-} from '../actions/poem_actions';
-import { RECEIVE_COMMENT } from '../actions/comment_actions';
+} from '../../actions/poem_actions';
+import { RECEIVE_COMMENT } from '../../actions/comment_actions';
 
 const PoemsReducer = (previousState = {}, action) => {
   Object.freeze(previousState);

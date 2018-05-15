@@ -2,7 +2,7 @@ import { merge } from 'lodash';
 import {
   RECEIVE_CURRENT_USER,
   LOGOUT_CURRENT_USER
-} from '../actions/session_actions';
+} from '../../actions/session_actions';
 
 const UsersReducer = (previousState = {}, action) => {
   Object.freeze(previousState);

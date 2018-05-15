@@ -1,8 +1,8 @@
 import { merge } from 'lodash';
 import {
   RECEIVE_POEM
-} from '../actions/poem_actions';
-import { RECEIVE_COMMENT } from '../actions/comment_actions';
+} from '../../actions/poem_actions';
+import { RECEIVE_COMMENT } from '../../actions/comment_actions';
 
 const CommentAuthorsReducer = (previousState = {}, action) => {
   Object.freeze(previousState);
