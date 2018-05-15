@@ -5,10 +5,11 @@ export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const RECEIVE_COMMENT_ERRORS = 'RECEIVE_COMMENT_ERRORS';
 
 // synchronous comment action creators
-export const receiveComment = (comment) => {
+export const receiveComment = ({ comment, current_user}) => {
   return {
     type: RECEIVE_COMMENT,
-    comment
+    comment,
+    current_user
   };
 };
 

@@ -10,8 +10,9 @@ const CommentAuthorsReducer = (previousState = {}, action) => {
     case RECEIVE_POEM:
       return action.comment_authors;
     case RECEIVE_COMMENT:
+    debugger
       return merge({}, previousState, {
-        [action.comment.comment_author_id]: action.comment_author_id
+        [action.comment.comment_author_id]: action.current_user
       });
     default:
       return previousState;

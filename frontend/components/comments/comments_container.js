@@ -8,7 +8,11 @@ import Comments from './comments';
 
 const mapStateToProps = (state, ownProps) => {
   let comments = state.entities.comments || { };
-  let commentAuthors = state.entities.commentAuthors || { };
+  debugger
+  let commentAuthors = state.entities.commentAuthors || {
+      [state.session.id]: state.entities.users[state.session.id].username
+  };
+  debugger
   let commentIds = ownProps.commentIds || [ ];
   if (isEmpty(commentAuthors)) {
     commentIds = [];

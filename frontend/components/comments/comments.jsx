@@ -7,16 +7,14 @@ class Comments extends React.Component {
     super(props);
   }
 
-  componentWillUpdate() {
-    this.render();
-  }
-
   render () {
     const commentsToRender = [];
     const poemComments = this.props.comments;
     const commentAuthors = this.props.commentAuthors;
+    debugger
     this.props.commentIds.forEach((id) => {
       let commentAuthorId = poemComments[id].comment_author_id;
+      debugger
       commentsToRender.push(
         <CommentItem
           key={`comment-item-${id}`}
