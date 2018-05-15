@@ -1,4 +1,5 @@
 .poem-show-foreground {
+  display: flex;
   margin: auto;
   width: 80%;
   min-width: 1000px;

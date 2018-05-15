@@ -1,6 +1,8 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import AuthorBarContainer from '../../authors/author_bar_container';
 import CommentsContainer from '../../comments/comments_container';
+import AnnotationContainer from '../../annotations/annotation_container';
 
 class Poem extends React.Component {
   constructor(props) {
@@ -53,6 +55,12 @@ class Poem extends React.Component {
             <CommentsContainer
               poemId={this.props.match.params.poemId}
               commentIds={this.props.poem.comment_ids} />
+          </div>
+          <div className="annotation-area">
+            hiiii
+            <Route
+              path="/poems/:poemId/annotations/:annotationId"
+              component={AnnotationContainer} />
           </div>
         </div>
       </div>

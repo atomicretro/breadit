@@ -4,12 +4,16 @@ import {
   fetchAnnotation,
   createAnnotation,
   receiveAnnotationsErrors
-} from '../../actions/annotations_actions';
+} from '../../actions/annotation_actions';
 import Annotation from './annotation';
 
 const mapStateToProps = (state, ownProps) => {
-  return {
+  let annotationId = ownProps.match.params.annotationId;
+  let poemId = ownProps.match.params.poemId;
 
+  return {
+    annotation: state.entities.annotations[annotationId] || { },
+    poem: state.entities.annotations[poemId] || { }
   };
 };
 

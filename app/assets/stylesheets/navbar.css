@@ -75,12 +75,11 @@
 .logo {
   position: absolute;
   top: -17px;
-  left: 50%;
+  left: 50.5%;
   transform: translate(-50%,0);
   display: block;
   width: auto;
   height: auto;
-  background-color: green;
 }
 
 .logo h1 {
@@ -91,6 +90,7 @@
   text-transform: uppercase;
   text-shadow: -2px 2px 0 #d70062;
   letter-spacing: 4px;
+
 }
 
 .navbar-bottom {

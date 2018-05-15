@@ -55,6 +55,7 @@ class CommentForm extends React.Component {
             value={this.state.body}
             onChange={this.update('body')}
             className="comment-form-body"
+            maxLength="500"
             placeholder="write a comment" />
           <div className="comment-baggage">
 
@@ -79,6 +80,9 @@ export default CommentForm;
 // {this.renderErrors()}
 // actually that only happens when componentWillUpdate w/ clearErrors() is
 // there, otherwise the errors just never unrender... so fix that, too
+
+// Add "error" when textarea gets to 500 characters saying
+// 'max length reached!'
 
 // line 64, to display the submit button and character count only when
 // someone starts to write a comment
