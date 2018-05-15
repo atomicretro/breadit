@@ -5,11 +5,11 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @poem = Poem.find(params[:poem_id])
     @user = current_user
+    @author = @poem.author
 
     @comment.commentable = @poem
     @comment.user = @user
     if @comment.save
-      @author = @poem.author
       render :show
     else
       render json: @comment.errors.full_messages, status: :unprocessable_entity
