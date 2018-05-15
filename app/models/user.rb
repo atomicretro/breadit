@@ -15,6 +15,16 @@ class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true}
 
+  has_many :comments,
+    class_name: 'Comments',
+    primary_key: :id,
+    foreign_key: :user_id
+
+  has_many :annotations,
+    class_name: 'Annotations',
+    primary_key: :id,
+    foreign_key: :user_id
+
   attr_reader :password
   after_initialize :ensure_token
 

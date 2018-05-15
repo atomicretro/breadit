@@ -29,4 +29,10 @@ class Poem < ApplicationRecord
 
   has_many :comments,
     as: :commentable
+
+  has_many :annotations,
+    class_name: 'Annotations',
+    primary_key: :id,
+    foreign_key: :poem_id
+    
 end
