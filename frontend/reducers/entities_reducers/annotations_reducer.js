@@ -1,7 +1,5 @@
 import { merge } from 'lodash';
-import {
-  RECEIVE_POEM
-} from '../../actions/poem_actions';
+import { RECEIVE_POEM } from '../../actions/poem_actions';
 import { RECEIVE_ANNOTATION } from '../../actions/annotation_actions';
 
 const AnnotationsReducer = (previousState = {}, action) => {
