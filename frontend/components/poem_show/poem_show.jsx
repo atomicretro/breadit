@@ -33,7 +33,7 @@ class Poem extends React.Component {
               commentIds={this.props.poem.comment_ids} />
           </div>
         </div>
-
+        <p>Hello from p <span style={{color:'blue'}}>span</span> p again</p>
       </div>
     );
   }

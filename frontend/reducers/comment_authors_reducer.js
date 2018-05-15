@@ -8,7 +8,7 @@ const CommentAuthorsReducer = (previousState = {}, action) => {
   Object.freeze(previousState);
   switch (action.type) {
     case RECEIVE_POEM:
-      return action.comment_authors;
+      return merge({}, previousState, action.comment_authors);
     case RECEIVE_COMMENT:
       return merge({}, previousState, {
         [action.comment.comment_author_id]: action.current_user

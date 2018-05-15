@@ -2,16 +2,19 @@ import { connect } from 'react-redux';
 import { isEmpty } from 'lodash';
 import {
   createComment,
-  receiveCommentErrors
+  receiveCommentErrors,
+  clearComments
 } from '../../actions/comment_actions';
 import Comments from './comments';
 
 const mapStateToProps = (state, ownProps) => {
-  let comments = state.entities.comments || { };
+  let commentIds = ownProps.commentIds || [ ];
+  let comments = commentIds.map((commentId) => {
+    return state.entities.comments[commentId];
+  });
   let commentAuthors = state.entities.commentAuthors || {
       [state.session.id]: state.entities.users[state.session.id].username
   };
-  let commentIds = ownProps.commentIds || [ ];
   if (isEmpty(commentAuthors)) {
     commentIds = [];
   }
@@ -32,7 +35,8 @@ const mapDispatchToProps = (dispatch) => {
     createComment: (comment, poemId) => {
       return dispatch(createComment(comment, poemId));
     },
-    clearErrors: (clear) => { dispatch(receiveCommentErrors(clear)); }
+    clearErrors: (clear) => { dispatch(receiveCommentErrors(clear)); },
+    clearComments: () => { dispatch(clearComments()); }
   };
 };
 

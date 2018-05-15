@@ -11,12 +11,14 @@ class Comments extends React.Component {
     const commentsToRender = [];
     const poemComments = this.props.comments;
     const commentAuthors = this.props.commentAuthors;
-    this.props.commentIds.forEach((id) => {
-      let commentAuthorId = poemComments[id].comment_author_id;
+    // debugger
+    this.props.comments.forEach((comment) => {
+      // debugger
+      let commentAuthorId = comment.comment_author_id;
       commentsToRender.push(
         <CommentItem
-          key={`comment-item-${id}`}
-          body={poemComments[id].body}
+          key={`comment-item-${comment.id}`}
+          body={comment.body}
           commentAuthor={commentAuthors[commentAuthorId]} />
       );
     });
