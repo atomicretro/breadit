@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import PoemIndexItemContainer from '../poem_index_item/poem_index_item_container';
+import PoemIndexItemContainer from './poem_index_item/poem_index_item_container';
 
 class PoemIndex extends Component {
   componentDidMount() {
