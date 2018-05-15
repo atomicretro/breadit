@@ -12,9 +12,9 @@ class CommentForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-  componentWillUnmount() {
-    this.clearErrors();
-  }
+  // componentWillUpdate() {
+  //   this.clearErrors();
+  // }
 
   update(field) {
     if (this.state[field].length === 0) {
@@ -57,7 +57,7 @@ class CommentForm extends React.Component {
             className="comment-form-body"
             placeholder="write a comment" />
           <div className="comment-baggage">
-            {this.renderErrors()}
+
             <span className="comment-count" >
               {this.state.body.length}
             </span>
@@ -74,6 +74,11 @@ class CommentForm extends React.Component {
 }
 
 export default CommentForm;
+
+// line 60, MAKE THIS WORK ==> errors: undefined in comment_errors_reducer
+// {this.renderErrors()}
+// actually that only happens when componentWillUpdate w/ clearErrors() is
+// there, otherwise the errors just never unrender... so fix that, too
 
 // line 64, to display the submit button and character count only when
 // someone starts to write a comment
