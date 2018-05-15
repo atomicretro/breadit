@@ -11,9 +11,7 @@ class Comments extends React.Component {
     const commentsToRender = [];
     const poemComments = this.props.comments;
     const commentAuthors = this.props.commentAuthors;
-    // debugger
     this.props.comments.forEach((comment) => {
-      // debugger
       let commentAuthorId = comment.comment_author_id;
       commentsToRender.push(
         <CommentItem
