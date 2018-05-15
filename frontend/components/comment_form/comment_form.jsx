@@ -9,7 +9,7 @@ class CommentForm extends React.Component {
 
     this.commentBaggage = false;
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderError = this.renderError.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   componentWillUnmount() {
@@ -31,21 +31,15 @@ class CommentForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const comment = Object.assign({}, this.state);
-    this.state.body = '';
-    this.props.createComment(comment, this.props.poemId);
+    this.props.createComment(comment, this.props.poemId).then(
+      this.state.body = ''
+    ); //USE PROMISES TO KEEP COMMENT BODY IN TEXTAREA IF ERRORS RENDER
   }
 
-  renderError(type) {
-    let errors = this.props.errors.commentErrors;
-    let thisError = '';
-    errors.forEach((error) => {
-      if (error.includes(type)) {
-        thisError = error;
-      }
-    });
-
+  renderErrors(type) {
+    let errors = this.props.errors;
     return(
-      <span>{thisError}</span>
+      <span className="comment-form-error">{errors[0]}</span>
     );
   }
 
@@ -63,6 +57,7 @@ class CommentForm extends React.Component {
             className="comment-form-body"
             placeholder="write a comment" />
           <div className="comment-baggage">
+            {this.renderErrors()}
             <span className="comment-count" >
               {this.state.body.length}
             </span>
@@ -71,7 +66,7 @@ class CommentForm extends React.Component {
               type="submit" >
               add comment
             </button>
-        </div>
+          </div>
         </form>
       </div>
     );

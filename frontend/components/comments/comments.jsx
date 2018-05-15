@@ -28,6 +28,7 @@ class Comments extends React.Component {
         <CommentForm
           poemId = {this.props.poemId}
           createComment={this.props.createComment}
+          errors={this.props.errors}
           clearErrors={this.props.clearErrors} />
         <ul className="comment-items-list-container">
           {commentsToRender}

@@ -16,7 +16,7 @@ export const receiveComment = ({ comment, current_user}) => {
 export const receiveCommentErrors = (errors) => {
   return ({
     type: RECEIVE_COMMENT_ERRORS,
-    errors
+    errors: errors.base
   });
 };
 

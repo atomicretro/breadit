@@ -26,7 +26,8 @@ const mapStateToProps = (state, ownProps) => {
   return {
     comments: comments,
     commentAuthors: commentAuthors,
-    commentIds: commentIds
+    commentIds: commentIds,
+    errors: state.errors.commentErrors
   };
 };
 
