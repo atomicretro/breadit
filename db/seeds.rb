@@ -23,3 +23,6 @@ if_poem = Poem.create(title: 'If', author: kipling, body: "If you can keep your 
 
 comment1 = Comment.create(body: 'what a good poem!', user: User.first, commentable: if_poem)
 comment2 = Comment.create(body: 'i think it is about donkeys', user: User.last, commentable: if_poem)
+
+annotation1 = Annotation.create(body: 'this part is DEFINITELY about donkeys', annotator: User.last, poem: if_poem, starting_character: 231, ending_character: 312)
+annotation2 = Annotation.create(body: 'something like this happened to me, once', annotator: User.first, poem: if_poem, starting_character: 830, ending_character: 874)
