@@ -1,3 +1,11 @@
 [class^="text-annotation-"] {
+  color: black;
   background-color: rgba(215, 0, 98, 0.5);
+  -webkit-transition: background-color 1s;
+  transition: background-color 1s;
+}
+
+[class^="text-annotation-"]:hover {
+  background-color: #9dc89b;
+  cursor: pointer;
 }

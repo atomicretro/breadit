@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import ModalContainer from './modal/modal_container';
+import ModalContainer from './modals/session_modal/modal_container';
 import NavbarContainer from './navbar/navbar_container';
 import PoemIndexContainer from './poems/poem_index/poem_index_container';
 import PoemShowContainer from './poems/poem_show/poem_show_container';

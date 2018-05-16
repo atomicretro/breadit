@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchPoem } from '../../../actions/poem_actions';
 import { fetchAuthor } from '../../../actions/author_actions';
+import { openModal } from '../../../actions/modal_actions';
 import Poem from './poem_show';
 
 const mapStateToProps = (state, ownProps) => {
@@ -18,7 +19,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchPoem: (poemId) => dispatch(fetchPoem(poemId))
+    fetchPoem: (poemId) => dispatch(fetchPoem(poemId)),
+    openModal: (modal) => dispatch(openModal(modal))
   };
 };
 

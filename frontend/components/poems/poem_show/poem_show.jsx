@@ -12,6 +12,7 @@ class Poem extends React.Component {
     this.selection = window.getSelection();
     this.mouseUp = this.mouseUp.bind(this);
     this.annotatePoemBody = this.annotatePoemBody.bind(this);
+    this.getSections = this.getSections.bind(this);
   }
 
   componentDidMount() {
@@ -40,64 +41,66 @@ class Poem extends React.Component {
   annotatePoemBody() {
     let poemBody = this.props.poem.body;
     if (typeof poemBody === "string") {
-      let annotatedPoemBody = [];
       let sortedAnnotations = this.props.annotations.sort((a, b) => {
         if(a.starting_character < b.starting_character) return -1;
         if(a.starting_character > b.starting_character) return 1;
         return 0;
       });
 
-      let sections = [];
-      let previousStartChar = 0;
-      sortedAnnotations.forEach((annotation, idx) => {
-        let annoStart = annotation.starting_character;
-        let annoEnd = annotation.ending_character;
-
-        if (previousStartChar === annoStart) {
-          sections.push(
-            <span
-              key={`text-annotation-${annotation.id}`}
-              className={`text-annotation-${annotation.id}`}>
-              {poemBody.slice(previousStartChar, annoEnd)}
-            </span>
-          );
-        } else {
-          sections.push(
-            <span
-              key={`not-annotations-${annotation.idx}`}
-              className={`not-annotation`}>
-              {poemBody.slice(previousStartChar, (annoStart - 1))}
-            </span>
-          );
-          sections.push(<span className="text-space"> </span>);
-          sections.push(
-            <span
-              key={`text-annotation-${annotation.id}`}
-              className={`text-annotation-${annotation.id}`}>
-              {poemBody.slice(annoStart, annoEnd)}
-            </span>
-          );
-        }
-
-        if (idx === (sortedAnnotations.length - 1) && annoEnd !== poemBody.length) {
-          sections.push(<span className="text-space"> </span>);
-          sections.push(
-            <span
-              key="not-annotation-end"
-              className={`not-annotation`}>
-              {poemBody.slice((annoEnd + 1), poemBody.length)}
-            </span>
-          );
-        }
-
-        previousStartChar = annoEnd + 1;
-        sections.push(<span className="text-space"> </span>);
-      });
-
-      console.log(sections);
-
-      return sections;
+      let annotatedPoemBody = this.getSections(poemBody, sortedAnnotations);
+      return annotatedPoemBody;
     }
+  }
+
+  getSections(poemBody, sortedAnnotations) {
+    let sections = [];
+    let previousStartChar = 0;
+
+    sortedAnnotations.forEach((annotation, idx) => {
+      let annoStart = annotation.starting_character;
+      let annoEnd = annotation.ending_character;
+
+      if (previousStartChar === annoStart) {
+        sections.push(
+          <span
+            key={`text-annotation-${annotation.id}`}
+            onClick={() => this.props.openModal('sign up')}
+            className={`text-annotation-${annotation.id}`}>
+            {poemBody.slice(previousStartChar, annoEnd + 1)}
+          </span>
+        );
+      } else {
+        sections.push(
+          <span
+            key={`not-annotations-${idx}`}
+            className={`not-annotation`}>
+            {poemBody.slice(previousStartChar, annoStart)}
+          </span>
+        );
+        sections.push(
+          <span
+            key={`text-annotation-${annotation.id}`}
+            onClick={this.mouseUp}
+            className={`text-annotation-${annotation.id}`}>
+            {poemBody.slice(annoStart, annoEnd + 1)}
+          </span>
+        );
+      }
+
+      if (idx === (sortedAnnotations.length - 1) && annoEnd !== poemBody.length) {
+        sections.push(
+          <span
+            key="not-annotation-end"
+            className={`not-annotation`}>
+            {poemBody.slice((annoEnd + 1), poemBody.length + 1)}
+          </span>
+        );
+      }
+
+      previousStartChar = annoEnd + 1;
+    });
+
+    return sections;
   }
 
   render () {
