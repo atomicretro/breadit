@@ -14,7 +14,7 @@ class Api::AuthorsController < ApplicationController
     if @author.save
       render :show
     else
-      render json: @author, status: :unprocessable_entity
+      render json: @author.errors.full_messages, status: :unprocessable_entity
     end
   end
 
