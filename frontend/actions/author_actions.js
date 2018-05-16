@@ -1,5 +1,4 @@
 import * as AuthorApiUtils from '../util/author_api_utils';
-import { fetchPoem } from '../util/poem_api_utils';
 
 // author action types
 export const RECEIVE_ALL_AUTHORS = 'RECEIVE_ALL_AUTHORS';
@@ -50,26 +49,14 @@ export const fetchAuthor = (id) => (dispatch) => {
     }
   );
 };
-// export const fetchAuthorFromPoem = (poemId) => (dispatch) => {
-//   return fetchPoem(poemId).then(
-//     (payload) => {
-//       return fetchAuthor(payload.poem.author_id).then(
-//         (payload) => {
-//           return dispatch(receiveAuthor(payload));
-//         },
-//         (errors) => {
-//           return dispatch(receiveAuthorErrors(errors.responseJSON));
-//         }
-//       )
-//     }
-//   );
-// };
-// export function fetchAuthorFromPoem(poemId) {
-//   return (dispatch, getState) => {
-//     return dispatch(fetchPoem(poemId)).then(() => {
-//       const fetchedPoem = getState().entities.poems.poemId;
-//       const authorId = fetchedPoem.author_id;
-//       return dispatch(AuthorApiUtils.fetchAuthor(authorId))
-//     })
-//   }
-// }
+
+export const createAuthor = (author) => (dispatch) => {
+  return AuthorApiUtils.createAuthor(author).then(
+    (author) => {
+      return dispatch(receiveAuthor(author));
+    },
+    (errors) => {
+      return dispatch(receiveAuthorErrors(errors.responseJSON));
+    }
+  );
+};

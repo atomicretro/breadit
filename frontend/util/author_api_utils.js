@@ -12,3 +12,11 @@ export const fetchAuthor = (id) => {
     url: `/api/authors/${id}`
   });
 };
+
+export const createAuthor = (author) => {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/authors',
+    data: { author }
+  });
+};

@@ -60,40 +60,16 @@ class AuthorForm extends React.Component {
             <h2>add an author</h2>
             <hr className="line2" />
             <form className="author-form-box">
-              <label>Title:<br />
-                <input type="text"
-                  value={this.state.title}
-                  onChange={this.update('title')}
-                  className="author-form-title"
-                  placeholder="title" />
-              </label>
-              <span className="author-input-error">
-                {this.renderError('Title')}
-              </span>
-              <br />
-              <label>Author:<br />
+              <label>Name:<br />
                 <input type="text"
                   value={this.state.name}
                   onChange={this.update('name')}
-                  className="author-form-author"
-                  placeholder="author" />
+                  className="author-form-name"
+                  placeholder="name" />
               </label>
               <span className="author-input-error">
-                {this.renderError('Author')}
+                {this.renderError('Name')}
               </span>
-              <br />
-              <div className="author-body-area">
-                <label>Body:<br />
-                  <textarea
-                    value={this.state.body}
-                    onChange={this.update('body')}
-                    className="author-form-body" />
-                </label>
-                <span className="author-body-error">
-                  <br />{this.renderError('Body')}
-                </span>
-              </div>
-              <br />
               <button className="author-submit"
                 onClick={this.handleSubmit}
                 type="submit" >
