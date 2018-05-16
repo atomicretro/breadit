@@ -6,11 +6,30 @@ class Annotation extends React.Component {
   }
 
   render () {
-    var h = document.getElementsByClassName('poem-text').clientHeight;
+    let poemText = document
+      .getElementsByClassName('poem-text')[0] || { clientHeight: 0 };
+    let poemHeight = poemText.clientHeight;
+
+    let id = this.props.annotation.id;
+    let thisAnnotation = document
+      .getElementsByClassName(`text-annotation-${id}`)[0] || { offsetTop: 0 };
+    let offsetTop = thisAnnotation.offsetTop;
+
+    // var rect = thisAnnotation.getBoundingClientRect();
+    // console.log(rect.top, rect.right, rect.bottom, rect.left);
+
+
     debugger
     return (
-      <div className="annotation-container">
-        {this.props.annotation.body}
+      <div style={{minHeight: poemHeight + 39}}
+        className="annotation-container">
+        <div className="annotation-title">
+          <h3>enjambment annotations</h3>
+        </div>
+        <div 
+          className="annotation-item">
+          {this.props.annotation.body}
+        </div>
       </div>
     );
   }

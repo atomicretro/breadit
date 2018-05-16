@@ -1,16 +1,15 @@
 .poem-show-foreground {
   display: flex;
   margin: auto;
-  width: 80%;
-  min-width: 1000px;
-  background-color: white;
+  width: 970px;
   padding-top: 50px;
   padding-bottom: 41px;
+  overflow: hidden;
 }
 
 .poem-show-text-area {
   padding-left: 75px;
-  max-width: 500px;
+  min-width: 500px;
 }
 
 .poem-show-title {
@@ -26,4 +25,8 @@
   font-weight: 300;
   font-size: 18px;
   line-height: 28px;
+}
+
+.annotation-area {
+  width: 365px;
 }
