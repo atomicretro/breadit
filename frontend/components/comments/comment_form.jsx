@@ -16,6 +16,10 @@ class CommentForm extends React.Component {
   //   this.clearErrors();
   // }
 
+  // componentDidUpdate() {
+  //   this.clearErrors();
+  // }
+
   update(field) {
     if (this.state[field].length === 0) {
       this.commentBaggage = false;
@@ -58,7 +62,7 @@ class CommentForm extends React.Component {
             maxLength="500"
             placeholder="write a comment" />
           <div className="comment-baggage">
-
+            {this.renderErrors()}
             <span className="comment-count" >
               {this.state.body.length}
             </span>
@@ -76,10 +80,7 @@ class CommentForm extends React.Component {
 
 export default CommentForm;
 
-// line 60, MAKE THIS WORK ==> errors: undefined in comment_errors_reducer
-// {this.renderErrors()}
-// actually that only happens when componentWillUpdate w/ clearErrors() is
-// there, otherwise the errors just never unrender... so fix that, too
+// comment errors are working now, but they won't clear!!!
 
 // Add "error" when textarea gets to 500 characters saying
 // 'max length reached!'
