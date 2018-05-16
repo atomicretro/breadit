@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     resources :poems, only: [:index, :show, :create, :update] do
       resources :comments, only: [:create]
     end
-    resources :authors, only: [:show, :create]
+    resources :authors, only: [:index, :show, :create]
     resources :annotations, only: [:show, :create]
   end
 end
