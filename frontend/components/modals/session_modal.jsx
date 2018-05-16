@@ -1,8 +1,8 @@
 import React from 'react';
-import LoginFormContainer from '../../session_form/login_form_container';
-import SignupFormContainer from '../../session_form/signup_form_container';
+import LoginFormContainer from '../session_form/login_form_container';
+import SignupFormContainer from '../session_form/signup_form_container';
 
-const Modal = (ownProps) => {
+const SessionModal = (ownProps) => {
   if (!ownProps.modal) {
     return null;
   }
@@ -20,12 +20,12 @@ const Modal = (ownProps) => {
   }
 
   return (
-    <div className="modal-background" onClick={ownProps.closeModal}>
-      <div className="modal-child" onClick={(e) => e.stopPropagation()}>
+    <div className="session-modal-background" onClick={ownProps.closeModal}>
+      <div className="session-modal-child" onClick={(e) => e.stopPropagation()}>
         { component }
       </div>
     </div>
   );
 };
 
-export default Modal;
+export default SessionModal;

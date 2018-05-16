@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import AuthorBarContainer from '../../authors/author_bar_container';
+import { PoemModalContainer } from '../../modals/modals_container';
 import CommentsContainer from '../../comments/comments_container';
 import AnnotationContainer from '../../annotations/annotation_container';
 
@@ -64,7 +65,7 @@ class Poem extends React.Component {
         sections.push(
           <span
             key={`text-annotation-${annotation.id}`}
-            onClick={() => this.props.openModal('sign up')}
+            onClick={() => this.props.openModal('annotation')}
             className={`text-annotation-${annotation.id}`}>
             {poemBody.slice(previousStartChar, annoEnd + 1)}
           </span>
@@ -80,7 +81,7 @@ class Poem extends React.Component {
         sections.push(
           <span
             key={`text-annotation-${annotation.id}`}
-            onClick={this.mouseUp}
+            onClick={() => this.props.openModal('annotation')}
             className={`text-annotation-${annotation.id}`}>
             {poemBody.slice(annoStart, annoEnd + 1)}
           </span>
@@ -126,6 +127,7 @@ class Poem extends React.Component {
               commentIds={this.props.poem.comment_ids} />
           </div>
           <div className="annotation-area">
+            <PoemModalContainer />
             <Route
               path="/poems/:poemId/annotations/:annotationId"
               component={AnnotationContainer} />

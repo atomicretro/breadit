@@ -1,4 +1,4 @@
-.modal-background {
+.session-modal-background {
   position: fixed;
   top: 0;
   bottom: 0;
@@ -8,7 +8,7 @@
   z-index: 10;
 }
 
-.modal-child {
+.session-modal-child {
   position: absolute;
   top: 30%;
   left: 50%;
@@ -57,10 +57,6 @@
   border-width: 1px;
   border-color: #d70062;
   background-color: #d70062;
-}
-
-.session-form {
-
 }
 
 .session-form input {

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import Modal from './modal';
-import { openModal, closeModal } from '../../../actions/modal_actions';
+import SessionModal from './session_modal';
+import PoemModal from './poem_modal';
+import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = (state) => {
   return ({
@@ -15,7 +16,12 @@ const mapDispatchToProps = (dispatch) => {
   });
 };
 
-export default connect(
+export const SessionModalContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Modal);
+)(SessionModal);
+
+export const PoemModalContainer = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(PoemModal);
