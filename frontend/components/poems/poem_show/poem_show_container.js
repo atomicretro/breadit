@@ -4,13 +4,15 @@ import { fetchAuthor } from '../../../actions/author_actions';
 import Poem from './poem_show';
 
 const mapStateToProps = (state, ownProps) => {
-  const poem = state.entities.poems[ownProps.match.params.poemId] || { };
-  // let annotations = annotationIds.map((annotationId) => {
-  //   return state.entities.annotations[annotationId];
-  // });
+  let poem = state.entities.poems[ownProps.match.params.poemId] || { };
+  let annotationIds = poem.annotation_ids || [ ];
+  let annotations = annotationIds.map((annotationId) => {
+    return state.entities.annotations[annotationId];
+  });
   return {
     poem: poem,
-    author: state.entities.authors[poem.author_id] || { }
+    author: state.entities.authors[poem.author_id] || { },
+    annotations: annotations
   };
 };
 

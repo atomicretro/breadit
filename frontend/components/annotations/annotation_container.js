@@ -10,7 +10,7 @@ import Annotation from './annotation';
 const mapStateToProps = (state, ownProps) => {
   let annotationId = ownProps.match.params.annotationId;
   let poemId = ownProps.match.params.poemId;
-
+  
   return {
     annotation: state.entities.annotations[annotationId] || { },
     poem: state.entities.annotations[poemId] || { }

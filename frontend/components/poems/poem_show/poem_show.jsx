@@ -8,9 +8,10 @@ class Poem extends React.Component {
   constructor(props) {
     super(props);
     this.poemBody = '';
-    this.selection = window.getSelection();
 
+    this.selection = window.getSelection();
     this.mouseUp = this.mouseUp.bind(this);
+    this.annotatePoemBody = this.annotatePoemBody.bind(this);
   }
 
   componentDidMount() {
@@ -36,10 +37,63 @@ class Poem extends React.Component {
     }
   }
 
+  annotatePoemBody() {
+    let poemBody = this.props.poem.body;
+    if (typeof poemBody === "string") {
+      let annotatedPoemBody = [];
+      let sortedAnnotations = this.props.annotations.sort((a, b) => {
+        if(a.starting_character < b.starting_character) return -1;
+        if(a.starting_character > b.starting_character) return 1;
+        return 0;
+      });
+
+      let sections = [];
+      let startChar = 0;
+      sortedAnnotations.forEach((annotation, idx) => {
+        let annoStart = annotation.starting_character;
+        let annoEnd = annotation.ending_character;
+
+        if (startChar === annoStart) {
+          // sections.push([startChar, annoEnd, 'annotated']);
+          sections.push(
+            <span className={`annotation-${annotation.id}`}>
+              {poemBody.slice(startChar, annoEnd)}
+            </span>
+          );
+        } else {
+          // sections.push([startChar, (annoStart - 1), 'not']);
+          sections.push(
+            <span className={`not-annotation`}>
+              {poemBody.slice(startChar, (annoStart - 1))}
+            </span>
+          );
+          // sections.push([annoStart, annoEnd, 'annotated']);
+          sections.push(<span className={`annotation-${annotation.id}`}>
+            {poemBody.slice(annoStart, annoEnd)}
+          </span>);
+        }
+
+        if (idx === (sortedAnnotations.length - 1) && annoEnd !== poemBody.length) {
+            // sections.push([(annoEnd + 1), poemBody.length, 'not']);
+            sections.push(
+              <span className={`not-annotation`}>
+                {poemBody.slice((annoEnd + 1), poemBody.length)}
+              </span>
+            );
+        }
+
+        startChar = annoEnd + 1;
+      });
+
+      console.log(sections);
+
+      return sections;
+    }
+  }
+
   render () {
     let poemId = this.props.poem.id;
-    let poemBody = this.props.poem.body;
-    debugger
+    let poemBody = this.annotatePoemBody();
     return(
       <div className="background">
         <AuthorBarContainer
@@ -65,6 +119,7 @@ class Poem extends React.Component {
               component={AnnotationContainer} />
           </div>
         </div>
+        {"aaa&lt<&ltaaa"}
       </div>
     );
   }
