@@ -22,7 +22,7 @@ class Poem extends React.Component {
     this.props.fetchPoem(this.props.match.params.poemId);
   }
 
-  mouseUp() {
+  mouseUp(e) {
     let selection = window.getSelection();
     let firstChar = selection.anchorOffset;
     let lastChar = selection.focusOffset;
@@ -38,7 +38,7 @@ class Poem extends React.Component {
       console.log(firstChar);
       console.log(lastChar);
       console.log(selection.anchorNode.data.charAt(lastChar));
-      this.props.openPoemModal('annotation');
+      this.props.openPoemModal({depth: e.clientY});
     }
   }
 

@@ -3,7 +3,6 @@ import PoemModal from './poem_modal';
 import { closeModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
-  // debugger
   return ({
     modal: state.ui.modal
   });

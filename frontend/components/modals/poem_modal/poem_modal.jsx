@@ -6,12 +6,9 @@ const PoemModal = (ownProps) => {
     return null;
   }
 
-
   return (
-    <div className="poem-modal-background" onClick={ownProps.closeModal}>
-      <div className="poem-modal-child" onClick={(e) => e.stopPropagation()}>
-        hhi
-      </div>
+    <div className="poem-modal" onClick={(e) => e.stopPropagation()}>
+      hhi
     </div>
   );
 };

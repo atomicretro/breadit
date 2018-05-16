@@ -1,5 +1,4 @@
 [class^="text-annotation-"] {
-  color: black;
   background-color: rgba(215, 0, 98, 0.5);
   -webkit-transition: background-color 1s;
   transition: background-color 1s;
@@ -8,4 +7,11 @@
 [class^="text-annotation-"]:hover {
   background-color: #9dc89b;
   cursor: pointer;
+}
+
+.annotation-container {
+  margin-top: 39px;
+  margin-left: 10px;
+  padding-left: 10px;
+  border-left: solid 5px #5c965d;
 }

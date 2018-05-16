@@ -6,13 +6,16 @@ class Annotation extends React.Component {
   }
 
   render () {
+    var h = document.getElementsByClassName('poem-text').clientHeight;
+    debugger
     return (
-      <div>
+      <div className="annotation-container">
         {this.props.annotation.body}
-        {this.props.poem.body}
       </div>
     );
   }
 }
 
 export default Annotation;
+
+// this.props.poem is the annotation again!?!?!?!?
