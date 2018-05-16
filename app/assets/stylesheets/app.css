@@ -1,15 +1,22 @@
-body {
-   height:100%;
+body{
+  
 }
 
 .app-page {
-  min-height: 100%;
-  position: relative;
-  min-height: 100%
+  flex: 1 0 auto;
+
+}
+
+.header {
+
 }
 
 .main {
-  padding-bottom: 82px;
+  /* padding-bottom: 82px; */
+}
+
+.footer {
+  /* flex-shrink: 0; */
 }
 
 .background {
