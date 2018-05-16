@@ -101,20 +101,28 @@
   font-size: 12px;
 }
 
-.navbar-add-poem {
+[class^="navbar-all-"] {
   text-transform: uppercase;
-  padding-right: 10px;
+  margin-right: 7px;
+  margin-left: 7px;
 }
 
-.navbar-add-poem:hover {
+[class^="navbar-all-"]:hover {
   text-decoration: underline #d70062;
 }
 
-.navbar-add-author {
+[class^="navbar-add-"] {
   text-transform: uppercase;
-  padding-left: 10px;
+  margin-right: 7px;
+  margin-left: 7px;
 }
 
-.navbar-add-author:hover {
+[class^="navbar-add-"]:hover {
   text-decoration: underline #d70062;
+}
+
+.navbar-links-separator {
+  color: #9dc89b;
+  margin-right: 5px;
+  margin-left: 5px;
 }

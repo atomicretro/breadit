@@ -23,9 +23,15 @@ class Poem extends React.Component {
     let lastChar = selection.focusOffset;
 
     if (lastChar - firstChar !== 0) {
+      if (firstChar > lastChar) {
+        let tempChar = firstChar;
+        firstChar = lastChar;
+        lastChar = tempChar;
+      }
+
       console.log(selection);
-      console.log(selection.anchorOffset);
-      console.log(selection.focusOffset);
+      console.log(firstChar);
+      console.log(lastChar);
       console.log(selection.anchorNode.data.charAt(lastChar));
     }
   }
@@ -33,6 +39,7 @@ class Poem extends React.Component {
   render () {
     let poemId = this.props.poem.id;
     let poemBody = this.props.poem.body;
+    debugger
     return(
       <div className="background">
         <AuthorBarContainer
@@ -53,7 +60,6 @@ class Poem extends React.Component {
               commentIds={this.props.poem.comment_ids} />
           </div>
           <div className="annotation-area">
-            hiiii
             <Route
               path="/poems/:poemId/annotations/:annotationId"
               component={AnnotationContainer} />

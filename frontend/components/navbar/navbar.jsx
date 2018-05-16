@@ -31,6 +31,11 @@ const Navbar = (ownProps) => {
         {ownProps.currentUser ? loggedIn() : sessionLinks()}
       </div>
       <div className="navbar-bottom">
+        <Link to="/poems/"
+          className="navbar-all-poems">all poems</Link>
+        <Link to="/authors/"
+          className="navbar-all-authors">all authors</Link>
+        <span className="navbar-links-separator">|</span>
         <Link to="/poems/new"
           className="navbar-add-poem">add poem</Link>
         <Link to="/authors/new"
