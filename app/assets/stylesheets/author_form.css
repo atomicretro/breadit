@@ -1,0 +1,90 @@
+.author-new-foreground {
+  margin: auto;
+  width: 80%;
+  min-width: 970px;
+  background-color: white;
+  padding-top: 25px;
+  padding-bottom: 41px;
+}
+
+.author-form-container {
+  padding-left: 75px;
+  padding-right: 75px;
+}
+
+.author-form-container h2 {
+  text-transform: uppercase;
+}
+
+.line2 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  border-color: #d70062;
+  background-color: #d70062;
+  margin-bottom: 26px;
+}
+
+/* .author-form-box label {
+  display: block;
+  padding-bottom: 2px;
+  background-color: red;
+} */
+
+.author-form-container input {
+  margin-top: 2px;
+  padding-left: 6px;
+  background-color: white;
+  height: 32px;
+  width: 570px;
+  border: inset 1px gray;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.author-input-error {
+  padding-left: 20px;
+  color: red;
+}
+
+.author-body-area {
+  display: flex;
+}
+
+.author-form-container textarea {
+  margin-top: 2px;
+  padding-top: 6px;
+  padding-left: 6px;
+  background-color: white;
+  height: 32px;
+  width: 570px;
+  height: 500px;
+  border: inset 1px gray;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.author-body-error {
+  padding-left: 20px;
+  color: red;
+
+}
+
+.author-submit {
+  font-size: 14px;
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: auto;
+  width: auto;
+  border: solid 2px black;
+}
+
+.author-submit:hover {
+  background-color: #dcdcdc;
+  text-decoration: underline #d70062;
+}
