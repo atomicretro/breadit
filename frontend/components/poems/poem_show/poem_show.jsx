@@ -48,41 +48,50 @@ class Poem extends React.Component {
       });
 
       let sections = [];
-      let startChar = 0;
+      let previousStartChar = 0;
       sortedAnnotations.forEach((annotation, idx) => {
         let annoStart = annotation.starting_character;
         let annoEnd = annotation.ending_character;
 
-        if (startChar === annoStart) {
-          // sections.push([startChar, annoEnd, 'annotated']);
+        if (previousStartChar === annoStart) {
           sections.push(
-            <span className={`annotation-${annotation.id}`}>
-              {poemBody.slice(startChar, annoEnd)}
+            <span
+              key={`text-annotation-${annotation.id}`}
+              className={`text-annotation-${annotation.id}`}>
+              {poemBody.slice(previousStartChar, annoEnd)}
             </span>
           );
         } else {
-          // sections.push([startChar, (annoStart - 1), 'not']);
           sections.push(
-            <span className={`not-annotation`}>
-              {poemBody.slice(startChar, (annoStart - 1))}
+            <span
+              key={`not-annotations-${annotation.idx}`}
+              className={`not-annotation`}>
+              {poemBody.slice(previousStartChar, (annoStart - 1))}
             </span>
           );
-          // sections.push([annoStart, annoEnd, 'annotated']);
-          sections.push(<span className={`annotation-${annotation.id}`}>
-            {poemBody.slice(annoStart, annoEnd)}
-          </span>);
+          sections.push(<span className="text-space"> </span>);
+          sections.push(
+            <span
+              key={`text-annotation-${annotation.id}`}
+              className={`text-annotation-${annotation.id}`}>
+              {poemBody.slice(annoStart, annoEnd)}
+            </span>
+          );
         }
 
         if (idx === (sortedAnnotations.length - 1) && annoEnd !== poemBody.length) {
-            // sections.push([(annoEnd + 1), poemBody.length, 'not']);
-            sections.push(
-              <span className={`not-annotation`}>
-                {poemBody.slice((annoEnd + 1), poemBody.length)}
-              </span>
-            );
+          sections.push(<span className="text-space"> </span>);
+          sections.push(
+            <span
+              key="not-annotation-end"
+              className={`not-annotation`}>
+              {poemBody.slice((annoEnd + 1), poemBody.length)}
+            </span>
+          );
         }
 
-        startChar = annoEnd + 1;
+        previousStartChar = annoEnd + 1;
+        sections.push(<span className="text-space"> </span>);
       });
 
       console.log(sections);
@@ -119,7 +128,6 @@ class Poem extends React.Component {
               component={AnnotationContainer} />
           </div>
         </div>
-        {"aaa&lt<&ltaaa"}
       </div>
     );
   }
