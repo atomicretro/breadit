@@ -1,10 +1,12 @@
 import React from 'react';
-import LoginFormContainer from '../poems/poem_show/poem_show_container';
+import LoginFormContainer from '../../poems/poem_show/poem_show_container';
 
 const PoemModal = (ownProps) => {
   if (!ownProps.modal) {
     return null;
   }
+
+  // debugger
 
   return (
     <div className="poem-modal-background" onClick={ownProps.closeModal}>

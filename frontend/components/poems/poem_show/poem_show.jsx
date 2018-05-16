@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import AuthorBarContainer from '../../authors/author_bar_container';
-import { PoemModalContainer } from '../../modals/modals_container';
+import PoemModalContainer from '../../modals/poem_modal/poem_modal_container';
 import CommentsContainer from '../../comments/comments_container';
 import AnnotationContainer from '../../annotations/annotation_container';
 

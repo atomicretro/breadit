@@ -20,7 +20,8 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchPoem: (poemId) => dispatch(fetchPoem(poemId)),
-    openModal: (modal) => dispatch(openModal(modal))
+    openModal: (modal) => dispatch(openModal(modal)),
+    closeModal: () => dispatch(closeModal())
   };
 };
 
