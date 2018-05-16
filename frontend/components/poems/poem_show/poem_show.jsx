@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import AuthorBarContainer from '../../authors/author_bar_container';
 import PoemModalContainer from '../../modals/poem_modal/poem_modal_container';
 import CommentsContainer from '../../comments/comments_container';
@@ -14,6 +15,7 @@ class Poem extends React.Component {
     this.mouseUp = this.mouseUp.bind(this);
     this.annotatePoemBody = this.annotatePoemBody.bind(this);
     this.getSections = this.getSections.bind(this);
+    this.navigateToAnnotation = this.navigateToAnnotation.bind(this);
   }
 
   componentDidMount() {
@@ -36,6 +38,7 @@ class Poem extends React.Component {
       console.log(firstChar);
       console.log(lastChar);
       console.log(selection.anchorNode.data.charAt(lastChar));
+      this.props.openPoemModal('annotation');
     }
   }
 
@@ -65,7 +68,7 @@ class Poem extends React.Component {
         sections.push(
           <span
             key={`text-annotation-${annotation.id}`}
-            onClick={() => this.props.openModal('annotation')}
+            onClick={() => this.navigateToAnnotation(annotation.id)}
             className={`text-annotation-${annotation.id}`}>
             {poemBody.slice(previousStartChar, annoEnd + 1)}
           </span>
@@ -81,7 +84,7 @@ class Poem extends React.Component {
         sections.push(
           <span
             key={`text-annotation-${annotation.id}`}
-            onClick={() => this.props.openModal('annotation')}
+            onClick={() => this.navigateToAnnotation(annotation.id)}
             className={`text-annotation-${annotation.id}`}>
             {poemBody.slice(annoStart, annoEnd + 1)}
           </span>
@@ -102,6 +105,11 @@ class Poem extends React.Component {
     });
 
     return sections;
+  }
+
+  navigateToAnnotation(annotationId) {
+    let poemId = this.props.poem.id;
+    this.props.history.push(`/poems/${poemId}/annotations/${annotationId}`);
   }
 
   render () {
@@ -138,4 +146,4 @@ class Poem extends React.Component {
   }
 }
 
-export default Poem;
+export default withRouter(Poem);

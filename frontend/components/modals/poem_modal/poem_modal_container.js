@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
 import PoemModal from './poem_modal';
-import { openModal, closeModal } from '../../../actions/modal_actions';
+import { closeModal } from '../../../actions/modal_actions';
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, ownProps) => {
+  // debugger
   return ({
     modal: state.ui.modal
   });
@@ -10,7 +11,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return ({
-    openModal: () => dispatch(openModal()),
     closeModal: () => dispatch(closeModal())
   });
 };

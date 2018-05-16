@@ -6,7 +6,6 @@ const PoemModal = (ownProps) => {
     return null;
   }
 
-  // debugger
 
   return (
     <div className="poem-modal-background" onClick={ownProps.closeModal}>
