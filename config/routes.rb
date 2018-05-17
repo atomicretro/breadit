@@ -7,9 +7,10 @@ Rails.application.routes.draw do
     resources :poems, only: [:index, :show, :create, :update] do
       resources :comments, only: [:create]
     end
+    get 'poems/newest', :to => 'poems#newest'
     resources :authors, only: [:index, :show, :create]
     resources :annotations, only: [:show, :create]
-    
+
     post 'poems/:id/upvote', to: 'upvotes#create'
     delete 'poems/:id/upvote', to: 'upvotes#destroy'
     post 'poems/:id/downvote', to: 'downvotes#create'

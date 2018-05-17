@@ -37,6 +37,10 @@ class Api::PoemsController < ApplicationController
     end
   end
 
+  def newest
+    @poems = Poem.recent(4)
+  end
+
 private
   def poem_params
     params.require(:poem).permit(:title, :body)
@@ -44,5 +48,17 @@ private
 
   def author_params
     params.require(:poem).permit(:name)
+  end
+
+  def recent(n)
+    in_order.endmost(n)
+  end
+
+  def in_order
+    order(created_at: :asc)
+  end
+
+  def endmost(n)
+    all.only(:order).from(all.reverse_order.limit(n), table_name)
   end
 end
