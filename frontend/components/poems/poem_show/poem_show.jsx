@@ -34,6 +34,9 @@ class Poem extends React.Component {
     if (this.props.modal !== null && this.clicks > 1) {
       this.clicks = 0;
       this.props.closeModal();
+      if (this.props.location.pathname.includes('annotations')) {
+        this.props.history.push(`/poems/${this.props.poem.id}`);
+      }
     }
   } //add click listener when you have time
     //this work around works... sometimes
