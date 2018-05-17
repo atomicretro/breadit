@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import SessionModalContainer from './modals/session_modal/session_modal_container';
 import NavbarContainer from './navbar/navbar_container';
+import FrontPageContainer from './front_page/front_page_container';
 import PoemIndexContainer from './poems/poem_index/poem_index_container';
 import PoemShowContainer from './poems/poem_show/poem_show_container';
 import NewPoemContainer from './poems/poem_form/new_poem_container';
@@ -17,6 +18,7 @@ const App = () => {
       <NavbarContainer className="header" />
       <main className="main">
         <Switch>
+          <Route exact path="/" component={FrontPageContainer} />
           <Route exact path="/poems/" component={PoemIndexContainer} />
           <Route exact path="/poems/new" component={NewPoemContainer} />
           <Route exact path="/poems/:poemId" component={PoemShowContainer} />
