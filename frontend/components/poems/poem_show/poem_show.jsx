@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
+import { isEmpty } from 'lodash';
 import AuthorBar from '../../authors/author_bar';
 import AnnotationModal from '../../modals/annotation_modal/annotation_modal';
 import CommentsContainer from '../../comments/comments_container';
@@ -39,24 +40,27 @@ class Poem extends React.Component {
         startPos = endPos;
         endPos = tempChar;
       }
-
+      debugger
       console.log(selection);
       console.log(startPos);
       console.log(endPos);
       console.log(selection.anchorNode.data.charAt(endPos));
-      this.props.receiveNewAnnotation({startPos, endPos});
       this.props.openAnnotationModal({depth: e.clientY});
+      this.props.receiveNewAnnotation({startPos, endPos});
     }
   }
 
   annotatePoemBody() {
+    debugger
     let poemBody = this.props.poem.body;
     if (typeof poemBody === "string") {
+      debugger
       let sortedAnnotations = this.props.annotations.sort((a, b) => {
         if(a.starting_character < b.starting_character) return -1;
         if(a.starting_character > b.starting_character) return 1;
         return 0;
       });
+      debugger
 
       let annotatedPoemBody = this.getSections(poemBody, sortedAnnotations);
       return annotatedPoemBody;
@@ -121,7 +125,13 @@ class Poem extends React.Component {
 
   render () {
     let poemId = this.props.poem.id;
-    let poemBody = this.annotatePoemBody();
+    let poemBody;
+    if(isEmpty(this.props.annotations)) {
+      poemBody = this.props.poem.body;
+    } else {
+      poemBody = this.annotatePoemBody();
+    }
+
     return(
       <div className="background">
         <AuthorBar
