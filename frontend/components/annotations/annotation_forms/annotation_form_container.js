@@ -7,21 +7,21 @@ import {
 import AnnotationForm from './annotation_form';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger
   let poemId = ownProps.match.params.poemId;
 
   return {
     user: state.entities.users[state.session.id] || { },
     poem: state.entities.poems[poemId] || { },
     startPos: state.entities.newAnnotation.startPos || { },
-    endPos: state.entities.newAnnotation.endPos || { }
+    endPos: state.entities.newAnnotation.endPos || { },
+    errors: state.errors
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    createAnnotation: (annotation, poemId) => {
-      return dispatch(createAnnotation(annotation, poemId));
+    createAnnotation: (annotation, poemId, startPos, endPos) => {
+      return dispatch(createAnnotation(annotation, poemId, startPos, endPos));
     },
     clearErrors: (clear) => { dispatch(receiveAnnotationsErrors(clear)); }
   };

@@ -40,8 +40,8 @@ export const fetchAnnotation = (id) => (dispatch) => {
   );
 };
 
-export const createAnnotation = (annotation, poemId) => (dispatch) => {
-  return AnnotationApiUtils.createAnnotation(annotation, poemId).then(
+export const createAnnotation = (annotation, poemId, startPos, endPos) => (dispatch) => {
+  return AnnotationApiUtils.createAnnotation(annotation, poemId, startPos, endPos).then(
     (annotation) => {
       return dispatch(receiveAnnotation(annotation));
     },
