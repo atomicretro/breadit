@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import AuthorBar from '../../authors/author_bar';
-import PoemModalContainer from '../../modals/poem_modal/poem_modal_container';
+import AnnotationModalContainer from '../../modals/annotation_modal/annotation_modal_container';
 import CommentsContainer from '../../comments/comments_container';
 import AnnotationContainer from '../../annotations/annotation_container';
 
@@ -38,7 +38,7 @@ class Poem extends React.Component {
       console.log(firstChar);
       console.log(lastChar);
       console.log(selection.anchorNode.data.charAt(lastChar));
-      this.props.openPoemModal({depth: e.clientY});
+      this.props.openAnnotationModal({depth: e.clientY});
     }
   }
 
@@ -132,7 +132,7 @@ class Poem extends React.Component {
               commentIds={this.props.poem.comment_ids} />
           </div>
           <div className="annotation-area">
-            <PoemModalContainer />
+            <AnnotationModalContainer />
             <Route
               path="/poems/:poemId/annotations/:annotationId"
               component={AnnotationContainer} />

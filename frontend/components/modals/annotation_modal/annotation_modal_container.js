@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import PoemModal from './poem_modal';
+import AnnotationModal from './annotation_modal';
 import { closeModal } from '../../../actions/modal_actions';
 
 const mapStateToProps = (state, ownProps) => {
@@ -17,4 +17,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(PoemModal);
+)(AnnotationModal);

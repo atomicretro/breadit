@@ -1,5 +1,5 @@
 export const OPEN_MODAL = 'OPEN_MODAL';
-export const OPEN_POEM_MODAL = 'OPEN_POEM_MODAL';
+export const OPEN_ANNOTATION_MODAL = 'OPEN_ANNOTATION_MODAL';
 export const CLOSE_MODAL = 'CLOSE_MODAL';
 
 export const openModal = (modal) => {
@@ -9,9 +9,9 @@ export const openModal = (modal) => {
   };
 };
 
-export const openPoemModal = (data) => {
+export const openAnnotationModal = (data) => {
   return {
-    type: OPEN_POEM_MODAL,
+    type: OPEN_ANNOTATION_MODAL,
     data
   };
 };
