@@ -16,12 +16,17 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true}
 
   has_many :comments,
-    class_name: 'Comments',
+    class_name: 'Comment',
     primary_key: :id,
     foreign_key: :user_id
 
   has_many :annotations,
-    class_name: 'Annotations',
+    class_name: 'Annotation',
+    primary_key: :id,
+    foreign_key: :user_id
+
+  has_many :votes,
+    class_name: 'Vote',
     primary_key: :id,
     foreign_key: :user_id
 

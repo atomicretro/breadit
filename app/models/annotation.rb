@@ -27,6 +27,9 @@ class Annotation < ApplicationRecord
     primary_key: :id,
     foreign_key: :poem_id
 
+  has_many :votes,
+    as: :votable
+
   def does_not_overlap_another_annotation
     unless overlapping_annotations.empty?
       errors[:base] << "Cannot annotate over a pre-existing annotation"

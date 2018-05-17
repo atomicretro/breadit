@@ -35,4 +35,6 @@ class Poem < ApplicationRecord
     primary_key: :id,
     foreign_key: :poem_id
 
+  has_many :votes,
+    as: :votable
 end
