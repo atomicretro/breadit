@@ -119,11 +119,7 @@ class Poem extends React.Component {
       <div className="background">
         <AuthorBar
           poem={this.props.poem}
-          imageUrl={this.props.poem.image_url}
-          title={this.props.poem.title}
-          authorId={this.props.poem.author_id}
-          authorName={this.props.author.name}
-          authorImage={this.props.author.image_url} />
+          author={this.props.author} />
         <div className="poem-show-foreground">
           <div className="poem-show-text-area">
             <h3 className="poem-show-title">{this.props.poem.title}</h3>
