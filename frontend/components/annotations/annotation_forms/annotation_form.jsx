@@ -45,37 +45,27 @@ class AnnotationForm extends React.Component {
   }
 
   render () {
-    let poemText = document
-      .getElementsByClassName('poem-text')[0] || { clientHeight: 0 };
-    let poemHeight = poemText.clientHeight;
-
     return (
-      <div style={{minHeight: poemHeight + 39}}
-        className="annotation-container">
-        <div className="annotation-title">
-          <h3>enjambment annotations</h3>
-        </div>
-        <div className="annotation-form">
-          <form className="annotation-form">
-            <textarea
-              value={this.state.body}
-              onChange={this.update('body')}
-              className="annotation-form-body"
-              maxLength="300"
-              placeholder="annotate away!" />
-            <div className="annotation-baggage">
-              {this.renderErrors()}
-              <span className="annotation-count" >
-                {this.state.body.length}
-              </span>
-              <button className="annotation-submit"
-                onClick={this.handleSubmit}
-                type="submit" >
-                add annotation
-              </button>
-            </div>
-          </form>
-        </div>
+      <div className="annotation-form">
+        <form className="annotation-form">
+          <textarea
+            value={this.state.body}
+            onChange={this.update('body')}
+            className="annotation-form-body"
+            maxLength="300"
+            placeholder="annotate away!" />
+          <div className="annotation-baggage">
+            {this.renderErrors()}
+            <span className="annotation-count" >
+              {this.state.body.length}
+            </span>
+            <button className="annotation-submit"
+              onClick={this.handleSubmit}
+              type="submit" >
+              add annotation
+            </button>
+          </div>
+        </form>
       </div>
     );
   }

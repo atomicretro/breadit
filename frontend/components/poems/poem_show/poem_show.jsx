@@ -10,9 +10,10 @@ class Poem extends React.Component {
   constructor(props) {
     super(props);
     this.poemBody = '';
+    this.clicks = 0;
 
     this.selection = window.getSelection();
-    // this.closeModal = this.closeModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
     this.mouseUp = this.mouseUp.bind(this);
     this.annotatePoemBody = this.annotatePoemBody.bind(this);
     this.getSections = this.getSections.bind(this);
@@ -28,11 +29,14 @@ class Poem extends React.Component {
     this.props.closeModal();
   }
 
-  // closeModal() {
-  //   if (this.props.modal !== null) {
-  //     this.props.closeModal();
-  //   }
-  // } CLOSES MODAL IMMEDIATELY, FIX THIS!!!!!
+  closeModal() {
+    this.clicks++;
+    if (this.props.modal !== null && this.clicks > 1) {
+      this.clicks = 0;
+      this.props.closeModal();
+    }
+  } //add click listener when you have time
+    //this work around works... sometimes
 
   mouseUp(e) {
     let selection = window.getSelection();
@@ -152,6 +156,7 @@ class Poem extends React.Component {
   }
 
   navigateToAnnotation(annotationId) {
+    this.props.openAnnotationModal({depth: 0});
     let poemId = this.props.poem.id;
     this.props.history.push(`/poems/${poemId}/annotations/${annotationId}`);
   }
@@ -175,6 +180,7 @@ class Poem extends React.Component {
             <h3 className="poem-show-title">{this.props.poem.title}</h3>
             <div className="poem-text">
               <p className={`poem-${poemId}-lines`}
+                onClick={this.closeModal}
                 onMouseUp={this.mouseUp}>{poemBody}</p>
             </div>
             <CommentsContainer
@@ -182,7 +188,9 @@ class Poem extends React.Component {
               commentIds={this.props.poem.comment_ids} />
           </div>
           <div className="annotation-area">
-            <AnnotationModal modal={this.props.modal} />
+            <AnnotationModal
+              modal={this.props.modal}
+              closeModal={this.props.closeModal} />
           </div>
         </div>
       </div>
