@@ -1,23 +1,19 @@
-.poem-show-text-area {
+.author-show-text-area {
   padding-left: 75px;
   width: 500px;
 }
 
-.poem-show-title {
+.author-show-title {
   margin: 0;
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 20px;
 }
 
-.poem-text {
+.author-text {
   white-space: pre-wrap;
   font-family: 'futura', sans-serif;
   font-weight: 300;
   font-size: 18px;
   line-height: 28px;
-}
-
-.annotation-area {
-  width: 365px;
 }

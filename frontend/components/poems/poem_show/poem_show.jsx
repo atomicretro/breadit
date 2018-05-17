@@ -175,7 +175,7 @@ class Poem extends React.Component {
         <AuthorBar
           poem={this.props.poem}
           author={this.props.author} />
-        <div className="poem-show-foreground">
+        <div className="show-foreground">
           <div className="poem-show-text-area">
             <h3 className="poem-show-title">{this.props.poem.title}</h3>
             <div className="poem-text">

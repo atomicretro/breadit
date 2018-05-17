@@ -21,7 +21,7 @@ class PoemIndex extends Component {
 
     return (
       <div className="background">
-        <section className="poem-index-foreground">
+        <section className="foreground">
           <div className="poem-index-container">
             <h2>all poems</h2>
             <hr className="line3" />

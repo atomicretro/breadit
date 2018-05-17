@@ -1,26 +1,59 @@
-body{
-
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
+#root {
+  height: 100%;
+}
+/*
 .app-page {
-  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 
-}
+} */
 
 .header {
 
 }
 
 .main {
-  /* padding-bottom: 82px; */
+  /* flex: 1 0 auto; */
+  /* height: 100%; */
+  min-height: calc(100vh - 219px);
 }
 
 .footer {
   /* flex-shrink: 0; */
+  min-height: 82px;
 }
 
 .background {
+  min-height: calc(100vh - 219px);
   background-color: #f7f7f7;
+}
+
+.foreground {
+  margin: auto;
+  width: 80%;
+  min-width: 970px;
+  background-color: white;
+  padding-top: 25px;
+  padding-bottom: 41px;
+  min-height: calc(100vh - 219px);
+}
+
+.show-foreground {
+  display: flex;
+  margin: auto;
+  width: 970px;
+  padding-top: 50px;
+  padding-bottom: 41px;
+  overflow: hidden;
+  background-color: white;
+  min-height: calc(100vh - 524px);
 }
 
 ::selection {

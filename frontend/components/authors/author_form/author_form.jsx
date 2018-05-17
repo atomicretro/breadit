@@ -55,7 +55,7 @@ class AuthorForm extends React.Component {
   render() {
     return (
       <div className="background">
-        <div className="author-new-foreground">
+        <div className="foreground">
           <div className="author-form-container">
             <h2>add an author</h2>
             <hr className="line2" />

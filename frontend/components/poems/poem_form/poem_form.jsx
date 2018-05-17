@@ -57,7 +57,7 @@ class PoemForm extends React.Component {
   render() {
     return (
       <div className="background">
-        <div className="poem-new-foreground">
+        <div className="foreground">
           <div className="poem-form-container">
             <h2>add a poem</h2>
             <hr className="line2" />

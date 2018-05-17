@@ -45,7 +45,7 @@ class AuthorIndex extends Component {
 
     return (
       <div className="background">
-        <section className="author-index-foreground">
+        <section className="foreground">
           <div className="author-index-container">
             <h2>all authors</h2>
             <hr className="line3" />

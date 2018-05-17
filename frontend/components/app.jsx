@@ -27,7 +27,6 @@ const App = () => {
           <Route exact path="/authors/new" component={NewAuthorContainer} />
           <Route exact path="/authors/:authorId" component={AuthorShowContainer} />
         </Switch>
-        <div className="push"></div>
       </main>
       <Footer className="footer" />
     </div>

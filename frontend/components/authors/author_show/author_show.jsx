@@ -18,7 +18,7 @@ class Author extends React.Component {
       <div className="background">
         <AuthorBar
           author={this.props.author} />
-        <div className="author-show-foreground">
+        <div className="show-foreground">
           <div className="author-show-text-area">
             <h3 className="author-show-title">{this.props.author.title}</h3>
             <div className="author-text">
