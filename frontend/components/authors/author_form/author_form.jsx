@@ -36,7 +36,6 @@ class AuthorForm extends React.Component {
 
   renderError(type) {
     let errors = this.props.errors.authorErrors;
-    debugger
     let thisError = '';
     errors.forEach((error) => {
       if (error.includes(type)) {

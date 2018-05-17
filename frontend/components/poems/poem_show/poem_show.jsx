@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
-import AuthorBarContainer from '../../authors/author_bar_container';
+import AuthorBar from '../../authors/author_bar';
 import PoemModalContainer from '../../modals/poem_modal/poem_modal_container';
 import CommentsContainer from '../../comments/comments_container';
 import AnnotationContainer from '../../annotations/annotation_container';
@@ -117,7 +117,8 @@ class Poem extends React.Component {
     let poemBody = this.annotatePoemBody();
     return(
       <div className="background">
-        <AuthorBarContainer
+        <AuthorBar
+          poem={this.props.poem}
           imageUrl={this.props.poem.image_url}
           title={this.props.poem.title}
           authorId={this.props.poem.author_id}
