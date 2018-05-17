@@ -18,15 +18,13 @@ class Annotation extends React.Component {
     // var rect = thisAnnotation.getBoundingClientRect();
     // console.log(rect.top, rect.right, rect.bottom, rect.left);
 
-
-    debugger
     return (
       <div style={{minHeight: poemHeight + 39}}
         className="annotation-container">
         <div className="annotation-title">
           <h3>enjambment annotations</h3>
         </div>
-        <div 
+        <div
           className="annotation-item">
           {this.props.annotation.body}
         </div>
