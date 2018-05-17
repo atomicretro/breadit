@@ -1,4 +1,5 @@
 import React from 'react';
+import { merge } from 'lodash';
 
 class AnnotationForm extends React.Component {
   constructor(props) {
@@ -19,10 +20,17 @@ class AnnotationForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const annotation = Object.assign({}, this.state);
-    this.props.createAnnotation(
-      annotation, this.props.poemId, this.props.startPos, this.props.endPos
+    let annotation = merge(
+      {},
+      this.state,
+      { poem_id: this.props.poem.id },
+      { starting_character: this.props.startPos },
+      { ending_character: this.props.endPos }
     );
+    // sends up poemid instead of controller getting it from app itself
+    // this is bad, fix it!!!
+
+    this.props.createAnnotation(annotation);
   }
 
   renderErrors(type) {
