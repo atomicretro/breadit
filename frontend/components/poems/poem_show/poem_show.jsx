@@ -24,6 +24,10 @@ class Poem extends React.Component {
     this.props.fetchPoem(this.props.match.params.poemId);
   }
 
+  componentWillUnmount() {
+    this.props.closeModal();
+  }
+
   // closeModal() {
   //   if (this.props.modal !== null) {
   //     this.props.closeModal();

@@ -9,7 +9,7 @@
 
 .poem-show-text-area {
   padding-left: 75px;
-  min-width: 500px;
+  width: 500px;
 }
 
 .poem-show-title {
