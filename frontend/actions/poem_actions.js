@@ -2,6 +2,7 @@ import * as PoemApiUtils from '../util/poem_api_utils';
 
 // poem action types
 export const RECEIVE_ALL_POEMS = 'RECEIVE_ALL_POEMS';
+export const RECEIVE_NEWEST_POEMS = 'RECEIVE_NEWEST_POEMS';
 export const RECEIVE_POEM = 'RECEIVE_POEM';
 export const REMOVE_POEM = 'REMOVE_POEM';
 export const RECEIVE_POEM_ERRORS = 'RECEIVE_POEM_ERRORS';
@@ -10,6 +11,13 @@ export const RECEIVE_POEM_ERRORS = 'RECEIVE_POEM_ERRORS';
 export const receiveAllPoems = (poems) => {
   return ({
       type: RECEIVE_ALL_POEMS,
+      poems
+    });
+};
+
+export const receiveNewestPoems = (poems) => {
+  return ({
+      type: RECEIVE_NEWEST_POEMS,
       poems
     });
 };
@@ -44,6 +52,17 @@ export const fetchPoems = (data) => (dispatch) => {
   return PoemApiUtils.fetchPoems(data).then(
     (poems) => {
       return dispatch(receiveAllPoems(poems));
+    },
+    (errors) => {
+      return dispatch(receivePoemErrors(errors.responseJSON));
+    }
+  );
+};
+
+export const fetchNewestPoems = (data) => (dispatch) => {
+  return PoemApiUtils.fetchNewestPoems(data).then(
+    (poems) => {
+      return dispatch(receiveNewestPoems(poems));
     },
     (errors) => {
       return dispatch(receivePoemErrors(errors.responseJSON));

@@ -6,6 +6,14 @@ export const fetchPoems = (data) => {
   });
 };
 
+export const fetchNewestPoems = (data) => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/poems/newest',
+    data: { data }
+  });
+};
+
 export const fetchPoem = (id) => {
   return $.ajax({
     method: 'GET',
