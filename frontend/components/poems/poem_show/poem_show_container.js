@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import { fetchPoem } from '../../../actions/poem_actions';
 import { fetchAuthor } from '../../../actions/author_actions';
+import { receiveNewAnnotation } from '../../../actions/annotation_actions';
 import { openAnnotationModal, closeModal } from '../../../actions/modal_actions';
 import Poem from './poem_show';
 
@@ -13,13 +14,15 @@ const mapStateToProps = (state, ownProps) => {
   return {
     poem: poem,
     author: state.entities.authors[poem.author_id] || { },
-    annotations: annotations
+    annotations: annotations,
+    modal: state.ui.modal
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchPoem: (poemId) => dispatch(fetchPoem(poemId)),
+    receiveNewAnnotation: (data) => dispatch(receiveNewAnnotation(data)),
     openAnnotationModal: (modal) => dispatch(openAnnotationModal(modal)),
     closeModal: () => dispatch(closeModal())
   };

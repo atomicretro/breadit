@@ -2,9 +2,8 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
 import AuthorBar from '../../authors/author_bar';
-import AnnotationModalContainer from '../../modals/annotation_modal/annotation_modal_container';
+import AnnotationModal from '../../modals/annotation_modal/annotation_modal';
 import CommentsContainer from '../../comments/comments_container';
-import AnnotationContainer from '../../annotations/annotation_container';
 
 class Poem extends React.Component {
   constructor(props) {
@@ -12,6 +11,7 @@ class Poem extends React.Component {
     this.poemBody = '';
 
     this.selection = window.getSelection();
+    // this.closeModal = this.closeModal.bind(this);
     this.mouseUp = this.mouseUp.bind(this);
     this.annotatePoemBody = this.annotatePoemBody.bind(this);
     this.getSections = this.getSections.bind(this);
@@ -22,22 +22,29 @@ class Poem extends React.Component {
     this.props.fetchPoem(this.props.match.params.poemId);
   }
 
+  // closeModal() {
+  //   if (this.props.modal !== null) {
+  //     this.props.closeModal();
+  //   }
+  // } CLOSES MODAL IMMEDIATELY, FIX THIS!!!!!
+
   mouseUp(e) {
     let selection = window.getSelection();
-    let firstChar = selection.anchorOffset;
-    let lastChar = selection.focusOffset;
+    let startPos = selection.anchorOffset;
+    let endPos = selection.focusOffset;
 
-    if (lastChar - firstChar !== 0) {
-      if (firstChar > lastChar) {
-        let tempChar = firstChar;
-        firstChar = lastChar;
-        lastChar = tempChar;
+    if (endPos - startPos !== 0) {
+      if (startPos > endPos) {
+        let tempChar = startPos;
+        startPos = endPos;
+        endPos = tempChar;
       }
 
       console.log(selection);
-      console.log(firstChar);
-      console.log(lastChar);
-      console.log(selection.anchorNode.data.charAt(lastChar));
+      console.log(startPos);
+      console.log(endPos);
+      console.log(selection.anchorNode.data.charAt(endPos));
+      this.props.receiveNewAnnotation({startPos, endPos});
       this.props.openAnnotationModal({depth: e.clientY});
     }
   }
@@ -132,10 +139,7 @@ class Poem extends React.Component {
               commentIds={this.props.poem.comment_ids} />
           </div>
           <div className="annotation-area">
-            <AnnotationModalContainer />
-            <Route
-              path="/poems/:poemId/annotations/:annotationId"
-              component={AnnotationContainer} />
+            <AnnotationModal modal={this.props.modal} />
           </div>
         </div>
       </div>

@@ -4,8 +4,8 @@ import {
   fetchAnnotation,
   createAnnotation,
   receiveAnnotationsErrors
-} from '../../actions/annotation_actions';
-import Annotation from './annotation';
+} from '../../../actions/annotation_actions';
+import AnnotationItem from './annotation_item';
 
 const mapStateToProps = (state, ownProps) => {
   let annotationId = ownProps.match.params.annotationId;
@@ -30,4 +30,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Annotation);
+)(AnnotationItem);
