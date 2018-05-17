@@ -5,7 +5,7 @@ class Api::PoemsController < ApplicationController
   end
 
   def newest
-    @poems = Poem.recent(4).reverse
+    @poems = Poem.recent(10).reverse
     render :newest
   end
 

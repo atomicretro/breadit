@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
-import FrontPageContainer from './front_page_container';
+import FrontPageItemContainer from './front_page_item/front_page_item_container';
 
 class FrontPage extends Component {
   constructor(props) {
@@ -9,13 +9,24 @@ class FrontPage extends Component {
 
   componentDidMount() {
     this.props.fetchNewestPoems();
-    //GOES TO RAILS ROUTES SHOW, NOT NEWEST
   }
 
   render() {
+    const fetchedPoems = this.props.poems;
+    const poemsToRender = [];
+    for (let key in fetchedPoems) {
+      poemsToRender.push(
+        <FrontPageItemContainer
+          key={`poem-item-${key}`}
+          poemInfo = { fetchedPoems[key] } />
+      );
+    }
+
     return (
       <div>
-        hi
+        <ul>
+          {poemsToRender}
+        </ul>
       </div>
     );
   }

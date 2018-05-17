@@ -4,11 +4,9 @@ import { fetchNewestPoems } from '../../actions/poem_actions';
 import FrontPage from './front_page';
 
 const mapStateToProps = (state) => {
-  let poems = state.entities.poems || { };
-  let authors = state.entities.authors || { };
+  let poems = state.entities.newestPoems || { };
   return {
-    poems,
-    authors
+    poems
   };
 };
 
