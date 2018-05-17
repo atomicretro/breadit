@@ -56,14 +56,13 @@ class AnnotationForm extends React.Component {
           <h3>enjambment annotations</h3>
         </div>
         <div className="annotation-form">
-          <span className="annotation-instructions">make an annotation!</span>
           <form className="annotation-form">
             <textarea
               value={this.state.body}
               onChange={this.update('body')}
               className="annotation-form-body"
               maxLength="300"
-              placeholder="create an annotation" />
+              placeholder="annotate away!" />
             <div className="annotation-baggage">
               {this.renderErrors()}
               <span className="annotation-count" >

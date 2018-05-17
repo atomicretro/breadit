@@ -1,0 +1,50 @@
+.annotation-instructions {
+  font-size: 14px;
+}
+
+.annotation-form textarea {
+  padding-top: 8px;
+  padding-left: 10px;
+  background-color: white;
+  height: 63px;
+  width: 90%;
+  border: inset 1px gray;
+  font-size: 14px;
+  resize: none;
+}
+
+.annotation-baggage {
+  display: flex;
+  justify-content: flex-end;
+  width: 93.5%;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-right: 0;
+}
+
+.annotation-form-error {
+  align-self: center;
+  float: left;
+  color: red;
+  font-size: 10px;
+}
+
+.annotation-count {
+  align-self: center;
+  margin-right: 20px;
+  display: inline-block;
+  width: 50px;
+  text-align: right;
+}
+
+.annotation-submit {
+  font-size: 12px;
+  display: block;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: auto;
+  width: auto;
+  border: solid 2px black;
+}

@@ -83,16 +83,13 @@ class Poem extends React.Component {
   }
 
   annotatePoemBody() {
-    debugger
     let poemBody = this.props.poem.body;
     if (typeof poemBody === "string") {
-      debugger
       let sortedAnnotations = this.props.annotations.sort((a, b) => {
         if(a.starting_character < b.starting_character) return -1;
         if(a.starting_character > b.starting_character) return 1;
         return 0;
       });
-      debugger
 
       let annotatedPoemBody = this.getSections(poemBody, sortedAnnotations);
       return annotatedPoemBody;
