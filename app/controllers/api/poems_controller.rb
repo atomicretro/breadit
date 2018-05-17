@@ -4,6 +4,11 @@ class Api::PoemsController < ApplicationController
     render :index
   end
 
+  def newest
+    @poems = Poem.recent(4)
+    render :index
+  end
+
   def show
     @poem = Poem.find(params[:id])
     render :show
@@ -37,9 +42,7 @@ class Api::PoemsController < ApplicationController
     end
   end
 
-  def newest
-    @poems = Poem.recent(4)
-  end
+
 
 private
   def poem_params

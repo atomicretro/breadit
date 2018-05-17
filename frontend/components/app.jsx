@@ -18,7 +18,7 @@ const App = () => {
       <NavbarContainer className="header" />
       <main className="main">
         <Switch>
-          <Route exact path="/" component={FrontPageContainer} />
+          <Route exact path="/" component={PoemIndexContainer} />
           <Route exact path="/poems/" component={PoemIndexContainer} />
           <Route exact path="/poems/new" component={NewPoemContainer} />
           <Route exact path="/poems/:poemId" component={PoemShowContainer} />

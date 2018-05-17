@@ -9,6 +9,7 @@ class FrontPage extends Component {
 
   componentDidMount() {
     this.props.fetchNewestPoems();
+    //GOES TO RAILS ROUTES SHOW, NOT NEWEST
   }
 
   render() {
