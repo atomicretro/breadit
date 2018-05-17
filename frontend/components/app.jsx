@@ -7,6 +7,7 @@ import PoemShowContainer from './poems/poem_show/poem_show_container';
 import NewPoemContainer from './poems/poem_form/new_poem_container';
 import AuthorIndexContainer from './authors/author_index/author_index_container';
 import NewAuthorContainer from './authors/author_form/new_author_container';
+import AuthorShowContainer from './authors/author_show/author_show_container';
 import Footer from './footer/footer';
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
             component={PoemShowContainer} />
           <Route exact path="/authors" component={AuthorIndexContainer} />
           <Route exact path="/authors/new" component={NewAuthorContainer} />
+          <Route exact path="/authors/:authorId" component={AuthorShowContainer} />
         </Switch>
         <div className="push"></div>
       </main>
