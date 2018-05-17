@@ -37,4 +37,16 @@ class Poem < ApplicationRecord
 
   has_many :votes,
     as: :votable
+
+  def self.recent(n)
+    in_order.endmost(n)
+  end
+
+  def self.in_order
+    order(created_at: :asc)
+  end
+
+  def self.endmost(n)
+    all.only(:order).from(all.reverse_order.limit(n), table_name)
+  end
 end

@@ -5,8 +5,8 @@ class Api::PoemsController < ApplicationController
   end
 
   def newest
-    @poems = Poem.recent(4)
-    render :index
+    @poems = Poem.recent(4).reverse
+    render :newest
   end
 
   def show
@@ -51,17 +51,5 @@ private
 
   def author_params
     params.require(:poem).permit(:name)
-  end
-
-  def recent(n)
-    in_order.endmost(n)
-  end
-
-  def in_order
-    order(created_at: :asc)
-  end
-
-  def endmost(n)
-    all.only(:order).from(all.reverse_order.limit(n), table_name)
   end
 end

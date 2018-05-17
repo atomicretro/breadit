@@ -2,12 +2,12 @@ Rails.application.routes.draw do
   root 'static_pages#root'
 
   namespace :api, defaults: { format: :json } do
+    get 'poems/newest', to: 'poems#newest'
     resources :users, only: [:create]
     resource :session, only: [:show, :create, :destroy]
     resources :poems, only: [:index, :show, :create, :update] do
       resources :comments, only: [:create]
     end
-    get 'poems/newest', to: 'poems#newest'
     resources :authors, only: [:index, :show, :create]
     resources :annotations, only: [:show, :create]
 
