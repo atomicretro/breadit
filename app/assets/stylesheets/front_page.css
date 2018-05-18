@@ -1,0 +1,74 @@
+.front-page-container {
+  padding-left: 75px;
+  padding-right: 75px;
+}
+
+.front-page-container h2 {
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.line5 {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  border-color: #d70062;
+  background-color: #d70062;
+}
+
+.front-page-list-container li {
+  /* margin-top: 15px;
+  padding-bottom: 15px; */
+  /* border-bottom: solid 1px #d70062; */
+}
+
+.front-page-list-container li:first-child {
+  margin-top: 10;
+}
+
+.front-page-list-outer-item {
+
+}
+
+.front-page-list-line {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+  border-color: #d70062;
+  background-color: #d70062;
+}
+
+.front-page-list-inner-item {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.front-page-list-inner-item:hover {
+  background-color: rgba(215, 0, 98, 0.5);
+}
+
+.front-page-poem-title {
+  font-size: 22px;
+}
+
+.front-page-author {
+  font-size: 16px;
+}
+
+.front-page-list-item-button {
+  display: flex;
+  width: 100%;
+  padding-left: 20px;
+  padding-top: 1px;
+  padding-bottom: 3px;
+}
+
+.front-page-list-item-index {
+  align-self: center;
+  font-size: 24px;
+  padding-right: 30px;
+}

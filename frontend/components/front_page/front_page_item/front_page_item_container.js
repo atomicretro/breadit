@@ -3,8 +3,10 @@ import FrontPageItem from './front_page_item';
 
 const mapStateToProps = (state, ownProps) => {
   const poemInfo = ownProps.poemInfo || { };
+  const index = ownProps.index || { };
   return {
-    poemInfo: poemInfo
+    index,
+    poemInfo
   };
 };
 
