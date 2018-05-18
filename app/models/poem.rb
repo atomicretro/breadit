@@ -19,7 +19,7 @@ class Poem < ApplicationRecord
   validates :title, uniqueness: { scope: :author_id,
     message: 'poem already exists' }
 
-  has_attached_file :image, default_url: "smiling.png"
+  has_attached_file :image, default_url: "nature.jpg"
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
   belongs_to :author,
