@@ -31,6 +31,7 @@ class AnnotationForm extends React.Component {
     // this is bad, fix it!!!
 
     this.props.createAnnotation(annotation);
+    // this.props.fetchPoem(this.props.poem.id);
   }
 
   renderErrors(type) {

@@ -5,6 +5,12 @@ import { receiveNewAnnotation } from '../../../actions/annotation_actions';
 import { openAnnotationModal, closeModal } from '../../../actions/modal_actions';
 import Poem from './poem_show';
 
+// poem doesn't rerender with new annotation
+// b/c after annotation new poem isn't fetched from db
+// tried getting it from db but then it thinks it has all the annotations,
+// and still doesn't render
+// check annotation form
+
 const mapStateToProps = (state, ownProps) => {
   let poem = state.entities.poems[ownProps.match.params.poemId] || { };
   let annotationIds = poem.annotation_ids || [ ];

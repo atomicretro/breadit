@@ -25,6 +25,14 @@ class Poem extends React.Component {
     this.props.fetchPoem(this.props.match.params.poemId);
   }
 
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    if (prevProps.data !== this.props.data) {
+      this.chart = c3.load({
+        data: this.props.data
+      });
+    }
+  }
+
   componentWillUnmount() {
     this.props.closeModal();
   }

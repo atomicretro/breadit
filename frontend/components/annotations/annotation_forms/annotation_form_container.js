@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { isEmpty } from 'lodash';
+import { fetchPoem } from '../../../actions/poem_actions';
 import {
   createAnnotation,
   receiveAnnotationsErrors
@@ -20,6 +21,7 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    fetchPoem: (poemId) => dispatch(fetchPoem(poemId)),
     createAnnotation: (annotation, poemId, startPos, endPos) => {
       return dispatch(createAnnotation(annotation, poemId, startPos, endPos));
     },
