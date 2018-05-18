@@ -16,7 +16,7 @@
 
 class Poem < ApplicationRecord
   validates :title, :body, :author, presence: true
-  validates :title, uniqueness: { scope: :author_id,
+  validates :title, uniqueness: { scope: :author,
     message: 'poem already exists' }
 
   has_attached_file :image, default_url: "nature.jpg"
