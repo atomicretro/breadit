@@ -22,7 +22,7 @@ class Comments extends React.Component {
     });
 
     return(
-      <div className="comments-container">
+      <div className="comments-container" data="comment">
         <hr className="line4" />
         <h3 className="comments-title">comments</h3>
         <CommentForm

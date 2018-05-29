@@ -60,7 +60,8 @@ class CommentForm extends React.Component {
             onChange={this.update('body')}
             className="comment-form-body"
             maxLength="500"
-            placeholder="write a comment" />
+            placeholder="write a comment"
+            data="comment" />
           <div className="comment-baggage">
             {this.renderErrors()}
             <span className="comment-count" >
@@ -68,7 +69,8 @@ class CommentForm extends React.Component {
             </span>
             <button className="comment-submit"
               onClick={this.handleSubmit}
-              type="submit" >
+              type="submit"
+              data="comment" >
               add comment
             </button>
           </div>

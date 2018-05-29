@@ -37,10 +37,17 @@ class Poem extends React.Component {
     this.props.closeModal();
   }
 
-  closeModal() {
-    this.clicks++;
-    if (this.props.modal !== null && this.clicks > 1) {
-      this.clicks = 0;
+  closeModal(e) {
+    debugger
+    if(
+      e.target.getAttribute('data') !== 'annotation' &&
+      e.target.getAttribute('data') !== 'comment'
+    ) {
+    // debugger
+    // console.log(e);
+    // this.clicks++;
+    // if (this.props.modal !== null && this.clicks > 1) {
+    //   this.clicks = 0;
       this.props.closeModal();
       if (this.props.location.pathname.includes('annotations')) {
         this.props.history.push(`/poems/${this.props.poem.id}`);
@@ -55,34 +62,26 @@ class Poem extends React.Component {
     let endPos = selection.focusOffset;
 
     if (endPos - startPos !== 0) {
-      if (startPos > endPos) {
-        let tempChar = startPos;
-        startPos = endPos;
-        endPos = tempChar;
-      }
-
       let poemId = this.props.poem.id;
       let absoluePositions = this.getSelectionPositions(
         document.getElementsByClassName(`poem-${poemId}-lines`)[0]
       );
-      console.log(selection);
-      console.log(absoluePositions);
       this.props.openAnnotationModal({depth: e.clientY});
       this.props.receiveNewAnnotation(absoluePositions);
     }
   }
 
   getSelectionPositions(element) {
-    var start = 0;
-    var end = 0;
-    var doc = element.ownerDocument || element.document;
-    var win = doc.defaultView || doc.parentWindow;
-    var sel;
+    let start = 0;
+    let end = 0;
+    let doc = element.ownerDocument || element.document;
+    let win = doc.defaultView || doc.parentWindow;
+    let sel;
     if (typeof win.getSelection != "undefined") {
         sel = win.getSelection();
         if (sel.rangeCount > 0) {
-            var range = win.getSelection().getRangeAt(0);
-            var preCaretRange = range.cloneRange();
+            let range = win.getSelection().getRangeAt(0);
+            let preCaretRange = range.cloneRange();
             preCaretRange.selectNodeContents(element);
             preCaretRange.setEnd(range.startContainer, range.startOffset);
             start = preCaretRange.toString().length;
@@ -90,8 +89,8 @@ class Poem extends React.Component {
             end = preCaretRange.toString().length;
         }
     } else if ( (sel = doc.selection) && sel.type != "Control") {
-        var textRange = sel.createRange();
-        var preCaretTextRange = doc.body.createTextRange();
+        let textRange = sel.createRange();
+        let preCaretTextRange = doc.body.createTextRange();
         preCaretTextRange.moveToElementText(element);
         preCaretTextRange.setEndPoint("EndToStart", textRange);
         start = preCaretTextRange.text.length;
@@ -128,7 +127,8 @@ class Poem extends React.Component {
           <span
             key={`text-annotation-${annotation.id}`}
             onClick={() => this.navigateToAnnotation(annotation.id)}
-            className={`text-annotation-${annotation.id}`}>
+            className={`text-annotation-${annotation.id}`}
+            data="annotation">
             {poemBody.slice(previousStartChar, annoEnd + 1)}
           </span>
         );
@@ -136,7 +136,8 @@ class Poem extends React.Component {
         sections.push(
           <span
             key={`not-annotations-${idx}`}
-            className={`not-annotation`}>
+            className={`not-annotation`}
+            data="not-annotation">
             {poemBody.slice(previousStartChar, annoStart)}
           </span>
         );
@@ -144,7 +145,8 @@ class Poem extends React.Component {
           <span
             key={`text-annotation-${annotation.id}`}
             onClick={() => this.navigateToAnnotation(annotation.id)}
-            className={`text-annotation-${annotation.id}`}>
+            className={`text-annotation-${annotation.id}`}
+            data="annotation">
             {poemBody.slice(annoStart, annoEnd + 1)}
           </span>
         );
@@ -154,7 +156,8 @@ class Poem extends React.Component {
         sections.push(
           <span
             key="not-annotation-end"
-            className={`not-annotation`}>
+            className={`not-annotation`}
+            data="not-annotation">
             {poemBody.slice((annoEnd + 1), poemBody.length + 1)}
           </span>
         );
@@ -186,8 +189,8 @@ class Poem extends React.Component {
         <AuthorBar
           poem={this.props.poem}
           author={this.props.author} />
-        <div className="show-foreground">
-          <div className="poem-show-text-area">
+        <div className="show-foreground" onClick={this.closeModal}>
+          <div className="poem-show-text-area" >
             <h3 className="poem-show-title">{this.props.poem.title}</h3>
             <div className="poem-text">
               <p className={`poem-${poemId}-lines`}

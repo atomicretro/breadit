@@ -7,7 +7,7 @@ const AuthorBar = (ownProps) => {
   let poem = ownProps.poem || { };
   let author = ownProps.author;
 
-  let imageUrl = poem.image_url;
+  let poemImage = poem.image_url;
   let title = poem.title;
   let authorId = poem.author_id;
   let authorName = author.name;
@@ -34,7 +34,7 @@ const AuthorBar = (ownProps) => {
   return(
     <div className="author-bar">
       <div className="author-bar-background">
-        <img src={imageUrl} className="background-img" />
+        <img src={poemImage} className="background-img" />
       </div>
       <div className="author-img-container">
         <img
