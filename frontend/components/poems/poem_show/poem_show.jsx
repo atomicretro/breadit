@@ -38,30 +38,23 @@ class Poem extends React.Component {
   }
 
   closeModal(e) {
-    debugger
     if(
       e.target.getAttribute('data') !== 'annotation' &&
       e.target.getAttribute('data') !== 'comment'
     ) {
-    // debugger
-    // console.log(e);
-    // this.clicks++;
-    // if (this.props.modal !== null && this.clicks > 1) {
-    //   this.clicks = 0;
       this.props.closeModal();
-      if (this.props.location.pathname.includes('annotations')) {
+      if(this.props.location.pathname.includes('annotations')) {
         this.props.history.push(`/poems/${this.props.poem.id}`);
       }
     }
-  } //add click listener when you have time
-    //this work around works... sometimes
+  }
 
   mouseUp(e) {
     let selection = window.getSelection();
     let startPos = selection.anchorOffset;
     let endPos = selection.focusOffset;
 
-    if (endPos - startPos !== 0) {
+    if(endPos - startPos !== 0) {
       let poemId = this.props.poem.id;
       let absoluePositions = this.getSelectionPositions(
         document.getElementsByClassName(`poem-${poemId}-lines`)[0]
