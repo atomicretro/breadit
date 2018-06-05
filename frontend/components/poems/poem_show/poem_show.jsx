@@ -182,7 +182,7 @@ class Poem extends React.Component {
         <AuthorBar
           poem={this.props.poem}
           author={this.props.author} />
-        <div className="show-foreground" onClick={this.closeModal}>
+        <div className="show-foreground" onMouseDown={this.closeModal}>
           <div className="poem-show-text-area" >
             <h3 className="poem-show-title">{this.props.poem.title}</h3>
             <div className="poem-text">
