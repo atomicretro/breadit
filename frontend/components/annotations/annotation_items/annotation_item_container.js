@@ -10,10 +10,14 @@ import AnnotationItem from './annotation_item';
 const mapStateToProps = (state, ownProps) => {
   let annotationId = ownProps.match.params.annotationId;
   let poemId = ownProps.match.params.poemId;
+  let annotators = state.entities.annotators || {
+      [state.session.id]: state.entities.users[state.session.id].username
+  };
 
   return {
     annotation: state.entities.annotations[annotationId] || { },
-    poem: state.entities.poems[poemId] || { }
+    poem: state.entities.poems[poemId] || { },
+    annotators: annotators
   };
 };
 
