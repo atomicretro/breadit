@@ -187,7 +187,7 @@ class Poem extends React.Component {
             <h3 className="poem-show-title">{this.props.poem.title}</h3>
             <div className="poem-text">
               <p className={`poem-${poemId}-lines`}
-                onClick={this.closeModal}
+
                 onMouseUp={this.mouseUp}>{poemBody}</p>
             </div>
             <CommentsContainer

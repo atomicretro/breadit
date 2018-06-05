@@ -6,14 +6,15 @@ const AnnotatorsReducer = (previousState = {}, action) => {
   Object.freeze(previousState);
   switch (action.type) {
     case RECEIVE_POEM:
-      return merge({}, previousState, action.comment_authors);
+      return merge({}, previousState, action.annotators);
     case RECEIVE_ANNOTATION:
+    debugger
       return merge({}, previousState, {
-        [action.annotation.comment_author_id]: action.current_user
+        [action.annotation.annotator_id]: action.current_user
       });
     default:
       return previousState;
   }
 };
 
-export default CommentAuthorsReducer;
+export default AnnotatorsReducer;

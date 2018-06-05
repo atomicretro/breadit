@@ -22,14 +22,15 @@ export const receiveNewestPoems = (poems) => {
     });
 };
 
-export const receivePoem = ({ poem, author, comments, comment_authors, annotations }) => {
+export const receivePoem = ({ poem, author, comments, comment_authors, annotations, annotators }) => {
   return {
     type: RECEIVE_POEM,
     poem,
     author,
     comments,
     comment_authors,
-    annotations
+    annotations,
+    annotators
   };
 };
 
