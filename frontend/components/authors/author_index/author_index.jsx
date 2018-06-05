@@ -6,8 +6,6 @@ import AuthorIndexItemContainer from './author_index_item/author_index_item_cont
 class AuthorIndex extends Component {
   constructor(props) {
     super(props);
-
-    this.alphabetize = this.alphabetize.bind(this);
   }
 
   componentDidMount() {
@@ -16,31 +14,31 @@ class AuthorIndex extends Component {
 
   alphabetize(authors) {
     let alphabetized = authors.sort((a, b) => {
-      if(a.props.authorInfo.name.toLowerCase() <
-          b.props.authorInfo.name.toLowerCase()) {
-            return -1;
-      }
+      let authorA = a.props.authorInfo.name.toLowerCase();
+      let authorB = b.props.authorInfo.name.toLowerCase();
+      let splitA = authorA.split(' ');
+      let splitB = authorB.split(' ');
+      let lastA = splitA[splitA.length - 1];
+      let lastB = splitB[splitB.length - 1];
 
-      if(a.props.authorInfo.name.toLowerCase() >
-          b.props.authorInfo.name.toLowerCase()) {
-            return 1;
-      }
-
+      if(lastA < lastB) return -1;
+      if(lastA > lastB) return 1;
       return 0;
     });
+
     return alphabetized;
   }
 
   render() {
     const fetchedAuthors = this.props.authors;
     const authorList = [];
-    for (let key in fetchedAuthors) {
+    for(let key in fetchedAuthors) {
       authorList.push(
         <AuthorIndexItemContainer
           key={`author-item-${key}`}
           authorInfo = { fetchedAuthors[key] } />
       );
-    }
+    };
     let alphabetizedAuthors = this.alphabetize(authorList);
 
     return (

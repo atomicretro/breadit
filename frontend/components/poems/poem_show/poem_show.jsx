@@ -36,7 +36,6 @@ class Poem extends React.Component {
   }
 
   closeModal(e) {
-    debugger
     if(
       e.target.getAttribute('data') !== 'annotation' &&
       e.target.getAttribute('data') !== 'comment'
@@ -58,7 +57,7 @@ class Poem extends React.Component {
       let absoluePositions = this.getSelectionPositions(
         document.getElementsByClassName(`poem-${poemId}-lines`)[0]
       );
-      this.props.openAnnotationModal({depth: e.clientY});
+      this.props.openAnnotationModal();
       this.props.receiveNewAnnotation(absoluePositions);
     }
   }
@@ -80,7 +79,7 @@ class Poem extends React.Component {
             preCaretRange.setEnd(range.endContainer, range.endOffset);
             end = preCaretRange.toString().length;
         }
-    } else if( (sel = doc.selection) && sel.type != "Control") {
+    } else if((sel = doc.selection) && sel.type != "Control") {
         let textRange = sel.createRange();
         let preCaretTextRange = doc.body.createTextRange();
         preCaretTextRange.moveToElementText(element);
