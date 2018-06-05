@@ -1,5 +1,4 @@
 import * as PoemApiUtils from '../util/poem_api_utils';
-import { receiveCommentErrors } from '../util/comment_api_utils';
 
 // poem action types
 export const RECEIVE_ALL_POEMS = 'RECEIVE_ALL_POEMS';
@@ -43,7 +42,6 @@ export const removePoem = (poemId) => {
 };
 
 export const receivePoemErrors = (errors) => {
-  debugger
   return ({
     type: RECEIVE_POEM_ERRORS,
     errors
@@ -57,7 +55,6 @@ export const fetchPoems = (data) => (dispatch) => {
       return dispatch(receiveAllPoems(poems));
     },
     (errors) => {
-      debugger
       return dispatch(receivePoemErrors(errors.responseJSON));
     }
   );
