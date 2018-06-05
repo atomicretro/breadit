@@ -31,7 +31,7 @@ class AnnotationModal extends React.Component {
         <div style={{minHeight: poemHeight + 39}}
           className="annotation-container">
           <div className="annotation-title">
-            <h3>enjambment annotations</h3>
+            <h3>enjambment annotation</h3>
             <div
               onClick={this.closeModal}
               className="annotation-close-x">x</div>

@@ -24,8 +24,12 @@ class Annotation extends React.Component {
 
     return (
       <div className="annotation-item">
-        {this.props.annotation.body}
-        {annotatorUsername}
+        <div className="annotation-item-body">
+          {this.props.annotation.body}
+        </div>
+        <div className="annotation-item-author">
+          —{annotatorUsername}
+        </div>
       </div>
     );
   }
