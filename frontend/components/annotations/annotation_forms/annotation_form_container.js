@@ -15,7 +15,7 @@ const mapStateToProps = (state, ownProps) => {
     poem: state.entities.poems[poemId] || { },
     startPos: state.entities.newAnnotation.startPos || { },
     endPos: state.entities.newAnnotation.endPos || { },
-    errors: state.errors
+    errors: state.errors.annotationErrors
   };
 };
 

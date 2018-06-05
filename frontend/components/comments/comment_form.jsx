@@ -12,14 +12,6 @@ class CommentForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   }
 
-  // componentWillUpdate() {
-  //   this.clearErrors();
-  // }
-
-  // componentDidUpdate() {
-  //   this.clearErrors();
-  // }
-
   update(field) {
     if (this.state[field].length === 0) {
       this.commentBaggage = false;
@@ -45,10 +37,6 @@ class CommentForm extends React.Component {
     return(
       <span className="comment-form-error">{errors[0]}</span>
     );
-  }
-
-  clearErrors() {
-    this.props.clearErrors([]);
   }
 
   render() {

@@ -39,7 +39,8 @@ class AnnotationForm extends React.Component {
     });
   }
 
-  renderErrors(type) {
+  renderErrors() {
+    debugger
     let errors = this.props.errors;
     return(<span className="annotation-form-error">{errors[0]}</span>);
   }
