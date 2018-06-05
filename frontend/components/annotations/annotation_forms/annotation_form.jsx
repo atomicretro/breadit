@@ -41,9 +41,7 @@ class AnnotationForm extends React.Component {
 
   renderErrors(type) {
     let errors = this.props.errors;
-    return(
-      <span className="annotation-form-error">{errors[0]}</span>
-    );
+    return(<span className="annotation-form-error">{errors[0]}</span>);
   }
 
   clearErrors() {
@@ -65,7 +63,8 @@ class AnnotationForm extends React.Component {
             <span className="annotation-count" >
               {this.state.body.length}
             </span>
-            <button className="annotation-submit"
+            <button
+              className="annotation-submit"
               onClick={this.handleSubmit}
               type="submit" >
               add annotation
