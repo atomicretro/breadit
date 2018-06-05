@@ -8,7 +8,6 @@ const AnnotatorsReducer = (previousState = {}, action) => {
     case RECEIVE_POEM:
       return merge({}, previousState, action.annotators);
     case RECEIVE_ANNOTATION:
-    debugger
       return merge({}, previousState, {
         [action.annotation.annotator_id]: action.current_user
       });

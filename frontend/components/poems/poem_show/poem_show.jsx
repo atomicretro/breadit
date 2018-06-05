@@ -15,10 +15,10 @@ class Poem extends React.Component {
     this.selection = window.getSelection();
     this.closeModal = this.closeModal.bind(this);
     this.mouseUp = this.mouseUp.bind(this);
-    this.annotatePoemBody = this.annotatePoemBody.bind(this);
-    this.getSections = this.getSections.bind(this);
-    this.navigateToAnnotation = this.navigateToAnnotation.bind(this);
-    this.getSelectionPositions = this.getSelectionPositions.bind(this);
+    // this.annotatePoemBody = this.annotatePoemBody.bind(this);
+    // this.getSections = this.getSections.bind(this);
+    // this.navigateToAnnotation = this.navigateToAnnotation.bind(this);
+    // this.getSelectionPositions = this.getSelectionPositions.bind(this);
   }
 
   componentDidMount() {
@@ -26,11 +26,9 @@ class Poem extends React.Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    if (prevProps.data !== this.props.data) {
-      this.chart = c3.load({
-        data: this.props.data
-      });
-    }
+    if(prevProps.data !== this.props.data) {
+      this.chart = c3.load({ data: this.props.data });
+    };
   }
 
   componentWillUnmount() {
@@ -70,7 +68,7 @@ class Poem extends React.Component {
     let doc = element.ownerDocument || element.document;
     let win = doc.defaultView || doc.parentWindow;
     let sel;
-    if (typeof win.getSelection != "undefined") {
+    if(typeof win.getSelection != "undefined") {
         sel = win.getSelection();
         if (sel.rangeCount > 0) {
             let range = win.getSelection().getRangeAt(0);
@@ -81,7 +79,7 @@ class Poem extends React.Component {
             preCaretRange.setEnd(range.endContainer, range.endOffset);
             end = preCaretRange.toString().length;
         }
-    } else if ( (sel = doc.selection) && sel.type != "Control") {
+    } else if( (sel = doc.selection) && sel.type != "Control") {
         let textRange = sel.createRange();
         let preCaretTextRange = doc.body.createTextRange();
         preCaretTextRange.moveToElementText(element);
@@ -95,7 +93,7 @@ class Poem extends React.Component {
 
   annotatePoemBody() {
     let poemBody = this.props.poem.body;
-    if (typeof poemBody === "string") {
+    if(typeof poemBody === "string") {
       let sortedAnnotations = this.props.annotations.sort((a, b) => {
         if(a.starting_character < b.starting_character) return -1;
         if(a.starting_character > b.starting_character) return 1;
@@ -115,7 +113,7 @@ class Poem extends React.Component {
       let annoStart = annotation.starting_character;
       let annoEnd = annotation.ending_character;
 
-      if (previousStartChar === annoStart) {
+      if(previousStartChar === annoStart) {
         sections.push(
           <span
             key={`text-annotation-${annotation.id}`}
@@ -145,7 +143,7 @@ class Poem extends React.Component {
         );
       }
 
-      if (idx === (sortedAnnotations.length - 1) && annoEnd !== poemBody.length) {
+      if(idx === (sortedAnnotations.length - 1) && annoEnd !== poemBody.length) {
         sections.push(
           <span
             key="not-annotation-end"
@@ -171,23 +169,19 @@ class Poem extends React.Component {
   render () {
     let poemId = this.props.poem.id;
     let poemBody;
-    if(isEmpty(this.props.annotations)) {
-      poemBody = this.props.poem.body;
-    } else {
-      poemBody = this.annotatePoemBody();
-    }
+    if(isEmpty(this.props.annotations)) poemBody = this.props.poem.body;
+    else poemBody = this.annotatePoemBody();
 
     return(
       <div className="background">
         <AuthorBar
           poem={this.props.poem}
           author={this.props.author} />
-        <div className="show-foreground" onMouseDown={this.closeModal}>
-          <div className="poem-show-text-area" >
+        <div className="show-foreground">
+          <div className="poem-show-text-area" onMouseDown={this.closeModal}>
             <h3 className="poem-show-title">{this.props.poem.title}</h3>
             <div className="poem-text">
               <p className={`poem-${poemId}-lines`}
-
                 onMouseUp={this.mouseUp}>{poemBody}</p>
             </div>
             <CommentsContainer
@@ -195,9 +189,7 @@ class Poem extends React.Component {
               commentIds={this.props.poem.comment_ids} />
           </div>
           <div className="annotation-area">
-            <AnnotationModal
-              modal={this.props.modal}
-              closeModal={this.props.closeModal} />
+            <AnnotationModal modal={this.props.modal} />
           </div>
         </div>
       </div>
