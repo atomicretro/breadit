@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router';
 import { merge } from 'lodash';
 
 class AnnotationForm extends React.Component {
@@ -30,8 +31,12 @@ class AnnotationForm extends React.Component {
     // sends up poemid instead of controller getting it from app itself
     // this is bad, fix it!!!
 
-    this.props.createAnnotation(annotation);
-    // this.props.fetchPoem(this.props.poem.id);
+    this.props.createAnnotation(annotation).then((payload) => {
+      let newAnnotationId = payload.annotation.id;
+      this.props.history.push(
+        `/poems/${this.props.poem.id}/annotations/${newAnnotationId}`
+      );
+    });
   }
 
   renderErrors(type) {
@@ -72,4 +77,4 @@ class AnnotationForm extends React.Component {
   }
 }
 
-export default AnnotationForm;
+export default withRouter(AnnotationForm);
