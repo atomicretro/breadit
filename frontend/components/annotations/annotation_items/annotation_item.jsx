@@ -16,18 +16,18 @@ class Annotation extends React.Component {
     let annotationId = this.props.annotation.id;
     let thisAnnotation = document
       .getElementsByClassName(`text-annotation-${annotationId}`)[0] ||
-                              { offsetTop: 0 };
+        { offsetTop: 0 };
     let offsetTop = thisAnnotation.offsetTop;
 
     // var rect = thisAnnotation.getBoundingClientRect();
     // console.log(rect.top, rect.right, rect.bottom, rect.left);
 
     return (
-      <div className="annotation-item">
-        <div className="annotation-item-body">
+      <div className="annotation-item" data="annotation">
+        <div className="annotation-item-body" data="annotation">
           {this.props.annotation.body}
         </div>
-        <div className="annotation-item-author">
+        <div className="annotation-item-author" data="annotation">
           —{annotatorUsername}
         </div>
       </div>

@@ -40,7 +40,6 @@ class AnnotationForm extends React.Component {
   }
 
   renderErrors() {
-    debugger
     let errors = this.props.errors;
     return(<span className="annotation-form-error">{errors[0]}</span>);
   }
@@ -52,22 +51,24 @@ class AnnotationForm extends React.Component {
   render () {
     return (
       <div className="annotation-form">
-        <form className="annotation-form">
+        <form className="annotation-form" data="annotation">
           <textarea
             value={this.state.body}
             onChange={this.update('body')}
             className="annotation-form-body"
             maxLength="300"
-            placeholder="annotate away!" />
-          <div className="annotation-baggage">
+            placeholder="annotate away!"
+            data="annotation" />
+          <div className="annotation-baggage" data="annotation">
             {this.renderErrors()}
-            <span className="annotation-count" >
+            <span className="annotation-count" data="annotation" >
               {this.state.body.length}
             </span>
             <button
               className="annotation-submit"
               onClick={this.handleSubmit}
-              type="submit" >
+              type="submit"
+              data="annotation" >
               add annotation
             </button>
           </div>

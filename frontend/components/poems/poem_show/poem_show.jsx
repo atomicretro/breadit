@@ -36,6 +36,7 @@ class Poem extends React.Component {
   }
 
   closeModal(e) {
+    debugger
     if(
       e.target.getAttribute('data') !== 'annotation' &&
       e.target.getAttribute('data') !== 'comment'
@@ -173,12 +174,12 @@ class Poem extends React.Component {
     else poemBody = this.annotatePoemBody();
 
     return(
-      <div className="background">
+      <div className="background" onMouseDown={this.closeModal}>
         <AuthorBar
           poem={this.props.poem}
           author={this.props.author} />
         <div className="show-foreground">
-          <div className="poem-show-text-area" onMouseDown={this.closeModal}>
+          <div className="poem-show-text-area" >
             <h3 className="poem-show-title">{this.props.poem.title}</h3>
             <div className="poem-text">
               <p className={`poem-${poemId}-lines`}
@@ -189,7 +190,9 @@ class Poem extends React.Component {
               commentIds={this.props.poem.comment_ids} />
           </div>
           <div className="annotation-area">
-            <AnnotationModal modal={this.props.modal} />
+            <AnnotationModal
+              modal={this.props.modal}
+              closeModal={this.closeModal} />
           </div>
         </div>
       </div>

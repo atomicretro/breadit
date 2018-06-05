@@ -7,14 +7,6 @@ import AnnotationItemContainer from '../../annotations/annotation_items/annotati
 class AnnotationModal extends React.Component {
   constructor(props) {
     super(props);
-
-    this.closeModal = this.closeModal.bind(this);
-  }
-
-  closeModal() {
-    let poemId = this.props.match.params.poemId;
-    this.props.closeModal();
-    this.props.history.push(`/poems/${poemId}`);
   }
 
   render() {
@@ -27,14 +19,18 @@ class AnnotationModal extends React.Component {
     let poemHeight = poemText.clientHeight;
 
     return (
-      <div className="annotation-modal" onClick={(e) => e.stopPropagation()}>
-        <div style={{minHeight: poemHeight + 39}}
-          className="annotation-container">
-          <div className="annotation-title">
-            <h3>enjambment annotation</h3>
-            <div
-              onClick={this.closeModal}
-              className="annotation-close-x">x</div>
+      <div
+        className="annotation-modal"
+        onClick={ (e) => e.stopPropagation() }
+        data="annotation" >
+        <div
+          style={ {minHeight: poemHeight + 39} }
+          className="annotation-container"
+          data="annotation" >
+          <div
+            className="annotation-title"
+            data="annotation" >
+            <h3 data="annotation">enjambment annotation</h3>
           </div>
           <Switch>
             <Route
