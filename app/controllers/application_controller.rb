@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
 
   def ensure_logged_in
     unless current_user
-      render json: { base: ["sorry, you're not logged in"] }, status: 401
+      render json: ["sorry, you're not logged in"], status: 401
     end
   end
 
