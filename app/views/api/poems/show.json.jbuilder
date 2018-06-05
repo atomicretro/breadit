@@ -4,7 +4,7 @@ end
 
 json.author do
   json.extract! @poem.author, :id, :name
-  # json.image_url asset_path(@poem.author.image.url)
+  json.image_url asset_path(@poem.author.image.url)
 end
 
 json.comments Hash.new()
@@ -32,6 +32,15 @@ json.annotations do
     json.set! annotation.id do
       json.extract! annotation, :id, :body, :starting_character, :ending_character, :poem_id
       json.annotator annotation.user_id
+    end
+  end
+end
+
+json.annotators Hash.new()
+json.annotators do
+  @poem.annotations.each do |annotation|
+    json.set! annotation.annotator.id do
+      json.extract! annotation.annotator, :id, :username
     end
   end
 end
