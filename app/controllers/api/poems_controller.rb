@@ -28,7 +28,7 @@ class Api::PoemsController < ApplicationController
         render json: all_errors, status: :unprocessable_entity
       end
     else
-      render :index
+      render json: ['You must be logged in to create a poem'], status: :unprocessable_entity
     end
   end
 

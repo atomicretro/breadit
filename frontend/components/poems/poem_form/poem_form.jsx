@@ -96,11 +96,15 @@ class PoemForm extends React.Component {
                 </span>
               </div>
               <br />
-              <button className="poem-submit"
-                onClick={this.handleSubmit}
-                type="submit" >
-                {this.props.formType}
-              </button>
+              <div className="poem-submit-button-area">
+                <button className="poem-submit"
+                  onClick={this.handleSubmit}
+                  type="submit" >
+                  {this.props.formType}
+                </button><span className="poem-session-error">
+                  {this.renderError('logged in')}
+                </span>
+              </div>
             </form>
           </div>
         </div>

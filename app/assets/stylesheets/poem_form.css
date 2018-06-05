@@ -60,7 +60,11 @@
 .poem-body-error {
   padding-left: 20px;
   color: red;
+}
 
+.poem-submit-button-area {
+  display: flex;
+  align-items: center;
 }
 
 .poem-submit {
@@ -78,4 +82,9 @@
 .poem-submit:hover {
   background-color: #dcdcdc;
   text-decoration: underline #d70062;
+}
+
+.poem-session-error {
+  padding-left: 20px;
+  color: red;
 }
