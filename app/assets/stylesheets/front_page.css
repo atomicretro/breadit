@@ -1,3 +1,66 @@
+.front-page-pictures-area {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 75px 0 75px;
+  height: 450px;
+}
+
+.front-page-large-picture {
+  overflow: hidden;
+  width: 675px;
+  height: 400px;
+  position: relative;
+}
+
+.newest-poem-title {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+}
+
+.newest-poem-author {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -45%);
+}
+
+.newest-poem-image {
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.front-page-small-pictures {
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.random-poem-1 {
+  width: 375px;
+  height: 190px;
+}
+
+.random-poem-1-image {
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
+.random-poem-2 {
+  width: 375px;
+  height: 190px;
+}
+
+.random-poem-2-image {
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+}
+
 .front-page-container {
   padding-left: 75px;
   padding-right: 75px;

@@ -13,6 +13,8 @@ class FrontPage extends Component {
 
   render() {
     const fetchedPoems = this.props.poems;
+    let newestPoem = fetchedPoems[0] || { };
+    // debugger
     const poemsToRender = [];
     for (let key in fetchedPoems) {
       poemsToRender.push(
@@ -34,6 +36,29 @@ class FrontPage extends Component {
       <div>
         <div className="background">
           <section className="foreground">
+
+            <div className="front-page-pictures-area">
+              <div className="front-page-large-picture">
+                <Link to={`/poems/${newestPoem.id}`}>
+                  <span className="newest-poem-title">
+                    {newestPoem.title}
+                  </span>
+                  <span className="newest-poem-author">
+                    {newestPoem.author_name}
+                  </span>
+                  <img className="newest-poem-image" src={ window.images.newestPoemImage }></img>
+                </Link>
+              </div>
+              <div className="front-page-small-pictures">
+                <div className="random-poem-1">
+                  <img className="random-poem-1-image" src={ window.images.newestPoemImage }></img>
+                </div>
+                <div className="random-poem-1">
+                  <img className="random-poem-2-image" src={ window.images.newestPoemImage }></img>
+                </div>
+              </div>
+            </div>
+
             <div className="front-page-container">
               <h2>newest poems</h2>
               <hr className="line5" />
@@ -41,6 +66,7 @@ class FrontPage extends Component {
                 {poemsToRender}
               </ul>
             </div>
+
           </section>
         </div>
       </div>
