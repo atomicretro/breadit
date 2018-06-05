@@ -1,13 +1,18 @@
-.footer-container {
+.footer-background {
   width: 100%;
   height: 82px;
   min-height: 82px;
   background-color: #9dc89b;
   border-top: solid 2px #5c965d;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+}
 
+.footer-container {
+  width: 900px;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .footer-links {
@@ -32,10 +37,30 @@
 }
 
 .footer-copyright {
-  font-size: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+}
+
+.footer-farewell {
+  font-size: 11px;
+  line-height: 13px;
   text-align: center;
 }
 
-.footer-copyright a:hover {
+.footer-farewell a:hover {
   text-decoration: underline #d70062;
+}
+
+.footer-personal-links {
+  font-size: 18px;
+}
+
+.footer-personal-links a {
+  padding: 0 5px 0 5px;
+}
+
+.footer-personal-links a:hover {
+  color: #d70062;
 }
