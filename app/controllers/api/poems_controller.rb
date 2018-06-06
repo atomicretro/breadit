@@ -10,11 +10,11 @@ class Api::PoemsController < ApplicationController
   end
 
   def random
+    # debugger
     @poems = []
-    while poems_to_send_up.length < 2 do
-      poem = Poem.order("RANDOM()").first
-      @poems << poem unless @poems.include?(poem)
-    end
+    random_poems = Poem.order("RANDOM()")
+    2.times { |i| @poems << random_poems[i] }
+    # debugger
     render :random
   end
 

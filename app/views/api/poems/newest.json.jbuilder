@@ -1,3 +1,4 @@
-json.poems do
-  json.partial! '/api/poems/poems', poems: @poems
+json.array! @poems do |poem|
+  json.extract! poem, :id, :title
+  json.author_name poem.author.name
 end
