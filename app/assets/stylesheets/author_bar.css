@@ -33,11 +33,15 @@
   border-radius: 50%;
 }
 
+.poem-bar-author a:hover {
+  color: #d70062;
+}
+
 .poem-bar-info {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 500px;
+  min-width: 500px;
 }
 
 .poem-bar-info h2 {
