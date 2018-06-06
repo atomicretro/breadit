@@ -57,7 +57,7 @@ class Poem extends React.Component {
       let absoluePositions = this.getSelectionPositions(
         document.getElementsByClassName(`poem-${poemId}-lines`)[0]
       );
-      this.props.openAnnotationModal();
+      this.props.openAnnotationModal({depth: 2});
       this.props.receiveNewAnnotation(absoluePositions);
     }
   }

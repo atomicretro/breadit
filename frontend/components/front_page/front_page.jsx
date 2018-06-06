@@ -14,7 +14,6 @@ class FrontPage extends Component {
   render() {
     const fetchedPoems = this.props.poems;
     let newestPoem = fetchedPoems[0] || { };
-    // debugger
     const poemsToRender = [];
     for (let key in fetchedPoems) {
       poemsToRender.push(

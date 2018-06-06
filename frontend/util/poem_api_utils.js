@@ -14,6 +14,14 @@ export const fetchNewestPoems = (data) => {
   });
 };
 
+export const fetchRandomPoems = (data) => {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/poems/random',
+    data: { data }
+  });
+};
+
 export const fetchPoem = (id) => {
   return $.ajax({
     method: 'GET',
