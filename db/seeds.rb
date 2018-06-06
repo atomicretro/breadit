@@ -42,11 +42,6 @@ neptr = User.create(username: 'neptr', password: '123456')
 gunter = User.create(username: 'gunter', password: '123456')
 billy = User.create(username: 'billy', password: '123456')
 
-users_array = [guest, finn, jake, bonnibel, marceline, lady, tv, jake_jr,
- kim_kil_whan, charlie, viola, ricardio, simon, betty, phoebe, joshua,
- margaret, lsp, martin, minerva, lemongrab, starchy, fern, bmo, neptr,
- gunter, billy]
-
 # ---AUTHORS---
 kipling = Author.create(name: 'Rudyard Kipling',
   image: 'https://s3.us-east-2.amazonaws.com/enjambment-pro/rudyard-kipling.jpg')
@@ -70,9 +65,6 @@ neruda = Author.create(name: 'Pablo Neruda',
   image: 'https://s3.us-east-2.amazonaws.com/enjambment-pro/pablo-neruda.jpg')
 mistral = Author.create(name: 'Gabriela Mistral',
   image: 'https://s3.us-east-2.amazonaws.com/enjambment-pro/gabriela-mistral.jpg')
-
-authos_array = [kipling, angelou, tolkien, poe, silverstein, frost, cummings,
-  whitman, hughes, neruda, mistral]
 
 # ---POEMS---
 # poem1 = Poem.create(title: "", author: , body: "")
@@ -167,16 +159,3 @@ stranger_poem = Poem.create(title: "The Stranger", author: mistral, body:
 corazon_poem = Poem.create(title: "Creo en mi corazón", author: mistral, body: "Creo en mi corazón, ramo de aromas \nque mi Señor como una fronda agita, \nperfumando de amor toda la vida \ny haciéndola bendita. \n\nCreo en mi corazón, el que no pide \nnada porque es capaz del sumo ensueño \ny abraza en el ensueño lo creado: \n¡inmenso dueño! \n\nCreo en mi corazón, que cuando canta \nhunde en el Dios profundo el franco herido, \npara subir de la piscina viva \nrecién nacido \n\nCreo en mi corazón, el que tremola \nporque lo hizo el que turbó los mares, \ny en el que da la Vida orquestaciones \ncomo de pleamares. \n\nCreo en mi corazón, el que yo exprimo \npara teñir el lienzo de la vida \nde rojez o palor y que le ha hecho \nveste encendida. \n\nCreo en mi corazón, el que en la siembra \npor el surco sin fin fue acrecentando. \nCreo en mi corazón, siempre vertido, \npero nunca vaciado. \n\nCreo en mi corazón, en que el gusano \nno ha de morder, pues mellará a la muerte; \ncreo en mi corazón, el reclinado \nen el pecho de Dios terrible y fuerte.")
 puertas_poem = Poem.create(title: "Puertas", author: mistral, body:
   "Entre los gestos del mundo \nrecibí el que me dan las puertas. \nEn la luz yo las he visto \no selladas o entreabiertas \ny volviendo sus espaldas \ndel color de la vulpeja. \n¿Por qué fue que las hicimos \npara ser sus prisioneras? \n\nDel gran fruto de la casa \nson la cáscara avarienta. \nEl fuego amigo que gozan \na la ruta no lo prestan. \nCanto que adentro cantamos \nlo sofocan sus maderas \ny a su dicha no convidan \ncomo la granada abierta: \n¡Sibilas llenas de polvo, \nnunca mozas, nacidas viejas! \n\nParecen tristes moluscos \nsin marea y sin arenas. \nParecen, en lo ceñudo, \nla nube de la tormenta. \nA las sayas verticales \nde la Muerte se asemejan \ny yo las abro y las paso \ncomo la caña que tiembla. \n\n«¡No!», dicen a las mañanas \naunque las bañen, las tiernas. \nDicen «¡No!» al viento marino \nque en su frente palmotea \ny al olor de pinos nuevos \nque se viene por la Sierra. \nY lo mismo que Casandra, \nno salvan aunque bien sepan: \nporque mi duro destino \nél también pasó mi puerta. \n\nCuando golpeo me turban \nigual que la vez primera. \nEl seco dintel da luces \ncomo la espada despierta \ny los batientes se avivan \nen escapadas gacelas. \nEntro como quien levanta \npaño de cara encubierta, \nsin saber lo que me tiene \nmi casa de angosta almendra \ny pregunto si me aguarda \nmi salvación o mi pérdida. \n\nYa quiero irme y dejar \nel sobrehaz de la Tierra, \nel horizonte que acaba \ncomo un ciervo, de tristeza, \ny las puertas de los hombres \nselladas como cisternas. \nPor no voltear en la mano \nsus llaves de anguilas muertas \ny no oírles más el crótalo \nque me sigue la carrera. \n\nVoy a cruzar sin gemido \nla última vez por ellas \ny a alejarme tan gloriosa \ncomo la esclava liberta, \nsiguiendo el cardumen vivo \nde mis muertos que me llevan. \nNo estarán allá rayados \npor cubo y cubo de puertas \nni ofendidos por sus muros \ncomo el herido en sus vendas. \n\nVendrán a mí sin embozo, \noreados de luz eterna. \nCantaremos a mitad \nde los cielos y la tierra. \nCon el canto apasionado \nheriremos puerta y puerta \ny saldrán de ellas los hombres \ncomo niños que despiertan \nal oír que se descuajan \ny que van cayendo muertas.")
-
-# ---COMMENTS---
-100.times do
-  Comment.create(
-    body: Faker::Hipster.paragraph(rand(4)),
-    user: User.all.sample,
-    commentable: Poem.all.sample
-  )
-end
-
-# ---ANNOTATIONS---
-annotation1 = Annotation.create(body: 'this part is DEFINITELY about donkeys', annotator: User.last, poem: if_poem, starting_character: 231, ending_character: 312)
-annotation2 = Annotation.create(body: 'something like this happened to me, once', annotator: User.first, poem: if_poem, starting_character: 830, ending_character: 874)
