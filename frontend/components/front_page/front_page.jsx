@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
+import { isEmpty } from 'lodash';
 import FrontPageItemContainer from './front_page_item/front_page_item_container';
 
 class FrontPage extends Component {
   constructor(props) {
     super(props);
+
+    if(isEmpty(this.props.newestPoems)) this.props.fetchNewestPoems();
+    if(isEmpty(this.props.randomPoems)) this.props.fetchRandomPoems();
   }
 
-  componentDidMount() {
+  componentWillUnmount() {
     this.props.fetchNewestPoems();
     this.props.fetchRandomPoems();
   }
@@ -69,7 +73,7 @@ class FrontPage extends Component {
                 </div>
 
                 <div className="random-poem-1">
-                  <Link to={`/poems/${randomPoemOne.id}`}>
+                  <Link to={`/poems/${randomPoemTwo.id}`}>
                     <span className="random-poem-2-title">
                       {randomPoemTwo.title}
                     </span>
