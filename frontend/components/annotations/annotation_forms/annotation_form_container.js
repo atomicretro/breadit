@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { isEmpty } from 'lodash';
 import { fetchPoem } from '../../../actions/poem_actions';
 import {
   createAnnotation,

@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-import { isEmpty } from 'lodash';
 import {
   fetchAnnotation,
   createAnnotation,

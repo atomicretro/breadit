@@ -5,10 +5,14 @@ class PoemForm extends React.Component {
     super(props);
     this.state = {
       title: '',
+      body: '',
       name: '',
-      body: ''
+      imageFile: null,
+      imageUrl: null
     };
 
+    this.updateFile = this.updateFile.bind(this);
+    this.fileReaderLoaded = this.fileReaderLoaded .bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.navigateToPoem = this.navigateToPoem.bind(this);
     this.renderError = this.renderError.bind(this);
@@ -20,8 +24,19 @@ class PoemForm extends React.Component {
 
   update(field) {
     return ((e) => {
-        this.setState({ [field]: e.currentTarget.value });
+      this.setState({ [field]: e.currentTarget.value });
     });
+  }
+
+  updateFile(e) {
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = () => this.fileReaderLoaded(file, fileReader);
+    if(file) fileReader.readAsDataURL(file);
+  }
+
+  fileReaderLoaded(file, fileReader) {
+    this.setState({ imageFile: file, imageUrl: fileReader.result });
   }
 
   navigateToPoem(poemId) {
@@ -30,8 +45,15 @@ class PoemForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const poem = Object.assign({}, this.state);
-    this.props.processForm(poem).then((response) => {
+
+    let formData = new FormData();
+    formData.append("poem[title]", this.state.title);
+    formData.append("poem[body]", this.state.body);
+    formData.append("author[name]", this.state.name);
+    formData.append("poem[image]", this.state.imageFile);
+
+    // const poem = Object.assign({}, this.state);
+    this.props.processForm(formData).then((response) => {
       this.navigateToPoem(response.poem.id);
     });
   }
@@ -55,6 +77,7 @@ class PoemForm extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     return (
       <div className="background">
         <div className="foreground">
@@ -105,6 +128,17 @@ class PoemForm extends React.Component {
                   {this.renderError('logged in')}
                 </span>
               </div>
+
+              <br />
+              <label>Poem Image:<br />
+                <input type="file"
+                  onChange={this.updateFile}
+                  className="poem-form-image" />
+              </label>
+              <img src={this.state.imageUrl} />
+              <span className="poem-input-error">
+                {this.renderError('Image')}
+              </span>
             </form>
           </div>
         </div>

@@ -29,11 +29,13 @@ export const fetchPoem = (id) => {
   });
 };
 
-export const createPoem = (poem) => {
+export const createPoem = (formData) => {
   return $.ajax({
     method: 'POST',
     url: '/api/poems',
-    data: { poem }
+    data: formData,
+    contentType: false,
+    processData: false
   });
 };
 

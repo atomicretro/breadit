@@ -23,11 +23,6 @@ h2 {
   position: relative;
 }
 
-/* .newest-poem-area {
-  min-width: 675px;
-  min-height: 400px;
-} */
-
 .newest-poem-area:hover {
   background-color: rgba(215, 0, 98, 0.3);
 }

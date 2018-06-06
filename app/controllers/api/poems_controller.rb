@@ -1,6 +1,7 @@
 class Api::PoemsController < ApplicationController
   def index
     @poems = Poem.all
+    @authors = Author.all
     render :index
   end
 
@@ -10,11 +11,9 @@ class Api::PoemsController < ApplicationController
   end
 
   def random
-    # debugger
     @poems = []
     random_poems = Poem.order("RANDOM()")
     2.times { |i| @poems << random_poems[i] }
-    # debugger
     render :random
   end
 
@@ -25,6 +24,7 @@ class Api::PoemsController < ApplicationController
 
   def create
     if logged_in?
+
       @poem = Poem.new(poem_params)
       @author = Author.find_or_initialize_by(author_params)
       @poem.author = @author
@@ -55,10 +55,10 @@ class Api::PoemsController < ApplicationController
 
 private
   def poem_params
-    params.require(:poem).permit(:title, :body)
+    params.require(:poem).permit(:title, :body, :image)
   end
 
   def author_params
-    params.require(:poem).permit(:name)
+    params.require(:author).permit(:name)
   end
 end

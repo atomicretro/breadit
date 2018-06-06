@@ -9,10 +9,11 @@ export const REMOVE_POEM = 'REMOVE_POEM';
 export const RECEIVE_POEM_ERRORS = 'RECEIVE_POEM_ERRORS';
 
 // synchronous poem action creators
-export const receiveAllPoems = (poems) => {
+export const receiveAllPoems = ({ poems, authors }) => {
   return ({
       type: RECEIVE_ALL_POEMS,
-      poems
+      poems,
+      authors
     });
 };
 

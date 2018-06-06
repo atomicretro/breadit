@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { isEmpty } from 'lodash';
-import PoemIndexItemContainer from './poem_index_item/poem_index_item_container';
+import PoemIndexItem from './poem_index_item/poem_index_item';
 
 class PoemIndex extends Component {
   componentDidMount() {
     this.props.fetchPoems();
   }
 
-  alphabetizeByAuthor(poems) {
+  alphabetizeByAuthor(poems, authors) {
+    // debugger
     let alphabetized = poems.sort((a, b) => {
-      let authorA = a.props.data || a.props.poemInfo.author_name.toLowerCase();
-      let authorB = b.props.data || b.props.poemInfo.author_name.toLowerCase();
+      let authorAObj = authors[a.props.poemInfo.author_id];
+      let authorBObj = authors[b.props.poemInfo.author_id];
+      let authorA = authorAObj.name.toLowerCase();
+      let authorB = authorBObj.name.toLowerCase();
       let splitA = authorA.split(' ');
       let splitB = authorB.split(' ');
       let lastA = splitA[splitA.length - 1];
@@ -28,15 +30,21 @@ class PoemIndex extends Component {
 
   render() {
     const fetchedPoems = this.props.poems;
+    const fetchedAuthors = this.props.authors;
+
     const poemsToRender = [];
     for(let key in fetchedPoems) {
+      let poem = fetchedPoems[key] || { };
+      let author = fetchedAuthors[poem.author_id] || { };
       poemsToRender.push(
-        <PoemIndexItemContainer
+        <PoemIndexItem
           key={`poem-item-${key}`}
-          poemInfo = { fetchedPoems[key] } />
+          poemInfo = { poem }
+          authorInfo = { author } />
       );
     };
-    let alphabetizedPoems = this.alphabetizeByAuthor(poemsToRender);
+
+    let alphabetizedPoems = this.alphabetizeByAuthor(poemsToRender, fetchedAuthors);
 
     return (
       <div className="background">
