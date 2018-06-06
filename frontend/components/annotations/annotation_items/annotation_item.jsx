@@ -19,9 +19,6 @@ class Annotation extends React.Component {
         { offsetTop: 0 };
     let offsetTop = thisAnnotation.offsetTop;
 
-    // var rect = thisAnnotation.getBoundingClientRect();
-    // console.log(rect.top, rect.right, rect.bottom, rect.left);
-
     return (
       <div className="annotation-item" data="annotation">
         <div className="annotation-item-body" data="annotation">

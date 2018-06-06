@@ -7,8 +7,8 @@ class PoemForm extends React.Component {
       title: '',
       body: '',
       name: '',
-      imageFile: null,
-      imageUrl: null
+      imageFile: '',
+      imageUrl: ''
     };
 
     this.updateFile = this.updateFile.bind(this);
@@ -77,7 +77,6 @@ class PoemForm extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="background">
         <div className="foreground">

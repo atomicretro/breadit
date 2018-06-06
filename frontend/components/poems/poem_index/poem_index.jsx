@@ -9,7 +9,6 @@ class PoemIndex extends Component {
   }
 
   alphabetizeByAuthor(poems, authors) {
-    // debugger
     let alphabetized = poems.sort((a, b) => {
       let authorAObj = authors[a.props.poemInfo.author_id];
       let authorBObj = authors[b.props.poemInfo.author_id];
