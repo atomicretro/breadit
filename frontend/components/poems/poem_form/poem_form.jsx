@@ -128,7 +128,6 @@ class PoemForm extends React.Component {
                   {this.renderError('logged in')}
                 </span>
               </div>
-
               <br />
               <label>Poem Image:<br />
                 <input type="file"

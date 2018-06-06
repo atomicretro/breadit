@@ -4,9 +4,13 @@ class AuthorForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ''
+      name: '',
+      imageFile: '',
+      imageUrl: ''
     };
 
+    this.updateFile = this.updateFile.bind(this);
+    this.fileReaderLoaded = this.fileReaderLoaded .bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.navigateToAuthor = this.navigateToAuthor.bind(this);
     this.renderError = this.renderError.bind(this);
@@ -22,14 +26,30 @@ class AuthorForm extends React.Component {
     });
   }
 
+  updateFile(e) {
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = () => this.fileReaderLoaded(file, fileReader);
+    if(file) fileReader.readAsDataURL(file);
+  }
+
+  fileReaderLoaded(file, fileReader) {
+    this.setState({ imageFile: file, imageUrl: fileReader.result });
+  }
+
   navigateToAuthor(authorId) {
     this.props.history.push(`/authors/${authorId}`);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const author = Object.assign({}, this.state);
-    this.props.processForm(author).then((response) => {
+
+    let formData = new FormData();
+    formData.append("author[name]", this.state.name);
+    formData.append("author[image]", this.state.imageFile);
+
+    // const author = Object.assign({}, this.state);
+    this.props.processForm(formData).then((response) => {
       this.navigateToAuthor(response.author.id);
     });
   }
@@ -53,6 +73,7 @@ class AuthorForm extends React.Component {
   }
 
   render() {
+    let imageClass = this.state.imageUrl === '' ? 'hidden' : 'author-form-image';
     return (
       <div className="background">
         <div className="foreground">
@@ -69,6 +90,18 @@ class AuthorForm extends React.Component {
               </label>
               <span className="author-input-error">
                 {this.renderError('Name')}
+              </span>
+              <br />
+              <label>Author Image:<br />
+                <input type="file"
+                  onChange={this.updateFile}
+                  className="author-form-image-input" />
+              </label>
+              <img
+                className={imageClass}
+                src={this.state.imageUrl} />
+              <span className="author-input-error">
+                {this.renderError('Image')}
               </span>
               <button className="author-submit"
                 onClick={this.handleSubmit}

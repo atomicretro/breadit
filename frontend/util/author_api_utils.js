@@ -13,10 +13,12 @@ export const fetchAuthor = (id) => {
   });
 };
 
-export const createAuthor = (author) => {
+export const createAuthor = (formData) => {
   return $.ajax({
     method: 'POST',
     url: '/api/authors',
-    data: { author }
+    data: formData,
+    contentType: false,
+    processData: false
   });
 };
