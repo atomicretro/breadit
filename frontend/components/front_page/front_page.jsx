@@ -47,39 +47,56 @@ class FrontPage extends Component {
             <div className="front-page-pictures-area">
 
               <div className="front-page-large-picture">
-                <Link to={`/poems/${newestPoem.id}`}>
-                  <span className="newest-poem-title">
-                    {newestPoem.title}
-                  </span>
-                  <span className="newest-poem-author">
-                    {newestPoem.author_name}
-                  </span>
-                  <img className="newest-poem-image" src={ window.images.newestPoemImage }></img>
-                </Link>
+                <h2 className="newest-poem-header">
+                  newest poem
+                </h2>
+                <div className="newest-poem-area">
+                  <Link to={`/poems/${newestPoem.id}`}>
+                    <p className="newest-poem-text">
+                      <span className="newest-poem-title">
+                        {newestPoem.title}
+                      </span>
+                      <br/>
+                      <span className="newest-poem-author">
+                        {newestPoem.author_name}
+                      </span>
+                    </p>
+                    <img className="newest-poem-image" src={ window.images.newestPoemImage }></img>
+                  </Link>
+                </div>
               </div>
 
               <div className="front-page-small-pictures">
+                <h2 className="random-poems-header">
+                  random poems
+                </h2>
 
-                <div className="random-poem-1">
+                <div className="random-poem-area">
                   <Link to={`/poems/${randomPoemOne.id}`}>
-                    <span className="random-poem-1-title">
-                      {randomPoemOne.title}
-                    </span>
-                    <span className="random-poem-1-author">
-                      {randomPoemOne.author_name}
-                    </span>
+                    <p className="random-poem-text">
+                      <span className="random-titles">
+                        {randomPoemOne.title}
+                      </span>
+                      <br/>
+                      <span className="random-authors">
+                        {randomPoemOne.author_name}
+                      </span>
+                    </p>
                     <img className="random-poem-1-image" src={ window.images.newestPoemImage }></img>
                   </Link>
                 </div>
 
-                <div className="random-poem-1">
+                <div className="random-poem-area">
                   <Link to={`/poems/${randomPoemTwo.id}`}>
-                    <span className="random-poem-2-title">
-                      {randomPoemTwo.title}
-                    </span>
-                    <span className="random-poem-2-author">
-                      {randomPoemTwo.author_name}
-                    </span>
+                    <p className="random-poem-text">
+                      <span className="random-titles">
+                        {randomPoemTwo.title}
+                      </span>
+                      <br/>
+                      <span className="random-authors">
+                        {randomPoemTwo.author_name}
+                      </span>
+                    </p>
                     <img className="random-poem-2-image" src={ window.images.newestPoemImage }></img>
                   </Link>
                 </div>
