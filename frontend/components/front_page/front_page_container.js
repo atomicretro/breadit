@@ -1,5 +1,8 @@
 import { connect } from 'react-redux';
-import { fetchNewestPoems } from '../../actions/poem_actions';
+import {
+  fetchNewestPoems,
+  fetchRandomPoems
+} from '../../actions/poem_actions';
 // import { fetchNewestAuthors } from '../../../actions/author_actions';
 import FrontPage from './front_page';
 
@@ -13,7 +16,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     fetchNewestPoems: () => dispatch(fetchNewestPoems()),
-    fetchNewestAuthors: () => dispatch(fetchNewestAuthors())
+    fetchNewestAuthors: () => dispatch(fetchNewestAuthors()),
+    fetchRandomPoems: () => dispatch(fetchRandomPoems())
   };
 };
 

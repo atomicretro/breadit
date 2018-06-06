@@ -9,6 +9,7 @@ class FrontPage extends Component {
 
   componentDidMount() {
     this.props.fetchNewestPoems();
+    this.props.fetchRandomPoems();
   }
 
   render() {
