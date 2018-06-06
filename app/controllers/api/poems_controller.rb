@@ -9,6 +9,15 @@ class Api::PoemsController < ApplicationController
     render :newest
   end
 
+  def random
+    @poems = []
+    while poems_to_send_up.length < 2 do
+      poem = Poem.order("RANDOM()").first
+      @poems << poem unless @poems.include?(poem)
+    end
+    render :random
+  end
+
   def show
     @poem = Poem.find(params[:id])
     render :show
