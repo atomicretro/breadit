@@ -60,7 +60,11 @@
 .author-body-error {
   padding-left: 20px;
   color: red;
+}
 
+.author-form-image {
+  max-width: 580px;
+  height: 100%;
 }
 
 .author-submit {
