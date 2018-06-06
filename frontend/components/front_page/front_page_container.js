@@ -7,9 +7,11 @@ import {
 import FrontPage from './front_page';
 
 const mapStateToProps = (state) => {
-  let poems = state.entities.newestPoems || { };
+  let newestPoems = state.entities.newestPoems || { };
+  let randomPoems = state.entities.randomPoems || { };
   return {
-    poems
+    newestPoems,
+    randomPoems
   };
 };
 
