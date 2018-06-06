@@ -77,6 +77,7 @@ class PoemForm extends React.Component {
   }
 
   render() {
+    let imageClass = this.state.imageUrl === '' ? 'hidden' : 'poem-form-image';
     return (
       <div className="background">
         <div className="foreground">
@@ -132,9 +133,11 @@ class PoemForm extends React.Component {
               <label>Poem Image:<br />
                 <input type="file"
                   onChange={this.updateFile}
-                  className="poem-form-image" />
+                  className="poem-form-image-input" />
               </label>
-              <img src={this.state.imageUrl} />
+              <img
+                className={imageClass}
+                src={this.state.imageUrl} />
               <span className="poem-input-error">
                 {this.renderError('Image')}
               </span>

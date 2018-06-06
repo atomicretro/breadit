@@ -62,6 +62,19 @@
   color: red;
 }
 
+.poem-form-image-input {
+  height: 100px;
+}
+
+.poem-form-image {
+  max-width: 580px;
+  height: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
 .poem-submit-button-area {
   display: flex;
   align-items: center;

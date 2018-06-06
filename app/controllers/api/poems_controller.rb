@@ -23,8 +23,6 @@ class Api::PoemsController < ApplicationController
   end
 
   def create
-    puts params
-    debugger
     if logged_in?
       @poem = Poem.new(poem_params)
       @author = Author.find_or_initialize_by(author_params)
