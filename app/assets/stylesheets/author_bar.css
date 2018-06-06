@@ -46,6 +46,7 @@
 
 .poem-bar-info h2 {
   text-transform: capitalize;
+  max-width: 550px;
   font-size: 32px;
   padding-left: 25px;
   margin: 0;
