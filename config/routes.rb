@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     get 'poems/newest', to: 'poems#newest'
+    get 'poems/random', to: 'poems#random'
     resources :users, only: [:create]
     resource :session, only: [:show, :create, :destroy]
     resources :poems, only: [:index, :show, :create, :update] do
