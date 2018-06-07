@@ -13,9 +13,12 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "redux": "^4.0.0",
-    "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
-    "webpack": "^3.11.0"
+    "webpack": "^4.11.1",
+    "webpack-cli": "^3.0.3"
+  },
+  "devDependencies": {
+    "redux-logger": "^3.0.6"
   },
   "description": "**en·jamb·ment** - /inˈjambmənt/ - _noun_<br> (in verse) the continuation of a sentence without a pause beyond the end of a line, couplet, or stanza.",
   "version": "1.0.0",
@@ -29,7 +32,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --watch",
+    "webpack-dev": "webpack --watch --mode=development",
+    "webpack": "webpack --watch --mode=production",
     "postinstall": "webpack"
   },
   "repository": {

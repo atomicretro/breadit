@@ -29,11 +29,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
 gem 'rails_12factor'
-gem 'pry-rails'
 gem "paperclip", '5.0.0.beta1'
 gem 'figaro'
 gem 'aws-sdk', '< 3.0'
-
 gem 'faker'
 
 # Use Capistrano for deployment
@@ -44,6 +42,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
+  gem 'pry-rails'
   gem 'selenium-webdriver'
   gem 'better_errors'
   gem 'binding_of_caller'
