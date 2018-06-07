@@ -20,14 +20,14 @@ Security on the back end is maintained through strong Rails Model validation and
 The pride of enjambment is it's annotation platform. Created by scratch entirely in JavaScript, enjambment's annotation platform allows any part of any uploaded poem to be directly commented on and discussed. This allows for much more granular discussions than general commenting alone, as users may have stronger opinions on specific lines of a poem than the poem overall.
 
 ## Screenshots
-If by Rudyard Kipling, showing unclicked annotations.
+**If by Rudyard Kipling, showing unclicked annotations.**
 ![If by Rudyard Kipling Poem Screenshot](readmes/enjambment_screenshot_1.png)
 
-If by Rudyard Kipling, creating an annotation.
+**If by Rudyard Kipling, creating an annotation.**
 ![If by Rudyard Kipling Annotation Screenshot](readmes/enjambment_screenshot_2.png)
 
-If by Rudyard Kipling, comments area.
+**If by Rudyard Kipling, comments area.**
 ![If by Rudyard Kipling Comments Screenshot](readmes/enjambment_screenshot_3.png)
 
-The Road Goes Ever On by J. R. R. Tolkien, showing full poem, unclicked annotation, and comments are.
+**The Road Goes Ever On by J. R. R. Tolkien, showing full poem, unclicked annotation, and comments area.**
 ![The Road Goes Ever On by J. R. R. Tolkien Screenshot](readmes/enjambment_screenshot_4.png)
