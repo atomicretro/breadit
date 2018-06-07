@@ -82,7 +82,7 @@ class FrontPage extends Component {
                         {randomPoemOne.author_name}
                       </span>
                     </p>
-                    <img className="random-poem-1-image" src={ window.images.newestPoemImage }></img>
+                    <img className="random-poem-1-image" src={ window.images.randomPoemImageOne }></img>
                   </Link>
                 </div>
 
@@ -97,7 +97,7 @@ class FrontPage extends Component {
                         {randomPoemTwo.author_name}
                       </span>
                     </p>
-                    <img className="random-poem-2-image" src={ window.images.newestPoemImage }></img>
+                    <img className="random-poem-2-image" src={ window.images.randomPoemImageTwo }></img>
                   </Link>
                 </div>
 
