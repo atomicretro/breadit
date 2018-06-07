@@ -17,4 +17,8 @@ Enjambment's back end is written in Ruby on Rails with a PostgreSQL database. A 
 Security on the back end is maintained through strong Rails Model validation and SQL escaping. Unacceptable form parameters are blocked. All user passwords are salted and hashed before being saved to the database. Session keys are discarded upon user logout to ensure account integrity.
 
 ## Annotations
-The pride of enjambment is it's annotation platform. Created by scratch entirely in Javascript, enjambment's annotation platform allows any part of any uploaded poem to be directly commented on and discussed. 
+The pride of enjambment is it's annotation platform. Created by scratch entirely in Javascript, enjambment's annotation platform allows any part of any uploaded poem to be directly commented on and discussed. This allows for much more granular discussions than general commenting alone, as users may have stronger opinions on specific lines of a poem than the poem overall.
+
+## Screenshots
+If by Rudyard Kipling showing unclicked annotations.
+![If by Rudyard Kiling Screenshot](https://github.com/atomicretro/enjambment/blob/master/readmes/enjambment_screenshot_1.pngzzzzzzz)
