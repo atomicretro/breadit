@@ -7,7 +7,7 @@ Enjambment is a single-page poetry annotation webapp loosely inspired by [Genius
 Enjambment has a React / Redux front end communicating with a Ruby on Rails back end and a PostgreSQL database. It is currently hosted on [GitHub](https://github.com) and [Heroku](https://heroku.com). It was made by one person over the course of a month as a proof of concept, and is a labor of love.
 
 ## The Front End
-Enjambment's front end is written entirely in React / Redux and Javascript, with jQuery being used solely to send AJAX requests to the Rails back end. The React / Redux flow allows enjambment to remain continuous and quick, giving users the illusion of browsing multiple webpages without jarring re-renders. The Redux store is kept normalized through specifically worded AJAX requests keeping the site responsive and lean.
+Enjambment's front end is written entirely in React / Redux and JavaScript, with jQuery being used solely to send AJAX requests to the Rails back end. The React / Redux flow allows enjambment to remain continuous and quick, giving users the illusion of browsing multiple webpages without jarring re-renders. The Redux store is kept normalized through specifically worded AJAX requests keeping the site responsive and lean.
 
 The design philosophy of enjambment was "serenity". The floral color palette of pastel greens and reds invokes nature. Color is used sparingly to heighten its effects in links and annotations. The site's design was purposefully left clean in the hopes of inspiring a sense of peace in its users, to be an oasis in an otherwise hectic Internet. Negative space is used to direct the user's eyes to the important information on the page: submission forms, comment boxes, the poetry itself. When annotating, that negative space is turned into the annotation box itself, allowing all screen real estate to serve both a presentational and functional purpose.
 
@@ -17,8 +17,17 @@ Enjambment's back end is written in Ruby on Rails with a PostgreSQL database. A 
 Security on the back end is maintained through strong Rails Model validation and SQL escaping. Unacceptable form parameters are blocked. All user passwords are salted and hashed before being saved to the database. Session keys are discarded upon user logout to ensure account integrity.
 
 ## Annotations
-The pride of enjambment is it's annotation platform. Created by scratch entirely in Javascript, enjambment's annotation platform allows any part of any uploaded poem to be directly commented on and discussed. This allows for much more granular discussions than general commenting alone, as users may have stronger opinions on specific lines of a poem than the poem overall.
+The pride of enjambment is it's annotation platform. Created by scratch entirely in JavaScript, enjambment's annotation platform allows any part of any uploaded poem to be directly commented on and discussed. This allows for much more granular discussions than general commenting alone, as users may have stronger opinions on specific lines of a poem than the poem overall.
 
 ## Screenshots
-If by Rudyard Kipling showing unclicked annotations.
-![If by Rudyard Kiling Screenshot](https://github.com/atomicretro/enjambment/blob/master/readmes/enjambment_screenshot_1.pngzzzzzzz)
+If by Rudyard Kipling, showing unclicked annotations.
+![If by Rudyard Kipling Poem Screenshot](readmes/enjambment_screenshot_1.png)
+
+If by Rudyard Kipling, creating an annotation.
+![If by Rudyard Kipling Annotation Screenshot](readmes/enjambment_screenshot_2.png)
+
+If by Rudyard Kipling, comments area.
+![If by Rudyard Kipling Comments Screenshot](readmes/enjambment_screenshot_3.png)
+
+The Road Goes Ever On by J. R. R. Tolkien, showing full poem, unclicked annotation, and comments are.
+![The Road Goes Ever On by J. R. R. Tolkien Screenshot](readmes/enjambment_screenshot_4.png)
