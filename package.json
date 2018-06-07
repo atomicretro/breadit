@@ -27,7 +27,7 @@
     "test": "test"
   },
   "engines": {
-    "node": "6.1.1",
+    "node": "8.9.0",
     "npm": "2.1.x"
   },
   "scripts": {
