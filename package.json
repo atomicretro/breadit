@@ -32,9 +32,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack-prod": "webpack -p --progress --config=config/webpack.prod.js --mode production",
-    "webpack-dev": "webpack --watch -p --progress --config=config/webpack.dev.js --mode development",
-    "postinstall": "webpack -p --progress --config=config/webpack.prod.js --mode production"
+    "webpack-prod": "webpack -p --progress --config=webpack.prod.js --mode production",
+    "webpack-dev": "webpack --watch -p --progress --config=webpack.dev.js --mode development",
+    "postinstall": "webpack -p --progress --config=webpack.prod.js --mode production"
   },
   "repository": {
     "type": "git",
