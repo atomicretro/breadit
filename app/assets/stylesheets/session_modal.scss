@@ -59,14 +59,22 @@
   background-color: #d70062;
 }
 
-.session-form input {
-  padding-left: 6px;
-  background-color: white;
-  height: 32px;
-  width: 400px;
-  border: inset 1px gray;
-  font-size: 12px;
-  margin-bottom: 12px;
+@media only screen and (min-width: 300px) {
+  .session-form input {
+    padding-left: 6px;
+    background-color: white;
+    height: 32px;
+    width: 300px;
+    border: inset 1px gray;
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .session-form input {
+    width: 400px;
+  }
 }
 
 .session-form-footer {
