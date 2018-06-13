@@ -35,14 +35,27 @@ html, body {
   background-color: #f7f7f7;
 }
 
-.foreground {
-  margin: auto;
-  width: 80%;
-  min-width: 970px;
-  background-color: white;
-  padding-top: 25px;
-  padding-bottom: 41px;
-  min-height: calc(100vh - 219px);
+@media only screen and (min-width: 300px) {
+  .foreground {
+    margin: auto;
+    width: 100%;
+    background-color: white;
+    padding-top: 25px;
+    padding-bottom: 41px;
+    min-height: calc(100vh - 219px);
+  }
+}
+
+@media only screen and (min-width: 985px) {
+  .foreground {
+    margin: auto;
+    width: 80%;
+    min-width: 970px;
+    background-color: white;
+    padding-top: 25px;
+    padding-bottom: 41px;
+    min-height: calc(100vh - 219px);
+  }
 }
 
 .show-foreground {

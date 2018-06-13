@@ -3,11 +3,149 @@ h2 {
   font-size: 12px;
 }
 
-.front-page-pictures-area {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 75px 0 75px;
-  height: 450px;
+@media only screen and (min-width: 300px) {
+  .front-page-pictures-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 5px 0 5px;
+    height: 600px;
+  }
+
+  .front-page-large-picture {
+    overflow: hidden;
+    width: 100%;
+    height: 400px;
+    margin-right: 20px;
+    position: relative;
+  }
+
+  .newest-poem-text {
+    text-align: center;
+    min-width: 500px;
+    max-width: 625px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .newest-poem-title {
+    font-size: 24px;
+  }
+
+  .newest-poem-author {
+    font-size: 16px;
+  }
+
+  .random-poems-header {
+    padding-top: 20px;
+  }
+
+  .random-poem-area {
+    font-size: 22px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .front-page-small-pictures {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .random-poem-text {
+    text-align: center;
+    width: 80%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .front-page-container {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .newest-poem-title {
+    font-size: 40px;
+  }
+
+  .newest-poem-author {
+    font-size: 32px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .newest-poem-title {
+    font-size: 48px;
+  }
+
+  .newest-poem-author {
+    font-size: 28px;
+  }
+}
+
+@media only screen and (min-width: 985px) {
+  .front-page-pictures-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 75px 0 75px;
+    height: 450px;
+  }
+
+  .front-page-large-picture {
+    overflow: hidden;
+    min-width: 500px;
+    height: 400px;
+    margin-right: 20px;
+    position: relative;
+  }
+
+  .random-poems-header {
+    padding-top: 0;
+  }
+
+  .random-poem-area {
+    font-size: 22px;
+    height: 190px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+
+  .random-poem-area:last-child {
+    margin-bottom: 0;
+  }
+
+  .front-page-small-pictures {
+    max-width: 375px;
+    min-width: 300px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .random-poem-text {
+    text-align: center;
+    width: 275px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .front-page-container {
+    padding-left: 75px;
+    padding-right: 75px;
+  }
 }
 
 .front-page-pictures-area span {
@@ -15,35 +153,8 @@ h2 {
   text-transform: uppercase;
 }
 
-.front-page-large-picture {
-  overflow: hidden;
-  /* width: 675px; */
-  min-width: 500px;
-  height: 400px;
-  margin-right: 20px;
-  position: relative;
-}
-
 .newest-poem-area:hover {
   background-color: rgba(215, 0, 98, 0.3);
-}
-
-.newest-poem-text {
-  text-align: center;
-  min-width: 500px;
-  max-width: 625px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.newest-poem-title {
-  font-size: 48px;
-}
-
-.newest-poem-author {
-  font-size: 28px;
 }
 
 .newest-poem-image {
@@ -54,37 +165,8 @@ h2 {
   opacity: 0.5;
 }
 
-.front-page-small-pictures {
-  max-width: 375px;
-  min-width: 300px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-}
-
-.random-poem-area {
-  font-size: 22px;
-  height: 190px;
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 20px;
-}
-
-.random-poem-area:last-child {
-  margin-bottom: 0;
-}
-
 .random-poem-area:hover {
   background-color: rgba(215, 0, 98, 0.3);
-}
-
-.random-poem-text {
-  text-align: center;
-  width: 275px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .random-titles {
@@ -105,11 +187,6 @@ h2 {
   width: 100%;
   height: auto;
   opacity: 0.5;
-}
-
-.front-page-container {
-  padding-left: 75px;
-  padding-right: 75px;
 }
 
 .line5 {
