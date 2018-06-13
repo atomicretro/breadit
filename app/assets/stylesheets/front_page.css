@@ -17,7 +17,8 @@ h2 {
 
 .front-page-large-picture {
   overflow: hidden;
-  width: 675px;
+  /* width: 675px; */
+  min-width: 500px;
   height: 400px;
   margin-right: 20px;
   position: relative;
@@ -55,7 +56,7 @@ h2 {
 
 .front-page-small-pictures {
   max-width: 375px;
-  min-width: 250px;
+  min-width: 300px;
   height: 400px;
   display: flex;
   flex-direction: column;
