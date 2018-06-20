@@ -4,6 +4,7 @@ import {
   RECEIVE_POEM,
   REMOVE_POEM
 } from '../../actions/poem_actions';
+import { RECEIVE_AUTHOR } from '../../actions/author_actions';
 import { RECEIVE_COMMENT } from '../../actions/comment_actions';
 
 const PoemsReducer = (previousState = {}, action) => {
@@ -22,6 +23,8 @@ const PoemsReducer = (previousState = {}, action) => {
       newState = merge({}, previousState);
       newState[action.comment.poem_id].comment_ids.unshift(action.comment.id);
       return newState;
+    case RECEIVE_AUTHOR:
+      return merge({}, previousState, action.poems);
     default:
       return previousState;
   }

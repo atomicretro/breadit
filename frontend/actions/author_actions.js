@@ -13,10 +13,11 @@ export const receiveAllAuthors = (authors) => {
   };
 };
 
-export const receiveAuthor = ({ author }) => {
+export const receiveAuthor = ({ author, poems }) => {
   return {
     type: RECEIVE_AUTHOR,
-    author
+    author,
+    poems
   };
 };
 
