@@ -7,20 +7,23 @@ const AuthorBar = (ownProps) => {
   let poem = ownProps.poem || { };
   let author = ownProps.author;
 
-  let poemImage = poem.image_url;
+  let backgroundImage;
   let title = poem.title;
   let authorId = poem.author_id;
   let authorName = author.name;
   let authorImage = author.image_url;
 
   let poemBarInfo;
-  if (isEmpty(poem)) {
+  if(isEmpty(poem)) {
+    backgroundImage = Math.random() > 0.5 ?
+      window.images.randomPoemImageOne : window.images.randomPoemImageTwo;
     poemBarInfo = (
       <div className="poem-bar-info">
         <h2 className="poem-bar-author">{authorName}</h2>
       </div>
     );
   } else {
+    backgroundImage = poem.image_url;
     poemBarInfo = (
       <div className="poem-bar-info">
         <h2 className="poem-bar-title">{title}</h2>
@@ -34,7 +37,7 @@ const AuthorBar = (ownProps) => {
   return(
     <div className="author-bar">
       <div className="author-bar-background">
-        <img src={poemImage} className="background-img" />
+        <img src={backgroundImage} className="background-img" />
       </div>
       <div className="author-img-container">
         <img
