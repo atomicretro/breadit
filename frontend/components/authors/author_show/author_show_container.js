@@ -4,9 +4,11 @@ import Author from './author_show';
 
 const mapStateToProps = (state, ownProps) => {
   let author = state.entities.authors[ownProps.match.params.authorId] || { };
+  let poems = state.entities.poems || { };
 
   return {
-    author: author
+    author,
+    poems
   };
 };
 
