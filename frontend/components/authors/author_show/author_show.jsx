@@ -19,11 +19,13 @@ class Author extends React.Component {
     const poemsToRender = [];
     for(let key in fetchedPoems) {
       let poem = fetchedPoems[key] || { };
-      poemsToRender.push(
-        <AuthorShowPoemItem
-          key={`poem-item-${key}`}
-          poemInfo = { poem } />
-      );
+      if(poem.author_id === authorId) {
+        poemsToRender.push(
+          <AuthorShowPoemItem
+            key={`poem-item-${key}`}
+            poemInfo = { poem } />
+        );
+      };
     };
 
     return(
@@ -33,9 +35,9 @@ class Author extends React.Component {
         <div className="show-foreground">
           <div className="author-show-text-area">
             <h3 className="author-show-title">ALL POEMS</h3>
-            <div className="all-author-poems">
+            <ul className="author-show-list-container">
               {poemsToRender}
-            </div>
+            </ul>
           </div>
         </div>
       </div>

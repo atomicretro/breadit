@@ -19,11 +19,11 @@
 }
 
 
-.poem-index-list-container li {
+.poem-index-list-item {
   margin-top: 10px
 }
 
-.poem-index-list-container li:first-child {
+.poem-index-list-item:first-child {
   margin-top: 0;
 }
 
