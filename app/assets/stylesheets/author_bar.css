@@ -17,13 +17,21 @@
   opacity: 0.3;
 }
 
-.author-img-container {
-  display: flex;
-  position: absolute;
-  width: auto;
-  height: auto;
-  left: 15%;
-  top: 101px;
+@media only screen and (min-width: 300px) {
+  .author-img-container {
+    display: flex;
+    position: absolute;
+    width: auto;
+    height: auto;
+    left: 15%;
+    top: 140px;
+  }
+}
+
+@media only screen and (min-width: 985px) {
+  .author-img-container {
+    top: 101px;
+  }
 }
 
 .author-img {
