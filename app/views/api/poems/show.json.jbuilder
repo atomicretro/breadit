@@ -11,7 +11,7 @@ json.comments Hash.new()
 json.comments do
   @poem.comments.each do |comment|
     json.set! comment.id do
-      json.extract! comment, :id, :body
+      json.extract! comment, :id, :body, :created_at
       json.comment_author_id comment.user.id
       json.poem_id comment.commentable_id
     end

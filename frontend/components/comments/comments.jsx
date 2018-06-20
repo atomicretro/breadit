@@ -13,7 +13,7 @@ class Comments extends React.Component {
     const commentAuthors = this.props.commentAuthors;
     this.props.comments.forEach((comment) => {
       let commentAuthorId = comment.comment_author_id;
-      commentsToRender.push(
+      commentsToRender.unshift(
         <CommentItem
           key={`comment-item-${comment.id}`}
           body={comment.body}
