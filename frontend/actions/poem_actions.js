@@ -31,7 +31,9 @@ export const receiveRandomPoems = (poems) => {
     });
 };
 
-export const receivePoem = ({ poem, author, comments, comment_authors, annotations, annotators }) => {
+export const receivePoem = (
+  { poem, author, comments, comment_authors, annotations, annotators }
+) => {
   return {
     type: RECEIVE_POEM,
     poem,
