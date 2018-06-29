@@ -8,13 +8,11 @@ Rails.application.routes.draw do
     resource :session, only: [:show, :create, :destroy]
     resources :poems, only: [:index, :show, :create, :update] do
       resources :comments, only: [:create]
+      resources :upvotes, only: [:create, :destroy]
     end
     resources :authors, only: [:index, :show, :create]
     resources :annotations, only: [:show, :create]
 
-
-    post 'poems/:id/upvote', to: 'upvotes#create'
-    delete 'poems/:id/upvote', to: 'upvotes#destroy'
     post 'poems/:id/downvote', to: 'downvotes#create'
     delete 'poems/:id/downvote', to: 'downvotes#destroy'
     post 'comments/:id/upvote', to: 'upvotes#create'
