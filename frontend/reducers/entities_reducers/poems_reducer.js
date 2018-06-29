@@ -27,7 +27,7 @@ const PoemsReducer = (previousState = {}, action) => {
       return merge({}, previousState, action.poems);
     default:
       return previousState;
-  }
+  };
 };
 
 export default PoemsReducer;

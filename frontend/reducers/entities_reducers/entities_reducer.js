@@ -9,6 +9,7 @@ import CommentAuthorsReducer from './comment_authors_reducer';
 import AnnotationsReducer from './annotations_reducer';
 import AnnotatorsReducer from './annotators_reducer';
 import NewAnnotationsReducer from './new_annotation_reducer';
+import VotesReducer from './votes_reducer';
 
 const EntitiesReducer = combineReducers({
   users: UsersReducer,
@@ -20,7 +21,8 @@ const EntitiesReducer = combineReducers({
   commentAuthors: CommentAuthorsReducer,
   annotations: AnnotationsReducer,
   annotators: AnnotatorsReducer,
-  newAnnotation: NewAnnotationsReducer
+  newAnnotation: NewAnnotationsReducer,
+  votes: VotesReducer
 });
 
 export default EntitiesReducer;
