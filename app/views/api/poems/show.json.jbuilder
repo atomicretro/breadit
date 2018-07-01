@@ -45,3 +45,11 @@ json.annotators do
     end
   end
 end
+
+json.votes do
+  @poem.votes.each do |vote|
+    json.set! vote.id do
+      json.partial! 'api/votes/votes', vote: vote
+    end
+  end
+end
