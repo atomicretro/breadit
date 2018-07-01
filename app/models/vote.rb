@@ -12,7 +12,7 @@
 #
 
 class Vote < ApplicationRecord
-  validates :score, :voter, :votable, presence: true
+  validates :vote_direction, :voter, :votable, presence: true
   validates :voter, uniqueness: { scope: [:id, :votable_id]}
 
   belongs_to :voter,
