@@ -32,7 +32,7 @@ export const receiveRandomPoems = (poems) => {
 };
 
 export const receivePoem = (
-  { poem, author, comments, comment_authors, annotations, annotators }
+  { poem, author, comments, comment_authors, annotations, annotators, votes }
 ) => {
   return {
     type: RECEIVE_POEM,
@@ -41,7 +41,8 @@ export const receivePoem = (
     comments,
     comment_authors,
     annotations,
-    annotators
+    annotators,
+    votes
   };
 };
 
