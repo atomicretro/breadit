@@ -8,6 +8,8 @@ import * as api from './util/session_api_utils';
 window.api = api;
 import * as acts from './actions/session_actions';
 window.acts = acts;
+import * as votesApi from './util/vote_api_utils';
+window.votesApi = votesApi;
 //testing
 
 document.addEventListener("DOMContentLoaded", () => {

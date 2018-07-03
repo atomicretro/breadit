@@ -1,8 +1,8 @@
-export const createPoemUpvote = ({type, type_id, vote}) => {
+export const createPoemUpvote = ({type, type_id, vote_direction}) => {
   return $.ajax({
     method: 'POST',
     url: `/api/${type}/${type_id}/upvotes`,
-    data: { vote }
+    data: { vote_direction }
   });
 };
 
