@@ -30,8 +30,8 @@ export const receiveVoteErrors = (errors) => {
 // thunk vote action creators
 export const createVote = (data) => dispatch => {
   return VoteApiUtils.createVote(data).then(
-    (payload) => {
-      return dispatch(receivePost(payload));
+    (data) => {
+      return dispatch(receivePost(data));
     },
     (errors) => {
       return dispatch(receiveVoteErrors(errors.responseJSON));
@@ -41,8 +41,8 @@ export const createVote = (data) => dispatch => {
 
 export const deleteVote = (type, type_id, id) => dispatch => {
   return VoteApiUtils.deleteVote(type, type_id, id).then(
-    (payload) => {
-      return dispatch(receivePost(payload));
+    (data) => {
+      return dispatch(receivePost(data));
     },
     (errors) => {
       return dispatch(receiveVoteErrors(errors.responseJSON));
