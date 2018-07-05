@@ -6,10 +6,10 @@ export const REMOVE_VOTE = 'REMOVE_VOTE';
 export const RECEIVE_VOTE_ERRORS = 'RECEIVE_VOTE_ERRORS';
 
 // synchronous vote action creators
-const receiveVote = (payload) => {
+const receiveVote = (vote) => {
     return ({
     type: RECEIVE_VOTES,
-    payload
+    vote
   });
 };
 
@@ -28,10 +28,10 @@ export const receiveVoteErrors = (errors) => {
 };
 
 // thunk vote action creators
-export const createVote = (data) => dispatch => {
+export const createVote = (data) => (dispatch) => {
   return VoteApiUtils.createVote(data).then(
-    (data) => {
-      return dispatch(receivePost(data));
+    (vote) => {
+      return dispatch(receiveVote(vote));
     },
     (errors) => {
       return dispatch(receiveVoteErrors(errors.responseJSON));
@@ -42,7 +42,7 @@ export const createVote = (data) => dispatch => {
 export const deleteVote = (type, type_id, id) => dispatch => {
   return VoteApiUtils.deleteVote(type, type_id, id).then(
     (data) => {
-      return dispatch(receivePost(data));
+      return dispatch(removeVote(data));
     },
     (errors) => {
       return dispatch(receiveVoteErrors(errors.responseJSON));
