@@ -3,7 +3,7 @@ class Api::UpvotesController < ApplicationController
     @vote = Vote.new(vote_params)
     @poem = Poem.find(params['poem_id'])
     @vote.votable = @poem
-    @vote.user_id = current_user.id
+    @vote.voter = current_user
     if @vote.save
       render '/api/poems/show'
     else
