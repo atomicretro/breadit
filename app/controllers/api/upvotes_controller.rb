@@ -11,6 +11,16 @@ class Api::UpvotesController < ApplicationController
     end
   end
 
+  def destroy
+    @vote = Vote.find(params['id'])
+    if @vote.destroy
+      @poem = Poem.find(params['poem_id'])
+      render '/api/poems/show'
+    else
+      render json: @vote.errors.full_messages, status: 422
+    end
+  end
+
 private
   def vote_params
     params.permit(:vote_direction)
