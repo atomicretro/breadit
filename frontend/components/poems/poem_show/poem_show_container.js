@@ -14,15 +14,14 @@ import Poem from './poem_show';
 
 const mapStateToProps = (state, ownProps) => {
   let poem = state.entities.poems[ownProps.match.params.poemId] || { };
-  let annotationIds = poem.annotation_ids || [ ];
-  let annotations = annotationIds.map((annotationId) => {
-    return state.entities.annotations[annotationId];
-  });
+  let annotations = getAnnotations(poem, state.entities.annotations);
+  let votes = getVotes(poem, state.entities.votes);
   return {
-    poem: poem,
+    poem,
     author: state.entities.authors[poem.author_id] || { },
-    annotations: annotations,
-    modal: state.ui.modal
+    annotations,
+    modal: state.ui.modal,
+    votes
   };
 };
 
@@ -35,6 +34,21 @@ const mapDispatchToProps = (dispatch) => {
     createVote: (vote) => dispatch(createVote(vote)),
     deleteVote: (vote) => dispatch(deleteVote(vote))
   };
+};
+
+const getAnnotations = (poem, allAnnotations) => {
+  let annotationIds = poem.annotation_ids || [ ];
+  let annotations = annotationIds.map((annotationId) => {
+    return allAnnotations[annotationId];
+  });
+  return annotations;
+};
+
+const getVotes = (poem, allVotes) => {
+  let voteIds = poem.vote_ids || [ ];
+  let votes = voteIds.map((voteId) => {
+    return allVotes[voteId];
+  });
 };
 
 export default connect(

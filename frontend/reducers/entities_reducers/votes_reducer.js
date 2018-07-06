@@ -4,7 +4,6 @@ import { REMOVE_VOTE } from '../../actions/vote_actions';
 
 const votesReducer = (previousState = {}, action) => {
   Object.freeze(previousState);
-  debugger
   switch(action.type){
     case RECEIVE_POEM:
       return merge({}, previousState, action.votes);
