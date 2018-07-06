@@ -21,3 +21,17 @@
 .annotation-area {
   width: 365px;
 }
+
+.poem-vote-area {
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 25px;
+}
+
+.poem-upvote-button {
+  font-family: 'Open Sans', sans-serif;
+  margin-left: 10px;
+}
+
+.poem-upvote-button:hover {
+  text-decoration: underline #d70062;
+}
