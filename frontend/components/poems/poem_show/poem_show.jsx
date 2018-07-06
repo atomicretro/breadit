@@ -14,6 +14,7 @@ class Poem extends React.Component {
 
     this.selection = window.getSelection();
     this.closeModal = this.closeModal.bind(this);
+    this.handleUpvote = this.handleUpvote.bind(this);
     this.mouseUp = this.mouseUp.bind(this);
     // this.annotatePoemBody = this.annotatePoemBody.bind(this);
     // this.getSections = this.getSections.bind(this);
@@ -45,6 +46,14 @@ class Poem extends React.Component {
         this.props.history.push(`/poems/${this.props.poem.id}`);
       }
     }
+  }
+
+  handleUpvote() {
+    this.props.createVote({
+      type: 'poems',
+      type_id: this.props.poem.id,
+      direction: 'upvote'
+    });
   }
 
   mouseUp(e) {
