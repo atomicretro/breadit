@@ -39,10 +39,10 @@ export const createVote = (data) => (dispatch) => {
   );
 };
 
-export const deleteVote = (type, type_id, id) => dispatch => {
-  return VoteApiUtils.deleteVote(type, type_id, id).then(
-    (data) => {
-      return dispatch(removeVote(data));
+export const deleteVote = (data) => dispatch => {
+  return VoteApiUtils.deleteVote(data).then(
+    (vote) => {
+      return dispatch(removeVote(vote));
     },
     (errors) => {
       return dispatch(receiveVoteErrors(errors.responseJSON));

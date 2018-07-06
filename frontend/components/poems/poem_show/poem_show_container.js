@@ -3,6 +3,7 @@ import { fetchPoem } from '../../../actions/poem_actions';
 import { fetchAuthor } from '../../../actions/author_actions';
 import { receiveNewAnnotation } from '../../../actions/annotation_actions';
 import { openAnnotationModal, closeModal } from '../../../actions/modal_actions';
+import { createVote, deleteVote } from '../../../actions/vote_actions';
 import Poem from './poem_show';
 
 // poem doesn't rerender with new annotation
@@ -30,7 +31,9 @@ const mapDispatchToProps = (dispatch) => {
     fetchPoem: (poemId) => dispatch(fetchPoem(poemId)),
     receiveNewAnnotation: (data) => dispatch(receiveNewAnnotation(data)),
     openAnnotationModal: (modal) => dispatch(openAnnotationModal(modal)),
-    closeModal: () => dispatch(closeModal())
+    closeModal: () => dispatch(closeModal()),
+    createVote: (vote) => dispatch(createVote(vote)),
+    deleteVote: (vote) => dispatch(deleteVote(vote))
   };
 };
 
