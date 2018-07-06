@@ -23,6 +23,6 @@ class Api::UpvotesController < ApplicationController
 
 private
   def vote_params
-    params.permit(:vote_direction)
+    params.permit(:direction)
   end
 end

@@ -12,7 +12,7 @@
 #
 
 class Vote < ApplicationRecord
-  validates :vote_direction, :voter, :votable, presence: true
+  validates :direction, :voter, :votable, presence: true
   validates :voter, uniqueness: { scope: :votable_id, message: "can't vote twice" }
 
   belongs_to :voter,
