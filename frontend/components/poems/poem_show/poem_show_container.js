@@ -19,7 +19,8 @@ const mapStateToProps = (state, ownProps) => {
     poem,
     author: state.entities.authors[poem.author_id] || { },
     annotations,
-    modal: state.ui.modal
+    modal: state.ui.modal,
+    currentUserVoted: poem.current_user_voted || { }
   };
 };
 

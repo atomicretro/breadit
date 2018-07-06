@@ -49,11 +49,20 @@ class Poem extends React.Component {
   }
 
   handleUpvote() {
-    this.props.createVote({
-      type: 'poems',
-      type_id: this.props.poem.id,
-      direction: 'upvote'
-    });
+    if(this.props.currentUserVoted.bool) {
+      this.props.deleteVote({
+        type: 'poems',
+        type_id: this.props.poem.id,
+        direction: 'upvote',
+        vote_id: this.props.currentUserVoted.vote_id
+      });
+    } else {
+      this.props.createVote({
+        type: 'poems',
+        type_id: this.props.poem.id,
+        direction: 'upvote'
+      });
+    }
   }
 
   mouseUp(e) {
