@@ -15,13 +15,11 @@ import Poem from './poem_show';
 const mapStateToProps = (state, ownProps) => {
   let poem = state.entities.poems[ownProps.match.params.poemId] || { };
   let annotations = getAnnotations(poem, state.entities.annotations);
-  let votes = getVotes(poem, state.entities.votes);
   return {
     poem,
     author: state.entities.authors[poem.author_id] || { },
     annotations,
-    modal: state.ui.modal,
-    votes
+    modal: state.ui.modal
   };
 };
 
@@ -42,13 +40,6 @@ const getAnnotations = (poem, allAnnotations) => {
     return allAnnotations[annotationId];
   });
   return annotations;
-};
-
-const getVotes = (poem, allVotes) => {
-  let voteIds = poem.vote_ids || [ ];
-  let votes = voteIds.map((voteId) => {
-    return allVotes[voteId];
-  });
 };
 
 export default connect(
