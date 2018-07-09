@@ -5,7 +5,7 @@ class Api::UpvotesController < ApplicationController
     @vote.votable = @poem
     @vote.voter = current_user
     if @vote.save
-      render '/api/poems/show'
+      render '/api/votes/show'
     else
       render json: @vote.errors.full_messages, status: 422
     end
@@ -15,7 +15,7 @@ class Api::UpvotesController < ApplicationController
     @vote = Vote.find(params['id'])
     if @vote.destroy
       @poem = Poem.find(params['poem_id'])
-      render '/api/poems/show'
+      render '/api/votes/show'
     else
       render json: @vote.errors.full_messages, status: 422
     end
