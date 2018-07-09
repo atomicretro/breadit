@@ -1,12 +1,14 @@
 import merge from 'lodash/merge';
-import { RECEIVE_POEM } from '../../actions/poem_actions';
-import { REMOVE_VOTE } from '../../actions/vote_actions';
+import {
+  RECEIVE_VOTE,
+  REMOVE_VOTE
+} from '../../actions/vote_actions';
 
 const votesReducer = (previousState = {}, action) => {
   Object.freeze(previousState);
   switch(action.type){
-    case RECEIVE_POEM:
-      return merge({}, previousState, action.votes);
+    case RECEIVE_VOTE:
+      return merge({}, previousState, action.vote);
     case REMOVE_VOTE:
       let newState = merge({}, previousState);
       delete newState[action.id];

@@ -1,14 +1,14 @@
 import * as VoteApiUtils from '../util/vote_api_utils';
 
 // vote action types
-export const RECEIVE_VOTES = 'RECEIVE_VOTES';
+export const RECEIVE_VOTE = 'RECEIVE_VOTE';
 export const REMOVE_VOTE = 'REMOVE_VOTE';
 export const RECEIVE_VOTE_ERRORS = 'RECEIVE_VOTE_ERRORS';
 
 // synchronous vote action creators
 const receiveVote = (vote) => {
     return ({
-    type: RECEIVE_VOTES,
+    type: RECEIVE_VOTE,
     vote
   });
 };

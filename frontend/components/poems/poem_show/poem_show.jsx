@@ -48,7 +48,8 @@ class Poem extends React.Component {
     }
   }
 
-  handleUpvote() {
+  handleUpvote(e) {
+    e.preventDefault();
     if(this.props.currentUserVoted.bool) {
       this.props.deleteVote({
         type: 'poems',
@@ -206,7 +207,8 @@ class Poem extends React.Component {
               {this.props.poem.score}
               <button className="poem-upvote-button"
                 onClick={this.handleUpvote}
-                type="submit" >
+                type="submit"
+                data="annotation" >
                 good poem!
               </button>
             </div>
