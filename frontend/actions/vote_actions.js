@@ -6,17 +6,19 @@ export const REMOVE_VOTE = 'REMOVE_VOTE';
 export const RECEIVE_VOTE_ERRORS = 'RECEIVE_VOTE_ERRORS';
 
 // synchronous vote action creators
-const receiveVote = (vote) => {
+const receiveVote = ({ vote, poem }) => {
     return ({
     type: RECEIVE_VOTE,
-    vote
+    vote,
+    poem
   });
 };
 
-const removeVote = (vote) => {
+const removeVote = ({ vote, poem }) => {
   return ({
     type: REMOVE_VOTE,
-    vote
+    vote,
+    poem
   });
 };
 
