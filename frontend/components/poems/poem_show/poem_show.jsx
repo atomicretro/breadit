@@ -208,15 +208,6 @@ class Poem extends React.Component {
               <p className={`poem-${poemId}-lines`}
                 onMouseUp={this.mouseUp}>{this.getPoemBody()}</p>
             </div>
-            <div className="poem-vote-area">
-              {this.props.poem.score}
-              <button className="poem-upvote-button"
-                onClick={this.handleUpvote}
-                type="submit"
-                data="annotation" >
-                good poem!
-              </button>
-            </div>
             <CommentsContainer
               poemId={this.props.match.params.poemId}
               commentIds={this.props.poem.comment_ids} />
