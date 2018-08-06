@@ -16,6 +16,7 @@ class Poem extends React.Component {
     this.closeModal = this.closeModal.bind(this);
     this.handleUpvote = this.handleUpvote.bind(this);
     this.mouseUp = this.mouseUp.bind(this);
+    this.getPoemBody = this.getPoemBody.bind(this);
     // this.annotatePoemBody = this.annotatePoemBody.bind(this);
     // this.getSections = this.getSections.bind(this);
     // this.navigateToAnnotation = this.navigateToAnnotation.bind(this);
@@ -185,11 +186,15 @@ class Poem extends React.Component {
     this.props.history.push(`/poems/${poemId}/annotations/${annotationId}`);
   }
 
-  render () {
-    let poemId = this.props.poem.id;
+  getPoemBody() {
     let poemBody;
     if(isEmpty(this.props.annotations)) poemBody = this.props.poem.body;
     else poemBody = this.annotatePoemBody();
+    return poemBody;
+  }
+
+  render () {
+    let poemId = this.props.poem.id;
 
     return(
       <div className="background" onMouseDown={this.closeModal}>
@@ -201,7 +206,7 @@ class Poem extends React.Component {
             <h3 className="poem-show-title">{this.props.poem.title}</h3>
             <div className="poem-text">
               <p className={`poem-${poemId}-lines`}
-                onMouseUp={this.mouseUp}>{poemBody}</p>
+                onMouseUp={this.mouseUp}>{this.getPoemBody()}</p>
             </div>
             <div className="poem-vote-area">
               {this.props.poem.score}

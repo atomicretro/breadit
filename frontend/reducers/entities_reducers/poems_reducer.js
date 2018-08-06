@@ -6,6 +6,7 @@ import {
 } from '../../actions/poem_actions';
 import { RECEIVE_AUTHOR } from '../../actions/author_actions';
 import { RECEIVE_COMMENT } from '../../actions/comment_actions';
+import { RECEIVE_ANNOTATION } from '../../actions/annotation_actions';
 import {
   RECEIVE_VOTE,
   REMOVE_VOTE
@@ -13,6 +14,7 @@ import {
 
 const PoemsReducer = (previousState = {}, action) => {
   Object.freeze(previousState);
+  debugger
   let newState;
   switch (action.type) {
     case RECEIVE_ALL_POEMS:
@@ -28,6 +30,10 @@ const PoemsReducer = (previousState = {}, action) => {
     case RECEIVE_COMMENT:
       newState = merge({}, previousState);
       newState[action.comment.poem_id].comment_ids.push(action.comment.id);
+      return newState;
+    case RECEIVE_ANNOTATION:
+      newState = merge({}, previousState);
+      newState[action.annotation.poem_id].annotation_ids.push(action.annotation.id);
       return newState;
     case RECEIVE_VOTE:
       return merge({}, previousState, { [action.poem.id]: action.poem });
