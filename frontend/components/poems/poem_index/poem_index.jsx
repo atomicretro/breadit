@@ -16,12 +16,14 @@ class PoemIndex extends Component {
     for(let key in fetchedPoems) {
       let poem = fetchedPoems[key] || { };
       let author = fetchedAuthors[poem.author_id] || { };
-      poemsToRender.push(
-        <PoemIndexItem
-          key={`poem-item-${key}`}
-          poemInfo = { poem }
-          authorInfo = { author } />
-      );
+      if(author.name !== "Alec") {
+        poemsToRender.push(
+          <PoemIndexItem
+            key={`poem-item-${key}`}
+            poemInfo = { poem }
+            authorInfo = { author } />
+        );
+      };
     };
 
     return (

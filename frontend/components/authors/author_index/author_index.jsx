@@ -33,11 +33,13 @@ class AuthorIndex extends Component {
     const fetchedAuthors = this.props.authors;
     const authorList = [];
     for(let key in fetchedAuthors) {
-      authorList.push(
-        <AuthorIndexItemContainer
-          key={`author-item-${key}`}
-          authorInfo = { fetchedAuthors[key] } />
-      );
+      if(fetchedAuthors[key].name !== "Alec") {
+        authorList.push(
+          <AuthorIndexItemContainer
+            key={`author-item-${key}`}
+            authorInfo = { fetchedAuthors[key] } />
+        );
+      };
     };
     let alphabetizedAuthors = this.alphabetize(authorList);
 

@@ -23,12 +23,15 @@ const AuthorBar = (ownProps) => {
       </div>
     );
   } else {
+    let linkTo;
+    if(authorName === "Alec") linkTo = "Alec Cuccia";
+    else linkTo = <Link to={`/authors/${authorId}`}>{authorName}</Link>;
     backgroundImage = poem.image_url;
     poemBarInfo = (
       <div className="poem-bar-info">
         <h2 className="poem-bar-title">{title}</h2>
         <h3 className="poem-bar-author">
-          <Link to={`/authors/${authorId}`}>{authorName}</Link>
+          {linkTo}
         </h3>
       </div>
     );
