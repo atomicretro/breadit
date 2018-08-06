@@ -11,8 +11,10 @@ class Api::AuthorsController < ApplicationController
   end
 
   def create
-    @author = Author.new(author_params)
-    if @author.save
+    @author = Author.find_or_initialize_by(name: author_params["name"])
+    #Doesn't create a new author now, but still doesn't update pic
+    if @author.valid?
+      @author.save
       render :show
     else
       render json: @author.errors.full_messages, status: :unprocessable_entity
