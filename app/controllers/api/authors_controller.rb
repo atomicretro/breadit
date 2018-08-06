@@ -11,10 +11,10 @@ class Api::AuthorsController < ApplicationController
   end
 
   def create
-    @author = Author.find_or_initialize_by(name: author_params["name"])
-    #Doesn't create a new author now, but still doesn't update pic
-    if @author.valid?
-      @author.save
+    @author = Author.find_or_initialize_by(author_params)
+    #author must have exact capitalization, otherwise creates new. FIX!
+    @author.update(author_picture_params)
+    if @author.save
       render :show
     else
       render json: @author.errors.full_messages, status: :unprocessable_entity
@@ -23,6 +23,10 @@ class Api::AuthorsController < ApplicationController
 
 private
   def author_params
-    params.require(:author).permit(:name, :image)
+    params.require(:author).permit(:name)
+  end
+
+  def author_picture_params
+    params.require(:author).permit(:image)
   end
 end
