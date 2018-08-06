@@ -8,12 +8,19 @@ import AnnotationForm from './annotation_form';
 
 const mapStateToProps = (state, ownProps) => {
   let poemId = ownProps.match.params.poemId;
+  let startPos;
+  if(state.entities.newAnnotation.startPos === 0) startPos = 0;
+  else if(!state.entities.newAnnotation.startPos) startPos = { };
+  else startPos = state.entities.newAnnotation.startPos;
+  let endPos;
+  if(!state.entities.newAnnotation.endPos) endPos = { };
+  else endPos = state.entities.newAnnotation.endPos - 1;
 
   return {
     user: state.entities.users[state.session.id] || { },
     poem: state.entities.poems[poemId] || { },
-    startPos: state.entities.newAnnotation.startPos || { },
-    endPos: state.entities.newAnnotation.endPos || { },
+    startPos: startPos,
+    endPos: endPos,
     errors: state.errors.annotationErrors
   };
 };

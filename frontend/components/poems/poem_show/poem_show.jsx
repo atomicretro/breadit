@@ -73,11 +73,11 @@ class Poem extends React.Component {
 
     if(endPos - startPos !== 0) {
       let poemId = this.props.poem.id;
-      let absoluePositions = this.getSelectionPositions(
+      let absolutePositions = this.getSelectionPositions(
         document.getElementsByClassName(`poem-${poemId}-lines`)[0]
       );
       this.props.openAnnotationModal({depth: 2});
-      this.props.receiveNewAnnotation(absoluePositions);
+      this.props.receiveNewAnnotation(absolutePositions);
     }
   }
 
