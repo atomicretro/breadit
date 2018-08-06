@@ -6,7 +6,8 @@ class Api::PoemsController < ApplicationController
   end
 
   def newest
-    @poems = Poem.recent(10).reverse
+    banned_author = Author.find_by(name: "alec cuccia").id
+    @poems = Poem.recent(11).where("author_id != '#{banned_author}'").reverse
     render :newest
   end
 
