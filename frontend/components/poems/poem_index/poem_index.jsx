@@ -16,7 +16,7 @@ class PoemIndex extends Component {
     for(let key in fetchedPoems) {
       let poem = fetchedPoems[key] || { };
       let author = fetchedAuthors[poem.author_id] || { };
-      if(author.name !== "Alec") {
+      if(author.name !== "alec cuccia") {
         poemsToRender.push(
           <PoemIndexItem
             key={`poem-item-${key}`}

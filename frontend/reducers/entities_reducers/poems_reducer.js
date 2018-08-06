@@ -14,7 +14,6 @@ import {
 
 const PoemsReducer = (previousState = {}, action) => {
   Object.freeze(previousState);
-  debugger
   let newState;
   switch (action.type) {
     case RECEIVE_ALL_POEMS:

@@ -19,10 +19,20 @@ class Annotation extends React.Component {
         { offsetTop: 0 };
     let offsetTop = thisAnnotation.offsetTop;
 
+    let annotationBody = this.props.annotation.body;
+    if(annotatorUsername === "alec cuccia") {
+      annotationBody =
+        <a
+          href={`${annotationBody}`}
+          data="annotation">
+          {annotationBody.slice(2)}
+        </a>;
+    };
+
     return (
       <div className="annotation-item" data="annotation">
         <div className="annotation-item-body" data="annotation">
-          {this.props.annotation.body}
+          {annotationBody}
         </div>
         <div className="annotation-item-author" data="annotation">
           —{annotatorUsername}

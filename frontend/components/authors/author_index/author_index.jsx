@@ -33,7 +33,7 @@ class AuthorIndex extends Component {
     const fetchedAuthors = this.props.authors;
     const authorList = [];
     for(let key in fetchedAuthors) {
-      if(fetchedAuthors[key].name !== "Alec") {
+      if(fetchedAuthors[key].name !== "alec cuccia") {
         authorList.push(
           <AuthorIndexItemContainer
             key={`author-item-${key}`}
