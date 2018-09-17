@@ -1,5 +1,5 @@
 **en·jamb·ment** - /inˈjambmənt/ - _noun_<br>
-(in verse) the continuation of a sentence without a pause beyond the end of a line, couplet, or stanza.
+(in verse) The continuation of a sentence without a pause beyond the end of a line, couplet, or stanza.
 
 # ENJAMBMENT
 Enjambment is a single-page poetry annotation webapp loosely inspired by [Genius.com](https://www.genius.com). It is a platform where lovers (and haters!) of poetry can get together to upload, discuss, vote on, and annotate their favorite (and least favorite!) poets and poems. Users may create profiles, upload individual poems and authors, write comments, and annotate poems directly.
